@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+/*预览*/
+.yulan{border:0px solid blue;height:100px;width:100px;background:url(../images/upload.png);position:relative;}
+/*预览详细*/
+.detail{display:none;border:1px solid black;background:black;width:100px;height:100px;filter:alpha(opacity=50);position:absolute;;top:0px;-moz-opacity:0.6;-khtml-opacity:0.6;opacity:0.6;}
+/*关闭*/
+.close{color:white;position:absolute;top:10px;right:5px;text-decoration:none;font-weight:bold;font-size:15px;cursor:pointer;}
+/*图片展示*/
+.picture{color:white;position:absolute;top:40px;right:30px;text-decoration:none;font-weight:bold;font-size:15px;}
+/*插入图片input框*/
+.inputimg{border:0px solid black;width:100px;height:100px;filter:alpha(opacity=50);position:absolute;;top:0px;-moz-opacity:0;-khtml-opacity:0;opacity:0;cursor:pointer;}
+
+
+/*如果先前已经有图片*/
+.oldyulan{background:white;}
+.olddetail{display:block;}
+.oldinputimg{display:none;}
+/*
+						$(".yulan"+num).empty(); //清空内容 
+						$(".yulan"+num).css("background","white"); //预览背景变为白色 
+						$(".yulan"+num).append("<img style='width:100px;height:100px;' src='"+objUrl+"'>");//放置图片
+						$(".picture"+num).attr("href",objUrl); //放置图片的链接 
+						$(".detail"+num).css("display","block"); //覆盖层出现 
+						$(this).css("display","none");//上传图片的按钮消失  
+
+*/

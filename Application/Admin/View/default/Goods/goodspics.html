@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<include file="Public:metas"/>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    
+                  
+                </div>
+            </div>
+            
+            <form method="post" action="<{:U('goods/changeSort')}>">
+            <div class="wrapper wrapper-content animated fadeInRight">
+          
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            
+                            <div class="ibox-content">
+                                
+                                <div class="table-responsive">
+                                
+                                    <table>
+                                    <!-- <table class="table table-hover"  style="background: #dfdfdf"> -->
+                                        <thead>
+                                            <tr>
+                                                <th>1:1原图</th>
+                                                <th>1:1铺满</th>
+                                                <th>2:1图</th>
+                                                <th>细节图1</th>
+                                                <th>细节图2</th>
+                                                <th>细节图4</th>
+                                                <th>场景图</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="sortable">
+                                        
+                                           
+                                            <tr>
+                                                <td><img width="200" src="<{$pics.pic_11}>"/></td>
+                                                <td><img width="200" src="<{$pics.pic_over_11}>"/></td>
+                                                <td><img width="200" src="<{$pics.pic_21}>"/></td>
+                                                <td><img width="200" src="<{$pics.pic_spec1}>"/></td>
+                                                <td><img width="200" src="<{$pics.pic_spec2}>"/></td>
+                                                <td><img width="200" src="<{$pics.pic_spec3}>"/></td>
+                                                <td><img width="200" src="<{$pics.pic_scene}>"/></td>
+                                                
+                                                <!-- <td><{$pics.name}></td> -->
+                                                
+                                                <!-- <td><img src="<{$pics.picture}>" width="100"></td> -->
+                                                <!-- <td><img src="<{$pics.thumb}>"></td> -->
+                                                <!-- <td>
+                                                    <if condition="$key eq 1">1:1全图(原图)
+                                                    <elseif condition="$key eq 2" />1:1铺满
+                                                    <elseif condition="$key eq 3" />2:1
+                                                    <elseif condition="$key eq 4" />细节
+                                                    <elseif condition="$key eq 5" />细节
+                                                    <elseif condition="$key eq 6" />细节
+                                                    <else />场景</if>
+                                                </td> -->
+                                                <!-- <td><{$key}></td> -->
+                                            </tr>
+                                            
+                                            
+                                            
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               </form>
+            </div>
+        </div>
+    </div>
+  
+</body>
+
+</html>

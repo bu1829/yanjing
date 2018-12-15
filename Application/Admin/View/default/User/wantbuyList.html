@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<include file="Public:metas"/>
+<script>
+ $(function() {
+	 $("#<{$action}>").addClass("<{$btn}>");
+	 var action="<{$action}>";
+	 if(action=="sort"){
+		 changeSort("user_wantbuy","id","sort");
+	 }
+ });
+</script>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	会员管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+					<a href="<{:U('User/wantbuyAdd')}>" class="btn btn-xs btn-primary">添加求购</a>
+                </div>
+            </div>
+            
+            
+            <div class="wrapper wrapper-content animated fadeInRight">
+            	<div style="margin-bottom:10px;">
+            	<a id="list" href="<{:U('User/wantbuyList',array('action'=>'list','keyword'=>$keyword))}>" class="btn btn-sm" type="submit">列表</a>
+            	<a id="sort" href="<{:U('User/wantbuyList',array('action'=>'sort','keyword'=>$keyword))}>" class="btn btn-sm" type="submit">排序</a>
+            	</div>
+            	<div style="margin-bottom:10px;">
+				    <form class='submitform' action='' method='get' id='signupForm'>
+				    <div style="margin-bottom:20px;">
+				    <input placeholder="请输入关键字" class="btn-sm btn-white" name="keyword" value="<{$keyword}>">
+				    <button class="btn btn-xs btn-info" type="submit" id="submit1">查询</button>
+				    <span class="input-group-btn mail-tools">
+	            	<button id="submit2" type="submit" class="btn btn-sm btn-danger">导出Excel报表</button> 
+	            	</span>
+				    </div>
+				    </form>
+			    </div>
+            	<form action="" method="post">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            
+                            <div class="ibox-content">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <if condition="$action eq sort">
+                                            	<th></th>
+                                            	</if>
+                                            	<th>求购名称</th>
+                                                <th>艺术家名称</th>
+                                                <th>详细描述</th>
+                                                <th>会员</th>
+                                                <th>相关商品</th>
+                                                <th>状态</th>
+                                                <th>时间</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="sortable">
+                                        
+                                        	<volist name="list" id="v">
+                                            <tr name="<{$v.id}>" class="one" <if condition="$action eq sort">style="cursor:move;"</if>>
+                                                <if condition="$action eq sort">
+                                            	<td style="padding-top:10px;">
+                                            	<i class="fa fa-arrows"></i>
+                                            	</td>
+                                            	</if>
+                                                
+                                                <td>
+                                                	<{$v.name}>
+                                                </td>
+                                                
+                                                <td>
+                                                	<{$v.artist_name}>
+                                                </td>
+                                                
+                                                <td>
+                                                	 <{$v.detail}>
+                                                </td>
+                                                
+                                                <td>
+                                                	<if condition="$v.user_id neq 0">
+                                                	<a class="btn btn-sm btn-success" href="<{:U('User/userInfo',array('user_id'=>$v[user_id]))}>">查看会员信息</a>
+                                                	</if>
+                                                </td>
+                                                
+                                                <td>
+                                                	<if condition="$v.gid neq 0">
+                                                	<a class="btn btn-sm btn-primary goodsInfo" rel="<{$v.gid}>">查看相关商品</a>
+                                                	</if>
+                                                </td>
+                                                
+                                                <td style="padding-top:10px;cursor:pointer;" class="status status<{$v.id}>" id="<{$v.id}>" name="<{$v.status}>">
+                                                	<switch name="v.status">
+                                                	<case value="0"><img alt="image" class="img-responsive" src="__IMG__/no.gif"></case>
+                                                	<case value="1"><img alt="image" class="img-responsive" src="__IMG__/yes.gif"></case>
+                                               	</switch>
+                                                </td>
+                                                
+                                                <td>
+                                                	<{$v.add_time|date='Y-m-d H:i:s',###}><br/>
+                                                </td>
+                                                <td>
+                                                	<if condition="$v.types eq 2">
+                                                	<a class="btn btn-sm btn-success" href="<{:U('User/wantbuyEditor',array('id'=>$v[id]))}>">编辑</a>
+                                                	</if>
+                                                </td>
+                                            </tr>
+                                            </volist>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-center">
+                                    <if condition='$page neq null'>
+                                    	<{$page}>
+                                    <else/>
+                                    	共<{$count}>条记录
+                                    </if>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+    $().ready(function(){
+    	$("#position<{$position_id}>").prop("selected","selected");
+       	
+       	$(".status").click(function(){
+       		var id=$(this).attr("id");//这是数据id
+       		var status=$(this).attr("name");//这是当前状态
+       		changeStatusOne('user_wantbuy','id',id,status,"status");
+       	})  
+       	
+       	
+       	//商品详情
+    	$(".goodsInfo").click(function(){
+    		var gid=$(this).attr("rel");
+   			layer.open({
+     			  type: 2,
+     			  title: '商品详情',
+     			  shadeClose: true,
+     			  shade: 0.8,
+     			  area: ['80%', '90%'],
+     			  content: '__APP__/Goods/goodsEditor/id/'+gid//iframe的url
+    		}); 
+    	})
+    	
+    	$("#submit1").click(function(){
+       		$(".submitform").attr("action","<{:U('User/wantbuyList')}>");
+       	})
+       	
+    	$("#submit2").click(function(){
+       		$(".submitform").attr("action","<{:U('User/wantbuyExport')}>");
+       	})
+       	
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+.webuploader-container {
+	position: relative;
+}
+
+#filePicker2 input[type=file]{display:none;}/* 去掉input按钮 */
+#filePicker input[type=file]{border:1px solid red;width:100%;padding:5px;display:none;}/* 去掉input按钮 */
+
+.webuploader-element-invisible {
+	/* position: absolute !important;
+	clip: rect(1px 1px 1px 1px); IE6, IE7
+    clip: rect(1px,1px,1px,1px); */
+	display:none;
+}
+.webuploader-pick {
+	width:100%;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	background: #880000;
+	padding: 8px 15px;
+	color: #fff;
+	border-radius: 3px;
+	overflow: hidden;
+}
+.webuploader-pick-hover {
+	background: #00a2d4;
+}
+
+.webuploader-pick-disable {
+	opacity: 0.6;
+	pointer-events:none;
+}
+
+/*上传所选区域按钮*/
+.upload-btn{margin:10px 0px;}
+

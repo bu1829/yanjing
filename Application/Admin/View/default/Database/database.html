@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+</head>
+
+<body>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        
+        <ol class="breadcrumb" style="margin-top:20px;">
+            <li>数据管理</li>
+            <li><strong><{$meta_title}></strong></li>
+        </ol>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="alert alert-success alert-dismissable">
+        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+      	  温馨提示：请及时做好数据库备份，防止数据丢失无法恢复。
+      	 <!-- <div style="padding:5px 0px;">系统自动备份时间为	<font style='color:#a40000'>每日凌晨2:00</font></div> -->
+    </div>
+	<!-- <div style="margin-bottom:10px;">
+	<a href="<{:U('Authority/roleAdd')}>" class="btn btn-sm btn-primary" type="submit">角色添加</a>
+	</div> -->
+	<form action="" method="post">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                
+                <div class="ibox-content">
+                    <div class="row">
+                        <!-- <div class="col-sm-4 m-b-xs">
+                            <button class="deletemore btn btn-sm btn-danger" type="button">删除选中</button>
+                             <a onclick="del('<{:U('Database/newBackup')}>','确定添加备份么？','3','添加')" class="btn btn-sm btn-success">添加新备份</a>
+                        </div> -->
+
+                        <div class="col-sm-4 m-b-xs">
+                            <button class="deletemore btn btn-sm btn-danger" type="button">删除选中</button>
+                             <!-- <a onclick="del('<{:U('Database/newBackup')}>','确定添加备份么？','3','添加')" class="btn btn-sm btn-success">添加新备份</a> -->
+
+                             <a href="<{:U('Database/newBackup')}>" class="btn btn-sm btn-success">添加新备份</a>
+                        </div>
+
+
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                	<th><input type="checkbox" class="choseall"></th>
+                                    <th>序号</th>
+                                    <th>文件名</th>
+                                    <th>文件大小</th>
+                                    <th>备份时间</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            
+                            <notempty  name="lists">
+
+	                            <foreach name="lists" key="key" item="row">
+	                                <if condition="$key gt 1">
+	                                    <tr class="database<{$key}>">
+	                                    	<td><input type="checkbox" class='i-checks' name="check[]" title="<{$key}>" value="<{$row}>"></td>
+	                                        <td><{$key-1}></td>
+	                                        <td style="text-align: left"><a title="点击下载"  onclick="del('<{:U('Database/downloadData',array('file'=>$row))}>','确定下载此备份数据库么？','3','下载')"><{$row}></a></td>
+	                                        <td><{$row|getfilesize=$datadir}></td>
+	                                        <td><{$row|getfiletime=$datadir}></td>
+	                                        <td>
+	                                            <!-- <a class="btn btn-xs  btn-success" onclick="del('<{:U('Database/downloadData',array('file'=>$row))}>','确定下载此备份数据库么？','3','下载')">下载</a> -->
+
+	                                            <a class="btn btn-xs  btn-success" href="<{:U('Database/downloadData',array('file'=>$row))}>">下载</a>
+	                                            <a class="btn btn-xs  btn-info" onclick="del('<{:U('Database/databaseHandle',array('action'=>'RL','file'=>$row))}>','确定将数据库还原到当前备份吗？请务必谨慎操作。','3','还原')">还原</a>
+	                                            <a id="<{$key}>" rel="<{$row}>" class="btn btn-xs  btn-danger deleteone">删除</a>
+	                                        </td>
+	                                    </tr>
+	                                </if>
+	                            </foreach>
+	                            <else/>
+	                            <tr>
+	                                <td colspan="7">没有找到相关数据。</td>
+	                            </tr>
+	                        </notempty>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+<script type="text/javascript">
+function deletedatabase(row,key){
+	$(".layui-layer-btn1").trigger("click");
+	//数据
+	var info = {
+		file:row,
+		action:"Del",
+    };
+	$.ajax({
+		url:"__APP__/Database/delData",
+		type:"post",
+		dataType:"json",
+		data:info,
+		success:function(re){
+			var msg=re.msg;
+			if(re.flag==1){
+				$(".database"+key).remove();
+			}
+			layer.msg(msg);
+		},
+		beforeSend:function(){
+			$("#"+key).html("正在删除 <i class='fa fa-spinner'></i>");
+		},
+		error:function(){
+			layer.msg("异常，稍后重试！");
+		}
+	})
+}
+$().ready(function(){
+	$(".deleteone").click(function(){//删除一个备份
+		var row=$(this).attr("rel");
+	    var key=$(this).attr("id");
+ 		layer.confirm('确定删除么？', {
+			icon:3,btn: ['确定','取消'] //按钮
+		}, function(){
+			deletedatabase(row,key);
+		});
+	})
+	
+	/* 删除选中*/
+	$(".deletemore").on('click',function(){
+		var a=true;
+		var s=''; 
+    	$('input[name="check[]"]:checked').each(function(){
+    		s+=$(this).val()+','; 
+    	})
+    	len=s.length;
+    	if(len>0){
+    		if(confirm("确定删除选中么？")){
+	    		//s=s.substring(0,len-1); 
+	    		//location.href="__APP__/Webset/deletemoread/ids/"+s;
+	    		$('input[name="check[]"]:checked').each(function(){
+	    			var row=$(this).val();
+	    		    var key=$(this).attr("title");
+	    		    deletedatabase(row,key);
+	    		})
+	    		return true;
+    		}else{
+    			return false;
+    		}
+    	}else{
+    		layer.alert('请选择要删除的备份文件！', {
+    			icon: 0,
+    		    skin: 'layui-layer-molv' //样式类名
+    		    ,closeBtn: 0
+    		});
+    		return false;
+    	}
+	})
+})
+</script>
+</body>
+</html>

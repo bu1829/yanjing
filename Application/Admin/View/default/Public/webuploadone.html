@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="__CJS__/webupload/webuploader.css"/>
+<link rel="stylesheet" type="text/css" href="__CJS__/webupload/style.css"/>
+            <div class="wrapper wrapper-content animated fadeInRight" style='padding:10px 0px;'>
+                <div class="row" id="wrapper1" style='margin:0px;'>
+			        <div id="container1" style='margin-top:0px;border:1px dotted #ccc;'>
+			            <!--头部，相册选择和格式选择-->
+			            <div id="uploader" style='margin:0px;'>
+			                <div class="queueList">
+			                    <div id="dndArea" class="placeholder" style='background:none;padding-top:0px;min-height:0px;'>
+			                        <div id="filePicker" style='margin:0px;'></div>
+			                        <!-- <p>或将文件拖到这里，单次最多可选<{$CONFIG.MORE_PICTURE_MAX_NUM}>个,总大小不超过<{$CONFIG.MORE_PICTURE_MAX_SIZE|getfilesize=###}></p> -->
+			                    </div>
+			                </div>
+			                <div class="statusBar" style="display:none;">
+			                    <div class="progress" style='display:block;'>
+			                        <span class="text">0%</span>
+			                        <span class="percentage"></span>
+			                    </div>
+			                    <div class="info">
+			                    </div>
+			                    <div class="btns">
+			                        <div id="filePicker2"></div><div class="uploadBtn">开始上传</div>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+<script>
+$().ready(function(){
+	$("#water<{$CONFIG.DEFAULT_WATER_TYPE}>").attr("checked","checked");
+})
+</script>
+<script type="text/javascript" src="__CJS__/webupload/webuploader.js"></script>
+<script type="text/javascript" src="__CJS__/webupload/upload.js"></script>

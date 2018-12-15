@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	会员管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+					<a href="<{:U('User/index')}>" class="btn btn-xs btn-primary">会员列表</a>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                
+                <div class="row">
+                    
+                    <div class="col-lg-12">
+	                    <div class="panel panel-primary">
+	                        <div class="panel-heading">
+	                            	<{$meta_title}>
+	                        </div>
+	                        <div class="panel-body">
+	                        	 <form action="<{:U('')}>" method="post" class="form-horizontal m-t" id="signupForm">
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font> 用户名：</label>
+                                        <div class="col-sm-3">
+                                            <input id="username" name="username" class="form-control" type="text" maxlength="11">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font> 密码：</label>
+                                        <div class="col-sm-3">
+                                            <input name="password" id="password" class="form-control" type="password" maxlength="20">
+                                        </div>
+                                        <div class="col-sm-6">
+                                        	<div style="border:0px solid red;overflow:auto;zoom:1;">
+	                                        	<div class="ywz_zhuce_huixian" id='pwdLevel_1'> </div>
+									            <div class="ywz_zhuce_huixian" id='pwdLevel_2'> </div>
+									            <div class="ywz_zhuce_huixian" id='pwdLevel_3'> </div>
+								            </div>
+								            <div>
+								            <div class="ywz_zhuce_hongxianwenzi"> 弱</div>
+								            <div class="ywz_zhuce_hongxianwenzi"> 中</div>
+								            <div class="ywz_zhuce_hongxianwenzi"> 强</div>
+								            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font> 确认密码：</label>
+                                        <div class="col-sm-3">
+                                            <input  name="confirm_password" class="form-control" type="password" maxlength="20">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font> 角色：</label>
+                                        <div class="col-sm-3">
+                                        	<div class="radio radio-success" style="float:left;">
+                                       			<input type="radio" value="1" name="role" id="role1" checked/>
+                                       			<label for="role1">
+                                       				普通会员&nbsp;&nbsp;&nbsp;
+                                       			</label>
+                                       		</div>
+                                       		
+                                       		<div class="radio radio-success" style="float:left;">
+                                       			<input type="radio" value="2" name="role" id="role2"/>
+                                       			<label for="role2">
+                                       				艺术家
+                                       			</label>
+                                       		</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"> 昵称：</label>
+                                        <div class="col-sm-3">
+                                            <input  name="nickname" class="form-control" type="text" maxlength="30">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"> 性别：</label>
+                                        <div class="col-sm-3">
+                                            <div class="radio radio-primary" style="float:left;margin-right:10px;">
+                                                <input type="radio" name="sex" id="sex1" value="1" checked=''>
+                                                <label for="sex1">
+                                                  	 男
+                                                </label>
+                                            </div>
+                                            
+                                            <div class="radio radio-danger" style="float:left;">
+                                                <input type="radio" name="sex" id="sex2" value="2">
+                                                <label for="sex2">
+                                               		   女
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- <div class="form-group">
+                                        <label class="col-sm-3 control-label">邮箱：</label>
+                                        <div class="col-sm-3">
+                                            <input  name="email" class="form-control" type="text" maxlength="30">
+                                        </div>
+                                    </div> -->
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-3">
+                                            <button class="btn btn-sm btn-primary" type="submit">保存</button>
+                                            <button class="btn btn-sm btn-primary" type="reset">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
+	                        </div>
+	                    </div>
+	                </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+	 <script type="text/javascript">
+	 
+	 $().ready(function(){
+		 $("#role<{$role}>").prop("checked","checked");
+		 
+		 
+		 $("[name='role']").click(function(){
+			 var value=$(this).val();
+			 if(value==1){
+				 $("#show").show();
+			 }else if(value==2){
+				 $("#show").hide();
+			 }else if(value==3){
+				 $("#show").hide();
+			 }
+		 })
+	 })
+	 </script>
+	 <script>
+        //以下为修改jQuery Validation插件兼容Bootstrap的方法，没有直接写在插件中是为了便于插件升级
+        //以下为官方示例
+        $().ready(function () {
+        	//设置默认选项的
+        	
+            // validate the comment form when it is submitted
+            $("#commentForm").validate();
+
+            // validate signup form on keyup and submit
+            $("#signupForm").validate({
+                rules: {
+                     username: {
+                         required: true,
+                         phone: true,
+                         usernamesame:true,
+                         /* remote: {
+                             url: "__APP__/User/checkUsernameOnly",
+                             type: "post",
+                             dataType: "json",
+                             data: {
+                                 username: function () {
+                                     return $("#username").val();　　　　//这个是取要验证的密码
+                                 }
+                             },
+                             dataFilter: function (msg) {　　　　//判断控制器返回的内容
+                                 if (msg == "1") {
+                                     return true;
+                                 }
+                                 else {
+                                     return false;
+                                 }
+                             }
+                         }  */
+                     },
+                	 password: {
+                         required: true,
+                         password: true,
+                     },
+                     confirm_password:{
+                    	 required: true,
+                    	 password:true,
+                    	 equalTo:"#password",
+                     },
+                     email:{
+                    	 email:true,
+                    	 emailsame:true,
+                     },
+                     phone:{
+                    	 phone:true,
+                    	 phonesame:true,
+                     }
+                    
+                },
+                messages: {
+                	username: {
+                		required:no+"请输入用户名",
+                		phone:no+"请输入正确的手机号",
+                        usernamesame:no+"该手机号已经被注册"
+                    },
+                	password: {
+                        required: no+"密码6-20位，由数字、字母、符号组成",
+                        password:no+"密码6-20位，由数字、字母、符号组成",
+                    },
+                    confirm_password:{
+                    	required: no+"密码6-20位，由数字、字母、符号组成",
+                        password:no+"密码6-20位，由数字、字母、符号组成",
+                        equalTo:no+"两次密码不一致"
+                    },
+                    email:{
+                   	 	email:no+"请输入正确的Email地址",
+                   	 	emailsame:no+"该邮箱已经存在",
+                    },
+                    phone:{
+                    	phone:no+"请填写正确的手机号码",
+                   		phonesame:no+"该手机号已经存在",
+                    }
+                   
+                },
+                onfocus: true,　　　　
+                onkeyup: false,　　　　//这个地方要注意，修改去控制器验证的事件。
+                onsubmit: true
+            });
+        });
+    </script>
+</body>
+</html>

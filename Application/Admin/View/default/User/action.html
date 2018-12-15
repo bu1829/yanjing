@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+</head>
+
+<body>
+    <div id="wrapper">
+        <!--菜单项 -->
+        <include file="Public:menu"/>
+        <!--菜单项 -->
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <!--头部项 -->
+	        <include file="Public:header"/>
+	        <!--头部项 -->
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            <a href="index.html">主页</a>
+                        </li>
+                        <li>
+                            <a>行为管理</a>
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                
+                <div class="row">
+                    
+                    <div class="col-lg-12">
+	                    <div class="panel panel-primary">
+	                        <div class="panel-heading">
+	                            	<{$meta_title}>
+	                        </div>
+	                        <div class="panel-body">
+	                        	 <form class="form-horizontal m-t" id="signupForm" enc-type="mulitipart-form/data">
+                                   
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">行为标识：</label>
+                                        <div class="col-sm-5">
+                                            <input  name="action_title" class="form-control" type="text" placeholder="输入行为标识 英文字母">
+                                        </div>
+                                    </div> 
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">行为名称：</label>
+                                        <div class="col-sm-5">
+                                            <input name="action_name" class="form-control" type="text" placeholder="输入行为标识 名称">
+                                        </div>
+                                    </div> 
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">行为类型：</label>
+                                        <div class="col-sm-5">
+                                            <input  name="action_name" class="form-control" type="text" placeholder="输入行为标识 名称">
+                                        </div>
+                                    </div> 
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">行为描述：</label>
+                                        <div class="col-sm-5">
+                                            <textarea  rows="3" name="action_description" class="form-control" placeholder="输入行为描述"></textarea>
+                                        </div>
+                                    </div> 
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">行为规则：</label>
+                                        <div class="col-sm-5">
+                                            <textarea  rows="3" name="action_rule" class="form-control" placeholder="输入行为规则，不写则只记录日志"></textarea>
+                                        </div>
+                                    </div> 
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">日志规则：</label>
+                                        <div class="col-sm-5">
+                                            <textarea  rows="3" name="log_rule" class="form-control" placeholder="记录日志备注时按此规则来生成，支持[变量|函数]。目前变量有：user,time,model,record,data"></textarea>
+                                        </div>
+                                    </div> 
+                                    
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">状态：</label>
+                                        <div class="col-sm-5">
+                                           <input name="action_state" type="checkbox" class="js-switch" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-4 col-sm-offset-3">
+                                            <button class="btn btn-sm btn-primary" type="submit">提交</button>
+                                            <button class="btn btn-sm btn-primary" type="reset">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
+	                        </div>
+	                    </div>
+	                </div>
+	                
+                </div>
+
+            </div>
+            <!-- 尾部项 -->
+            <include file="Public:footer"/>
+            <!-- 尾部项 -->
+        </div>
+    </div>
+
+    <script>
+        //以下为修改jQuery Validation插件兼容Bootstrap的方法，没有直接写在插件中是为了便于插件升级
+        
+
+         //以下为官方示例
+        $().ready(function () {
+            // validate the comment form when it is submitted
+            $("#commentForm").validate();
+
+            // validate signup form on keyup and submit
+            $("#signupForm").validate({
+                rules: { 	
+                	action_title: {
+                        required: true  
+                    },
+                    
+                	action_name: {
+                		required: true  
+                     },
+                    action_description: {
+                        required: true  
+                    }
+                     
+                },
+                messages: {
+                	action_title: {
+                        required: no+"请输入行为标识 英文字母"                   
+                    },
+                    action_name: {
+                        required: no+"请输入行为名称"
+                    },
+                    action_description: {
+                        required: no+"请输入行为描述"
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

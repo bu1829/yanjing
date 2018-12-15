@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <include file="Public:metas"/>
+  <link href="__JS__/lock/lock.css" rel="stylesheet">
+  </head>
+  <body onload="getTime()" style="background:#333;">
+	  	<div class="container">
+	  		<div id="showtime"></div>
+	  			<div class="col-lg-4 col-lg-offset-4">
+	  				<div class="lock-screen">
+	  					<div class="m-b-md">
+			                <img alt="image" class="img-circle circle-border" width="200px" src="__ROOT__<{$avatar}>">
+			            </div>
+		  				<h2><a data-toggle="modal" href="#myModal"><i class="fa fa-lock" style="color:white;"></i></a></h2>
+		  				<a data-toggle="modal" href="#myModal" style="color:white;">解锁</a>
+				          <!-- Modal -->
+				          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+				              <div class="modal-dialog">
+				                  <div class="modal-content" style='text-align:center;'>
+				                      <div class="modal-header">
+				                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				                          <h4 class="modal-title">欢迎回来</h4>
+				                      </div>
+				                      <div class="modal-body">
+				                          <p class="centered">
+				                          <img class="img-circle" width="80" src="__ROOT__<{$avatar}>">
+				                          </p>
+				                          <input  class='form-control password' type="password" name="password" value="" placeholder="请输入密码">
+				                          <a  href="<{:U('Public/login',array('action'=>'out'))}>" class='btn btn-xs btn-white' style="float:right;">切换新账号</a>
+				                      </div>
+				                      <div class="modal-footer" style='text-align:center;'>
+				                          <button class="btn btn-sm btn-primary go" type="button">登录</button>
+				                      </div>
+				                  </div>
+				              </div>
+				          </div>
+				          <!-- modal -->
+	  				</div>
+	  			</div><!-- /col-lg-4 -->
+	  	</div><!-- /container -->
+	<script type="text/javascript" src="__JS__/lock/jquery.backstretch.min.js"></script>
+    <script>
+        $.backstretch("__IMAGES__/7.jpg", {speed: 500});
+    </script>
+    <script type='text/javascript' src='__JS__/lock/lock.js'></script>
+  </body>
+</html>

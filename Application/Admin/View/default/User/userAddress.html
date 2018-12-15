@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+<script type="text/javascript" src="__CJS__/city/jquery.cityselect.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#city").citySelect({
+    	prov:"", 
+    	city:"",
+    	dist:"",
+	});
+});
+</script>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	会员管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+					<include file="Public:return"/>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                
+                <div class="row">
+                    
+                    <div class="col-lg-12">
+	                    <div class="panel panel-primary">
+	                        <div class="panel-heading">
+	                            	<{$meta_title}>
+	                        </div>
+	                        <div class="panel-body">
+	                        	 <form action="<{:U('')}>" method="post" class="form-horizontal m-t" id="signupForm">
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font> 会员：</label>
+                                        <div class="col-sm-3" style="padding-top:5px;">
+                                        	<input name="user_id" type="hidden" value="<{$data.user_id}>">
+                                            <button class="btn btn-xs btn-info info user<{$data.user_id}>" type="button"><{$data.username}>
+			                             	<!-- <i class="fa fa-close" id="<{$data.user_id}>"></i> -->
+			                             	</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font> 收货人：</label>
+                                        <div class="col-sm-3">
+                                            <input placeholder="收货人姓名，50字符内" name="name" value="<{$data.name}>" class="form-control" type="text" maxlength="11">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font> 手机号码：</label>
+                                        <div class="col-sm-3">
+                                            <input placeholder="收货人手机号" name="phone" value="<{$data.phone}>" class="form-control" type="tel" maxlength="11">
+                                        </div>
+                                    </div> 
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font> 所在地区：</label>
+                                        <div class="col-sm-9">
+                                            <div id="city">
+										  		<select class="prov btn btn-sm btn-white" name='province'></select> 
+										    	<select class="city btn btn-sm btn-white" name='city'></select>
+										    	<select class="dist btn btn-sm btn-white" name='dist'></select> <if condition="$data.region neq null">当前选择： <{$data.region}></if>
+										    </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font> 详细地址：</label>
+                                        <div class="col-sm-3">
+                                            <textarea name="address" class='form-control' placeholder="请填写详细地址"><{$data.address}></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                   
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-3">
+                                        	<input name="id" value="<{$data.id}>" type="hidden">
+                                            <button class="btn btn-sm btn-primary" type="submit">保存</button>
+                                            <button class="btn btn-sm btn-primary" type="reset">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
+	                        </div>
+	                    </div>
+	                </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+	 <script type="text/javascript">
+	 $().ready(function(){
+	 })
+	 </script>
+	 <script>
+        //以下为修改jQuery Validation插件兼容Bootstrap的方法，没有直接写在插件中是为了便于插件升级
+        //以下为官方示例
+        $().ready(function () {
+        	//设置默认选项的
+        	
+            // validate the comment form when it is submitted
+            $("#commentForm").validate();
+            var id=$("[name='id']").val();
+        	if(!id){
+        		a=true;
+        	}else{
+        		a=false;
+        	}
+            // validate signup form on keyup and submit
+            $("#signupForm").validate({
+                rules: {
+                	 name: {
+                         required: true,
+                         rangelength: [1,50],
+                     },
+                     phone:{
+                    	 required: true,
+                    	 phone:true,
+                     },
+                     province:{
+                    	 required: a,
+                     },
+                     address:{
+                    	 required: true,
+                    	 rangelength: [5,255],
+                     }
+                },
+                messages: {
+                	name: {
+                		required:no+"请填写收货人姓名",
+                		rangelength:no+"50字符以内",
+                    },
+                    phone:{
+                    	required:no+ "请填写收货人手机号",
+                    	phone:no+"请填写正确的手机号码",
+                    },
+                    province:{
+                   	 	required:"",
+                    },
+                    address:{
+	                   	required: no+ "请填写详细地址",
+	                   	rangelength: no+ "至少5个字",
+                    }
+                },
+                onfocus: true,　　　　
+                onkeyup: false,　　　　//这个地方要注意，修改去控制器验证的事件。
+                onsubmit: true
+            });
+        });
+    </script>
+</body>
+</html>

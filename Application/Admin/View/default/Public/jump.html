@@ -1,0 +1,57 @@
+<?php
+    if(C('LAYOUT_ON')) {
+        echo '{__NOLAYOUT__}';
+    }
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>跳转提示 - <{$CONFIG.WEB_SITE_TITLE}></title>
+<include file='Public:metas'/>
+<style type="text/css">
+*{ padding: 0; margin: 0;background:#ffffff; }
+.system-message{ padding: 100px 48px;border:0px solid blue;text-align:center; }
+.system-message img{ width:50px;}
+.system-message .jump{ padding-top: 0px}
+.system-message .jump a{ color: #333;}
+.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 26px; font-weight:bold;margin-top:10px;}
+.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
+#wait{font-size:16px;color:#a40000;}
+</style>
+</head>
+<body  class="gray-bg">
+            <div class="wrapper wrapper-content">
+               <div class="row animated fadeInRight">
+                   <div class="system-message">
+					<?php if(isset($message)) {?>
+					<img src="__CIMAGES__/icon-success.png"/>
+					<?php }else{?>
+					<img src="__CIMAGES__/icon-fail.png"/>
+					<?php }?>
+					<?php if(isset($message)) {?>
+					<p class="success"><?php echo($message); ?></p>
+					<?php }else{?>
+					<p class="success"><?php echo($error); ?></p>
+					<?php }?>
+					<p class="detail">
+					</p>
+					<p class="jump">
+					页面自动 <a id="href" href="<?php echo($jumpUrl); ?>">跳转</a> 等待时间： <b id="wait"><?php echo($waitSecond); ?></b>
+					</p>
+				</div>
+           </div>
+</div>
+<script type="text/javascript">
+(function(){
+var wait = document.getElementById('wait'),href = document.getElementById('href').href;
+var interval = setInterval(function(){
+	var time = --wait.innerHTML;
+	if(time <= 0) {
+		location.href = href;
+		clearInterval(interval);
+	};
+}, 1000);
+})();
+</script>
+</body>
+</html>

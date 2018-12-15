@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<include file="Public:metas"/>
+<script>
+ $(function() {
+	 $("#<{$action}>").addClass("<{$btn}>");
+	 var action="<{$action}>";
+	 if(action=="sort"){
+		 changeSort("arter","id","sort");
+	 }
+ });
+</script>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	会员管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+					<a href="<{:U('User/userAdd',array('role'=>2))}>" class="btn btn-xs btn-primary">添加艺术家</a>
+                </div>
+            </div>
+            
+            
+            <div class="wrapper wrapper-content animated fadeInRight">
+            	<div style="margin-bottom:10px;">
+            	<a id="list" href="<{:U('User/artistList',array('action'=>'list','keyword'=>$keyword))}>" class="btn btn-sm" type="submit">列表</a>
+            	<a id="sort" href="<{:U('User/artistList',array('action'=>'sort','keyword'=>$keyword))}>" class="btn btn-sm" type="submit">排序</a>
+            	</div>
+            	<div style="margin-bottom:10px;">
+				    <form class='submitform' action='' method='get' id='signupForm'>
+				    <div style="margin-bottom:20px;">
+				    <input placeholder="请输入关键字" class="btn-sm btn-white" name="keyword" value="<{$keyword}>">
+				    <button class="btn btn-xs btn-info" type="submit" id="submit1">查询</button>
+				    <span class="input-group-btn mail-tools">
+	            	<button id="submit2" type="submit" class="btn btn-sm btn-danger">导出Excel报表</button> 
+	            	</span>
+				    </div>
+				    </form>
+			    </div>
+            	<form>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            
+                            <div class="ibox-content">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <if condition="$action eq sort">
+                                            	<th></th>
+                                            	</if>
+                                            	<th>头像</th>
+                                                <th>姓名</th>
+                                                <th>笔名</th>
+                                                <th>创作方向</th>
+                                                <th>代表作品</th>
+                                                <th>每日推荐webapp</th>
+                                                <th>首页推荐状态</th>
+                                                <th>显示状态</th>
+                                                <th>时间</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="sortable">
+                                        
+                                        	<volist name="list" id="v">
+                                            <tr name="<{$v.id}>" class="one" <if condition="$action eq sort">style="cursor:move;"</if>>
+                                                <if condition="$action eq sort">
+                                            	<td style="padding-top:10px;">
+                                            	<i class="fa fa-arrows"></i>
+                                            	</td>
+                                            	</if>
+                                                
+                                                <td>
+                                                	<if condition="$v.picture neq null">
+                                                	<a class="fancybox"  href="__ROOT__<{$v.picture}>">
+                                    					<img alt="image" class="img-circle" style="border:0px solid red;width:50px;height:50px;" src="__ROOT__<{$v.picture}>" />
+                               						</a>
+                               						</if>
+                                                </td>
+                                                
+                                                <td>
+                                                	<{$v.name}>
+                                                </td>
+                                                
+                                                <td>
+                                                	<{$v.pseudonym}>
+                                                </td>
+                                                
+                                                <td style="padding-top:10px;">
+                                                	 <{$v.direction}>
+                                                </td>
+                                                
+                                                <td style="padding-top:10px;width:300px;">
+                                                	<{$v.works}>
+                                                </td>
+                                                <td style="padding-top:10px;cursor:pointer;" class="day_recommend day_recommend<{$v.id}>" id="<{$v.id}>" name="<{$v.day_recommend}>">
+                                                    <switch name="v.day_recommend">
+                                                    <case value="0"><img alt="image" class="img-responsive" src="__IMG__/no.gif"></case>
+                                                    <case value="1"><img alt="image" class="img-responsive" src="__IMG__/yes.gif"></case>
+                                                    </switch>
+                                                </td>
+
+                                                <td style="padding-top:10px;cursor:pointer;" class="recommend recommend<{$v.id}>" id="<{$v.id}>" name="<{$v.recommend}>">
+                                                	<switch name="v.recommend">
+                                                	<case value="0"><img alt="image" class="img-responsive" src="__IMG__/no.gif"></case>
+                                                	<case value="1"><img alt="image" class="img-responsive" src="__IMG__/yes.gif"></case>
+                                               	</switch>
+                                                </td>
+                                                
+                                                <td style="padding-top:10px;cursor:pointer;" class="status status<{$v.id}>" id="<{$v.id}>" name="<{$v.status}>">
+                                                	<switch name="v.status">
+                                                	<case value="0"><img alt="image" class="img-responsive" src="__IMG__/no.gif"></case>
+                                                	<case value="1"><img alt="image" class="img-responsive" src="__IMG__/yes.gif"></case>
+                                               	</switch>
+                                                </td>
+                                                <td>
+                                                	添加：<{$v.add_time|date='Y-m-d H:i:s',###}><br/>
+                                                	更新：<{$v.update_time|date='Y-m-d H:i:s',###}><br/>
+                                                </td>
+                                                <td style="padding-top:10px;">
+                                                	<a data-toggle="tooltip" data-placement="top" title="会员详情" class="btn btn-sm btn-success" href="<{:U('User/userInfo',array('user_id'=>$v['user_id']))}>">
+                                                	<i class="fa fa-eye"></i>
+                                                	</a>&nbsp;
+                                                	
+                                                	<a data-toggle="tooltip" data-placement="top" title="编辑" class="btn btn-sm btn-info" href="<{:U('User/artistInfo',array('user_id'=>$v['user_id']))}>">
+                                                	<i class="fa fa-edit"></i>&nbsp;
+                                                	</a>&nbsp;
+                                                	
+                                                	<a data-toggle="tooltip" data-placement="top" title="签约设置" class="btn btn-sm btn-danger" href="<{:U('User/artistSignInfo',array('aid'=>$v['id']))}>">
+                                                	签约设置
+                                                	</a>&nbsp;
+                                                	
+                                                	<if condition="$types eq 'chose'">
+                                                	<a class="btn btn-sm btn-primary add" rel="<{$v.id}>" id="<{$v.picture}>" name="<{$v.name}>">
+                                                	确认选择
+                                                	</a>&nbsp;
+                                                	</if>
+                                                </td>
+                                            </tr>
+                                            </volist>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-center">
+                                    <if condition='$page neq null'>
+                                    	<{$page}>
+                                    <else/>
+                                    	共<{$count}>条记录
+                                    </if>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+    $().ready(function(){
+    	$("#position<{$position_id}>").prop("selected","selected");
+
+        $(".day_recommend").click(function(){
+            var id=$(this).attr("id");//这是数据id
+            var recommend=$(this).attr("name");//这是当前状态
+            changeStatusOne('artist','id',id,recommend,"day_recommend");
+        })  
+
+    	$(".recommend").click(function(){
+       		var id=$(this).attr("id");//这是数据id
+       		var recommend=$(this).attr("name");//这是当前状态
+       		changeStatusOne('artist','id',id,recommend,"recommend");
+       	})  
+       	
+       	$(".status").click(function(){
+       		var id=$(this).attr("id");//这是数据id
+       		var recommend=$(this).attr("name");//这是当前状态
+       		changeStatusOne('artist','id',id,recommend,"status");
+       	})  
+       	
+       	$(".add").click(function(){
+       		var id=$(this).attr("rel");
+       		var name=$(this).attr("name");
+       		var picture=$(this).attr("id");
+       		window.parent.call_back_art(id,name,picture);
+       	})
+       	
+       	$("#submit1").click(function(){
+       		$(".submitform").attr("action","<{:U('User/artistList')}>");
+       	})
+       	
+    	$("#submit2").click(function(){
+       		$(".submitform").attr("action","<{:U('User/artistExport')}>");
+       	})
+    })
+    </script>
+</body>
+
+</html>

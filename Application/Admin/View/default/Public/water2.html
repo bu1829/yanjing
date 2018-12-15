@@ -1,0 +1,15 @@
+<div class="form-group haswater" style='display:none;'>
+    <label class="col-sm-2 control-label"><font color="#a40000">*</font> 水印：</label>
+    <div class="col-sm-8" style="padding:5px 15px;">
+     	<input id='water0' type="radio" value="0" name="water" checked/>无水印
+    	<input id='water1' type="radio" value="1" name="water"/>文字水印
+    	<input id='water2' type="radio" value="2" name="water"/>图片水印
+    	<input id='water3' type="radio" value="3" name="water"/>全部水印
+    </div>
+</div>
+<script>
+$().ready(function(){
+	$("#water<{$CONFIG.DEFAULT_WATER_TYPE}>").attr("checked","checked");
+})
+</script>
+

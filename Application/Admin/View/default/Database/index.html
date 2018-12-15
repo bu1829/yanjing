@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+</head>
+
+<body>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            
+            <ol class="breadcrumb" style="margin-top:20px;">
+                <li>
+                    	数据管理
+                </li>
+                <li>
+                    <strong><{$meta_title}></strong>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+    	<div class="alert alert-success alert-dismissable">
+            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+          	  温馨提示：为了减少数据冗余，请及时对表进行优化。尽量在网站访问量少的时间段进行优化。
+        </div>
+    	<form action="" method="post">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-4 m-b-xs">
+                                <button class="optimizemore btn btn-sm btn-primary" type="button">优化选中</button>
+                            	<a onclick="del('<{:U('Database/optimizeTable',array('action'=>'all'))}>','确定优化全部表么？','3','全部优化')" class="btn btn-sm btn-warning" type="submit">一键优化全部</a>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" class="choseall"></th>
+                                        <th>表名</th>
+                                        <th>数据大小</th>
+                                        <th>创建时间</th>
+                                        <th>最后优化时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                
+                                <volist name='list' id='v'>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox"  class='i-checks' name="check[]" value="<{$v.id}>">
+                                        </td>
+                                        <td>
+                                        	<{$v.name}>
+                                        </td>
+                                        <td>
+                                        	<{$v.size}>
+                                        </td>
+                                        <td>
+                                        	<{$v.create_time}>
+                                        </td>
+                                        <td id="optimize-time<{$v.id}>">
+                                        	<if condition="$v.optimize_time eq 0">
+                                        	无优化
+                                        	<else/>
+                                        	<{$v.optimize_time|date='Y-m-d H:i:s',###}>
+                                        	</if>
+                                        </td>
+                                        <td id="top-table<{$v.id}>">
+                                        	<a id="table<{$v.id}>" rel="<{$v.id}>" class="btn btn-xs btn-white optimizeone">优化表</a>
+                                        </td>
+                                    </tr>
+                                 </volist> 
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+						<div class="text-center">
+                            <{$page}>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+<script type="text/javascript">
+function optimize(id){
+	$(".layui-layer-btn1").trigger("click");
+	//数据
+	var info = {
+		id:id,
+		action:"one",
+    };
+	$.ajax({
+		url:"__APP__/Database/optimizeTable",
+		type:"post",
+		dataType:"json",
+		data:info,
+		success:function(re){
+			var msg=re.msg;
+			if(re.flag==1){
+				$("#optimize-time"+id).html(msg);
+				$("#top-table"+id).html("<font class='text-success'><i class='fa fa-check'></i> 优化成功</font>");
+			}else{
+				$("#table"+id).html(msg);
+			}
+		},
+		beforeSend:function(){
+			$("#top-table"+id).html("优化中<i class='fa fa-spinner'></i>");
+		},
+		error:function(){
+			layer.msg("异常，稍后重试！");
+		}
+	})
+}
+$().ready(function(){
+	
+	$(".optimizeone").click(function(){//优化一个
+		var id=$(this).attr("rel");
+		layer.confirm('确定优化么？', {
+			icon:3,btn: ['确定','取消'] //按钮
+		}, function(){
+			optimize(id);
+		});
+	})
+	
+	/* 优化选中*/
+	$(".optimizemore").on('click',function(){
+		var a=true;
+		var s=''; 
+    	$('input[name="check[]"]:checked').each(function(){
+    		s+=$(this).val()+','; 
+    	})
+    	len=s.length;
+    	if(len>0){
+    		if(confirm("确定优化选中么？")){
+	    		//s=s.substring(0,len-1); 
+	    		//location.href="__APP__/Webset/deletemoread/ids/"+s;
+	    		$("input:checked").each(function(){
+	    			var id=$(this).val();
+	    			optimize(id);
+	    		})
+	    		return true;
+    		}else{
+    			return false;
+    		}
+    	}else{
+    		layer.alert('请选择您要优化的表！', {
+    			icon: 0,
+    		    skin: 'layui-layer-molv' //样式类名
+    		    ,closeBtn: 0
+    		});
+    		return false;
+    	}
+	})
+	
+})
+</script>
+</body>
+</html>

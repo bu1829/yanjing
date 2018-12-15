@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<include file="Public:metas"/>
+</head>
+
+<body>
+    <div id="wrapper">
+        <!--菜单项 -->
+        <include file="Public:menu"/>
+        <!--菜单项 -->
+        
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+        	<!--头部项 -->
+	        <include file="Public:header"/>
+	        <!--头部项 -->
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            <a href="<{:U('Index/index')}>">主页</a>
+                        </li>
+                        <li>
+                           	 用户管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                
+              
+                <div class="row">
+                    
+                    <div class="col-lg-12">
+	                    <div class="panel panel-primary">
+	                        <div class="panel-heading">
+	                            	<{$meta_title}>
+	                        </div>
+	                        <div class="panel-body">
+	                        	 <form action="__APP__/Rbac/nodeInsert" method="post" class="form-horizontal m-t"  onsubmit="return check()">
+                                    
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font color="#a40000">*</font> 禁止IP列表：</label>
+                                        <div class="col-sm-3">
+                                            <textarea  name="title" class="form-control" rows="10"></textarea>
+                                        </div>
+                                        <div class="col-sm-3 title comm">
+                                        	<div>格式1：IP地址,有效天数&nbsp;&nbsp;&nbsp;如192.168.1.113,7</div>
+                                            <div>格式2：IP地址&nbsp;&nbsp;&nbsp;如192.168.1.113,默认有效期为30天</div>
+                                            <div>每行一条</div>                                                                           
+                                        </div>
+                                    </div>
+                                   
+                               
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-3">
+                                            <button class="btn btn-sm btn-primary" type="submit">添加</button>
+                                            <button class="btn btn-sm btn-primary" type="reset">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
+	                        </div>
+	                    </div>
+	                </div>
+	                
+                </div>
+
+            </div>
+            <!-- 尾部项 -->
+            <include file="Public:footer"/>
+            <!-- 尾部项 -->
+        </div>
+    </div>	
+</body>
+</html>

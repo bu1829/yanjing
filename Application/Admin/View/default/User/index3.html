@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+</head>
+
+<body>
+    <div >
+        <div id="page-wrapper">
+            
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            <a href="<{:U('Index/index')}>">主页</a>
+                        </li>
+                        <li>
+                            	用户管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+					<a href="<{:U('User/userAdd')}>" class="btn btn-xs btn-info">用户添加</a>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+            	<div style="margin-bottom:10px;">
+            	<a id="role0" href="<{:U('User/userList',array('role'=>'all'))}>" class="btn btn-sm" type="submit">全部</a>
+            	<a id="role1" href="<{:U('User/userList',array('role'=>'manger'))}>" class="btn btn-sm" type="submit">管理列表</a>
+            	<a id="role2" href="<{:U('User/userList',array('role'=>'member'))}>" class="btn btn-sm" type="submit">会员列表</a>
+            	<a id="role3" href="<{:U('User/userList',array('role'=>'business'))}>" class="btn btn-sm" type="submit">商家列表</a>
+            	<a title="说明" class="btn btn-white btn-circle" data-toggle="modal" data-target="#myModal">
+      				<i class="fa fa-question"></i><!-- 说明 -->
+				</a>	
+	            	 <div class="ibox">
+                                <div class="modal inmodal" id="myModal">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content animated bounceInRight">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" style="color:black;">&times;</span><span class="sr-only">关闭</span>
+                                                </button>
+                                                <h4 class="modal-title">用户说明</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div>
+                                           		特别说明：
+                                            </div>
+                                            <div style="padding:10px 0px;">
+                                            	1.用户状态为“正常”，登录不会被禁止
+                                            </div>
+                                            <div style="padding:10px 0px;">
+                                            	2.当用户状态为“禁止”，且禁止时间大于当前时间才会禁止登录。
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+            	</div>
+            	<form class="submitform" action="<{:U('User/userHandle')}>" method="post" id="signupForm">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            
+                            <div class="ibox-content">
+                                <div class="row">
+                                    <div class="col-sm-2 m-b-xs">
+                                       <select name="handle" style="font-size:13px;" class="input-sm form-control input-s-sm inline">
+                                            <option value="1">启用</option>
+                                            <option value="0">禁用</option>
+                                            <option value="2">删除</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4 m-b-xs">
+                                    	 <button class="deletechosebysubmit btn btn-sm btn-primary" type="submit">操作</button>
+                                    </div>
+                                    
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" id="search" name="username" value="<{$search|default=''}>" placeholder="请输入用户名" class="input-sm form-control"> 
+                                            
+                                            <span class="input-group-btn">
+                                        	<button id="submit2" type="submit" class="btn btn-sm btn-primary">搜索</button> 
+                                        	</span>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th><input type="checkbox" class="choseall" name="input[]"></th>
+                                                <th>UID</th>
+                                                <th>用户名</th>
+                                                <th>角色</th>
+                                                <th>登录次数</th>
+                                                <th>资金</th>
+                                                <th>微校币</th>
+                                                <th>注册时间|来源</th>
+                                                <th>最后登录时间</th>
+                                                <th>最后登录IP</th>
+                                                <th>状态</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+                                        	<volist name="list" id="v" empty="暂无数据">
+                                            <tr>
+                                                <td>
+                                                   <input type="checkbox" class='i-checks' name="check[]" value="<{$v.user_id}>">
+                                                </td>
+                                                <td>
+                                                	<{$v.user_id}>
+                                                </td>
+                                                <td>
+                                                	<{$v.username}>
+                                                </td>
+                                                <td>
+                                                	<if condition='$v.name neq null'>
+                                                	<{$v.name}>|
+                                                	</if>
+                                                	<if condition='$v.role eq 1'>
+                                                	管理员
+                                                	<elseif condition='$v.role eq 2'/>
+                                                	会员
+                                                	<elseif condition='$v.role eq 3'/>
+                                                	商家
+                                                	</if>
+                                                </td>
+                                                <td>
+                                                	<{$v.login}>
+                                                </td>
+                                                <td>
+                                                	<a href="<{:U('Money/moneyList',array('username'=>$v[username]))}>" title="查看资金记录"><{$v.money}></a>
+                                                </td>
+                                                <td>
+                                                	<a href="<{:U('User/weixiaobiList',array('username'=>$v[username]))}>" title="查看微校币记录"><{$v.weixiaobi}></a>
+                                                </td>
+                                                <td>
+                                                	<if condition="$v.reg_time neq 0">
+                                                	<{$v.reg_time|date="Y-m-d H:i:s",###}> |
+                                                	<switch name="v.reg_source">
+                                                		<case value="1">手机</case>
+                                                		<case value="2">电脑</case>
+                                                		<case value="3">后台</case>
+                                                	</switch>
+                                                	</if>
+                                                </td>
+                                                <td>
+                                                	<if condition="$v.last_login_time neq 0">
+                                                	<{$v.last_login_time|date="Y-m-d H:i:s",###}>
+                                                	</if>
+                                                </td>
+                                                <td>
+                                                	<if condition="$v.last_login_ip neq 0">
+                                                	<{$v.last_login_ip}>
+                                                	</if>
+                                                </td>
+                                                
+                                                <td class="status status<{$v.user_id}>" id="<{$v.user_id}>" name="<{$v.status}>" style="cursor:pointer;">
+                                                <switch name="v.status">
+                                                	<case value="0"><img alt="image" class="img-responsive" src="__IMG__/no.gif"></case>
+                                                	<case value="1"><img alt="image" class="img-responsive" src="__IMG__/yes.gif"></case>
+                                                </switch>
+                                                </td>
+                                                <td>
+                                                	<a href="<{:U('User/userInfo',array('user_id'=>$v['user_id']))}>">信息</a> |
+                                                	<a href="<{:U('User/userBan',array('user_id'=>$v['user_id']))}>">禁止用户</a> |
+                                                	<if condition="($v.user_id neq 1) and ($v.user_id neq $personal['user_id'])">
+                                                	<a onclick="del('<{:U('User/userDeleteOne',array('user_id'=>$v[user_id]))}>','您确定删除此用户么？','3')">删除</a>
+                                                	</if>
+                                                </td>
+                                            </tr>
+                                            </volist>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+								<div class="text-center">
+                                    <{$page}>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+            <!-- 尾部项 -->
+            <include file="Public:footer"/>
+            <!-- 尾部项 -->
+        </div>
+    </div>
+   <script type="text/javascript">
+   $().ready(function(){
+	   $("#role"+<{$role}>).addClass("<{$btn}>");
+	   
+	   $(".status").click(function(){
+      		var id=$(this).attr("id");//这是数据id
+      		var status=$(this).attr("name");//这是当前状态 0禁用1正常
+      		changeStatusOne('user','user_id',id,status);
+      	}) 
+      
+	    var action2='<{:U("User/userList",array("role"=>$searchrole))}>';
+	 //切换action
+      	form("<{:U('User/userHandle')}>",action2,"post","get");
+   })
+   </script>
+   <script>
+        //以下为修改jQuery Validation插件兼容Bootstrap的方法，没有直接写在插件中是为了便于插件升级
+        //以下为官方示例
+        $().ready(function () {
+        	//设置默认选项的
+        	
+            // validate the comment form when it is submitted
+            $("#commentForm").validate();
+          
+           	 // validate signup form on keyup and submit
+                $("#signupForm").validate({
+                    rules: {
+                        search: {
+                             username:true,
+                         }
+                    },
+                    messages: {
+                    	search: {
+                    		username:no+"用户名4-20位，可由数字、字母、下划线组成"
+                        }
+                    }
+                });
+           	
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="x-template" id="template">
+		<div class="day-timer timer-section">
+			<span class="time">%d天</span>
+		</div>
+		<div class="hour-timer timer-section">
+			<span class="time">%h小时</span>
+		</div>
+		<div class="min-timer timer-section">
+			<span class="time">%i分</span>
+		</div>
+		<div class="second-timer timer-section">
+			<span class="time">%s秒</span>
+		</div>
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".timers").countdown({
+			dataAttr: "cdate",
+			yearsAndMonths: true,
+			template: $('#template').html()
+		});
+	});
+</script>
+</head>
+<body>
+<div data-cdate="2016-12-12 12:00:00" class="timers text-center" title="时间倒计时" style='font-weight:bold;'></div>
+</body>
+</html>

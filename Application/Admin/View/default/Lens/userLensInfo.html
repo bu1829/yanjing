@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+<script>
+ $(function() {
+   $("#<{$action}>").addClass("<{$btn}>");
+   var action="<{$action}>";
+   if(action=="sort"){
+     changeSort("goods","id","sort");
+   } 
+   
+   //默认显示
+ });
+</script>
+</head>
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	镜片管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+                <a href="<{:U('Lens/userList')}>" class="btn btn-xs btn-info">客户列表</a>
+					         <a href="<{:U('Lens/userLensAdd')}>" class="btn btn-xs btn-primary">新增配镜</a>
+                </div>
+            </div>
+            
+            
+            <div class="wrapper wrapper-content animated fadeInRight">
+            	<div style="margin-bottom:10px;">
+				    <form action='' method='get' id='signupForm'>
+				    <div style="margin-bottom:20px;">
+				    
+                                    
+            <!-- <div class=" m-b-xs">
+                <span>客户<font class="lens_l" style="font-weight:bold;color:red"><{$user.name}></font>的配镜信息：</span>
+            </div> -->
+                                    
+				    </div>
+				    </form>
+			    </div>
+            	<form action="<{:U('Goods/goodsHandle')}>" method="post">
+             
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            
+                            <div class="ibox-content">
+                                
+                                <div class="table-responsive">
+                                	
+
+
+<volist name="list" id="v">
+<div class="form-group">
+<center>
+    <div style="left">配镜时间：<{$v.gls_time}>|<a href="<{:U('Lens/userLensEdit',array('id'=>$v['id']))}>">[修改]</a></div>
+    <table style="width: 900px;height: 240px" border="3" cellpadding="0" cellspacing="0">
+       <tr>
+           <th>姓名</th>
+           <td><{$v.name}></td>
+           <th>性别</th>
+           <td><{$v.sex}></td>
+           <th>地址</th>
+           <td colspan="2"><{$v.address}></td>
+           <th>电话</th>
+           <td><{$v.mobile}></td>
+       </tr>
+       <tr>
+           <th>年龄</th>
+           <td><{$v.age}></td>
+           <th>球镜</th>
+           <th>柱镜</th>
+           <th>轴位</th>
+           <th>矫正视力</th>
+           <td></td>
+           <td colspan="2"></td>
+       </tr>
+       <tr>
+           <th rowspan="2">远用</th>
+           <th>右</th>
+           <td><{$v.f_r_ballmirror}></td>
+           <td><{$v.f_r_columnmirror}></td>
+           <td><{$v.f_r_shaftposition}></td>
+           <td><{$v.f_r_correcteyesight}></td>
+           <th>镜架</th>
+           <td colspan="2"><{$v.gls_frame}></td>
+       </tr>
+       <tr>
+           <th>左</th>
+           <td><{$v.f_l_ballmirror}></td>
+           <td><{$v.f_l_columnmirror}></td>
+           <td><{$v.f_l_shaftposition}></td>
+           <td><{$v.f_l_correcteyesight}></td>
+           <th>镜片</th>
+           <td colspan="2"><{$v.lens}></td>
+       </tr>
+       <tr>
+           <th rowspan="2">近用</th>
+           <th>右</th>
+           <td><{$v.n_r_ballmirror}></td>
+           <td><{$v.n_r_columnmirror}></td>
+           <td><{$v.n_r_shaftposition}></td>
+           <td><{$v.n_r_correcteyesight}></td>
+           <th>瞳距</th>
+           <td><{$v.pupil_distance}>mm</td>
+           <th>金额</th>
+       </tr>
+       <tr>
+           <th>左</th>
+           <td><{$v.n_l_ballmirror}></td>
+           <td><{$v.n_l_columnmirror}></td>
+           <td><{$v.n_l_shaftposition}></td>
+           <td><{$v.n_l_correcteyesight}></td>
+           <th>瞳高</th>
+           <td><{$v.pupil_hight}>mm</td>
+           <td><{$v.total_price}></td>
+       </tr>
+   </table>                                       
+</center>
+</div>
+</volist>
+
+
+                                       
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+    $().ready(function(){
+    	$("#status<{$status}>").prop("selected","selected");
+      $("#is_best<{$is_best}>").prop("selected","selected");
+      $("#is_enquiry<{$is_enquiry}>").prop("selected","selected");
+      $("#is_sell<{$is_sell}>").prop("selected","selected");
+      $("#artist_id<{$artist_id}>").prop("selected","selected");
+      $("#cat_id<{$cat_id}>").prop("selected","selected");
+      $("#sub_id<{$sub_id}>").prop("selected","selected");
+      $("#is_new<{$is_new}>").prop("selected","selected");
+      $("#is_best<{$is_best}>").prop("selected","selected");
+      $("#is_discount<{$is_discount}>").prop("selected","selected");
+    	
+    	//修改库存
+    	$(".is_sell").change(function(){
+    		var id=$(this).attr("id");//商品id
+    		//var is_sell=$(this).val();//新库存
+       //alert(123);
+    		//if(is_sell==0){
+    			$.ajax({
+        			url:"__APP__/Goods/updateSell",
+        			type:"post",
+        			//data:"id="+id+"&is_sell="+is_sell,
+              $data:"id="+id,
+        			success:function(re){
+        				if(re!="success"){
+        					layer.msg(re);
+        				}
+        			},
+        			error:function(){
+        				layer.msg("错误,稍后重试！");
+        			}
+        		})
+    		// }else{
+    		// 	$(this).focus();
+    		// 	layer.msg("库存数只能为数字！");
+    		// }
+    	})
+    	
+    	
+    	//确认选择参与抢购的商品
+   		$(".add").click(function(){
+       		var gid=$(this).attr("rel");
+       		var name=$(this).attr("name");
+       		var price=$(this).attr("id");
+       		window.parent.call_back(gid,name,price);
+       	})
+       	
+       	//确认选择参与添加订单
+   		$(".addOrder").click(function(){
+   			/* var ids="";
+       	 	$("[name='check[]']:checked").each(function(){
+       	   		var a=$(this).val();
+       	   		if(ids!=""){
+       	   			ids+=","+a;
+       	   		}else{
+       	   			ids+=a;
+       	   		}
+       	  	}); */
+       		
+       		var gid=$(this).attr("id");
+       		var name=$(this).attr("name");
+       		var price=$(this).attr("price");
+       		var is_sell=$(this).attr("is_sell");
+          var enquiry_price = $(this).attr("enquiry_price");
+       		//is_sell=is_sell-1;
+       		// $(this).attr("title",is_sell);
+       	  	// console.log(is_sell);
+       		window.parent.call_back_goods(gid,name,price,is_sell,enquiry_price);
+       	})
+    	
+    	
+    	//上下架
+    	$(".status").click(function(){
+       		var id=$(this).attr("id");//这是数据id
+       		var status=$(this).attr("name");//这是当前状态 0禁用1正常
+       		changeStatusOne('goods','id',id,status);
+       	})   
+       	
+       	//专家推荐
+       	$(".expert").click(function(){
+       		var id=$(this).attr("id");//这是数据id
+       		var status=$(this).attr("name");//这是当前状态 0禁用1正常
+       		changeStatusOne('goods','id',id,status,"expert");
+       	})  
+       	
+        //名画推荐
+       	$(".painting").click(function(){
+       		var id=$(this).attr("id");//这是数据id
+       		var status=$(this).attr("name");//这是当前状态 0禁用1正常
+       		changeStatusOne('goods','id',id,status,"painting");
+       	})  
+       	
+        //是否新品
+       	$(".is_new").click(function(){
+       		var id=$(this).attr("id");//这是数据id
+       		var status=$(this).attr("name");//这是当前状态 0禁用1正常
+       		changeStatusOne('goods','id',id,status,"is_new");
+       	})  
+
+        //是否精品
+        $(".is_best").click(function(){
+          var id=$(this).attr("id");//这是数据id
+          var status=$(this).attr("name");//这是当前状态 0禁用1正常
+          changeStatusOne('goods','id',id,status,"is_best");
+        })
+       	
+        //是否热销
+       	$(".is_hot").click(function(){
+       		var id=$(this).attr("id");//这是数据id
+       		var status=$(this).attr("name");//这是当前状态 0禁用1正常
+       		changeStatusOne('goods','id',id,status,"is_hot");
+       	})  
+        //是否代表作
+        $(".is_masteropus").click(function(){
+          var id=$(this).attr("id");//这是数据id
+          var status=$(this).attr("name");//这是当前状态 0禁用1正常
+          changeStatusOne('goods','id',id,status,"is_masteropus");
+        })
+
+        //是否是询价商品
+        $(".is_enquiry").click(function(){
+          var id=$(this).attr("id");//这是数据id
+          var status=$(this).attr("name");//这是当前状态 0禁用1正常
+          changeStatusOne('goods','id',id,status,"is_enquiry");
+        })
+
+        //是否询价中
+        $(".enquiring").click(function(){
+          var id=$(this).attr("id");//这是数据id
+          var order_status = $(this).attr("order_status");
+          var status=$(this).attr("name");//这是当前状态 0禁用1正常
+          if(1==order_status && 1==status){
+               alert('该商品已经下单！');return;
+          }
+          changeStatusOne('goods','id',id,status,"enquiring");
+        })
+
+        //是否是折扣商品
+        $(".is_discount").click(function(){
+          var id=$(this).attr("id");//这是数据id
+          var status=$(this).attr("name");//这是当前状态 0禁用1正常
+          changeStatusOne('goods','id',id,status,"is_discount");
+        })
+
+        //是否活动
+        $(".is_activity").click(function(){
+          var id=$(this).attr("id");//这是数据id
+          var status=$(this).attr("name");//这是当前状态 0禁用1正常
+          changeStatusOne('goods','id',id,status,"is_activity");
+        })
+
+
+
+
+
+
+
+
+    })
+    </script>
+</body>
+
+</html>

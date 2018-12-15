@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+<style>
+.single-picture-div{float:left;margin:10px}
+.single-picture{width:80px;height:80px;}
+#picture{margin-bottom:40px;}
+#fileupload{width:80px;height:80px;margin-left:0px;position:absolute;top:10px;opacity:0;z-index:999;}
+.delimg{position:relative;left:-60px;bottom:-55px;}
+.expert-info{margin-bottom:15px;}
+.expert-avatar{width:30px;height:30px;margin-right:10px;}
+.expert-name{font-weight:bold;margin-right:10px;}
+.delcomment{cursor:pointer;}
+
+</style>
+<!-- <link rel="stylesheet" href="__PUBLIC__/Home/css/goods_details.css"> -->
+<script src="__PUBLIC__/Home/js/e-smart-zoom-jquery.min.js"></script>
+<script>
+ $(function() {
+	 changeSort("goods_picture","id","sort");
+	 //默认显示
+	 
+	 changeSort("goods_expert_comment","id","sort","sortable2");
+	 //默认显示
+ });
+</script>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	商品管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+					<a href="<{:U('Goods/goodsList/action/list',array('action'=>'list'))}>" class="btn btn-xs btn-info">商品列表</a>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                
+                <div class="row">
+                    
+                    <div class="col-lg-12">
+                    
+                    	<div class="panel blank-panel">
+
+                            <div class="panel-heading">
+                                <div class="panel-title m-b-md">
+                                    <h4><{$meta_title}></h4>
+                                </div>
+                                <div class="panel-options">
+                                    <ul class="nav nav-tabs">
+                                    	<!-- <volist name="list" key="k" id="v">
+										<li class="<eq name='key' value='基本设置'> active</eq>">
+										<a href="#<{$key}>"  data-toggle="tab">
+												<{$key}>
+										</a>
+										</li>
+										</volist> -->
+										
+										<li class="active">
+											<a href="#basic"  data-toggle="tab">
+												基本信息
+											</a>
+										</li>
+										
+										<li class="">
+											<a href="#picture"  data-toggle="tab">
+												商品相册
+											</a>
+										</li>
+										
+										
+										
+										<li class="">
+											<a href="#comment"  data-toggle="tab">
+												艺术顾问点评
+											</a>
+										</li>
+										
+										<li class="">
+											<a href="#introl"  data-toggle="tab">
+												商品详情
+											</a>
+										</li>
+									</ul>
+									
+									<form id="signupForm5" action=""  method="post" class="form-horizontal m-t" enctype="multipart/form-data" onsubmit="return check()">
+									<div class="tab-content">
+										<div class="tab-pane active" id="basic">
+											 <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><if condition="$data.id eq null"><font class="text-danger">*</font></if> 缩略图：</label>
+		                                        <div class="col-sm-3">
+		                                            <div class="details" style="width:100px;">
+									                   <div style='border:0px solid red;position:relative;'><!-- 第一张-->
+															<div class='yulan yulan1'></div><!-- 预览  -->
+															<div class='detail detail1'><!--预览详细和关闭  -->
+																<div>
+																<a title=''  rel="1" class='close close1'>×</a>
+																</div>
+																<div>
+																<a class="picture picture1"  id="1" target='_black' title="图片预览">
+																查看
+	                               								</a>
+																</div>
+															</div>
+															<div><input type="file" name="picture"  value='' class="inputimg inputimg1" id="1" /></div><!-- input插入 -->
+													  </div>
+									                </div>
+		                                        </div>
+		                                        <div class="col-sm-3">
+		                                            <if condition="$data.picture neq null">
+		                                			<a class="fancybox"  href="__ROOT__<{$data.picture}>" title="<{$v.title|default=''}>">
+		                            					<img alt="image" class="feed-photo" style="border:0px solid red;width:100px;height:100px;" src="__ROOT__<{$data.picture}>" />
+		                       						</a>
+		                       						</if>
+		                                        </div>
+		                                    </div>
+
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><if condition="$data.id eq null"><font class="text-danger">*</font></if> 画籍证书：</label>
+		                                        <div class="col-sm-3">
+		                                            <div class="details" style="width:100px;">
+									                   <div style='border:0px solid red;position:relative;'><!-- 第一张-->
+															<div class='yulan yulan2'></div><!-- 预览  -->
+															<div class='detail detail2'><!--预览详细和关闭  -->
+																<div>
+																<a title=''  rel="1" class='close close1'>×</a>
+																</div>
+																<div>
+																<a class="picture picture2"  id="2" target='_black' title="图片预览">
+																查看
+
+	                               								</a>
+																</div>
+															</div>
+															<div><input type="file" name="certificate"  value='' class="inputimg inputimg2" id="2" /></div><!-- input插入 -->
+													  </div>
+									                </div>
+									                <if condition="$data.certificate neq null">
+									                <button type="button" class="btn btn-sm btn-info"><a href="__ROOT__<{$data.certificate}>" target="_blank">画籍证书原图</a></button></if>
+		                                        </div>
+		                                        <div class="col-sm-3">
+		                                            <if condition="$data.certificate neq null">
+		                                			<a class="fancybox"  href="__ROOT__<{$data.certificate}>" title="<{$v.title|default=''}>">
+		                            					<img alt="image" class="feed-photo" style="border:0px solid red;width:100px;height:100px;" src="__ROOT__<{$data.certificate}>" />
+		                       						</a>
+		                       						</if>
+		                                        </div>
+		                                    </div>
+
+
+		                                    
+		                                    <!-- <div class="form-group haswater" style='display:none;'>
+											    <label class="col-sm-2 control-label"><font class="text-danger">*</font> 水印：</label>
+											    <div class="col-sm-8" style="padding:5px 15px;">
+											     	 <input id='water0' type="radio" value="0" name="water" checked="checked"/>无水印 
+											    	<input id='water1' type="radio" value="1" name="water"/>无水印
+											    	<input id='water2' type="radio" value="2" name="water"/>图片水印
+											    	<input id='water3' type="radio" value="3" name="water"/>全部水印
+											    	<input id='water4' type="radio" value="4" name="water"/>文字水印
+											    </div>
+											</div> -->
+											<script>
+											$().ready(function(){
+												$("#water<{$CONFIG.DEFAULT_WATER_TYPE}>").attr("checked","checked");
+											})
+											</script>
+											
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 商品名称：</label>
+		                                        <div class="col-sm-8">
+		                                            <input  name="name" value="<{$data.name}>" class="form-control" type="text" maxlength="255">
+		                                        </div>
+		                                    </div>
+
+		                                    <!-- <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 商品货号：</label>
+		                                        <div class="col-sm-8">
+		                                            <input  name="goods_no" value="<{$data.goods_no}>" class="form-control" type="text" maxlength="255">
+		                                        </div>
+		                                    </div> -->
+		                                    
+		                                    <!-- <div class="form-group">
+		                                        <label class="col-sm-2 control-label"> 作品描述：</label>
+		                                        <div class="col-sm-8">
+		                                            <textarea name="description" class="form-control"><{$data.description}></textarea>
+		                                        </div>
+		                                    </div> -->
+
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"> 作品欣赏：</label>
+		                                        <div class="col-sm-8">
+		                                            <textarea name="appreciation" class="form-control"><{$data.appreciation}></textarea>
+		                                        </div>
+		                                    </div>
+		                                    
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"> 艺术家：</label>
+		                                        <div class="col-sm-2">
+		                                        	<button type="button" class="btn btn-sm btn-info choseart">选择艺术家</button>
+		                                        	
+		                                        	<if condition="$artist neq null">
+		                                        		<if condition="$artist.picture neq null">
+			                                        	<img class="img-circle expert-avatar art" src="__ROOT__<{$artist.picture}>"/>
+			                                        	</if>
+			                                        	<font class="art" style="font-weight:bold;"><{$artist.name}> </font>
+				                                        <i class="fa fa-close art"></i>
+			                                        </if>
+			                                        
+			                                        <input type="hidden" name="artist_id" value="<{$data.artist_id}>"> 
+		                                            <!-- <select name="arter_id" class="btn-sm btn-white">
+		                                            	<option value="">请选择</option>
+		                                            	<volist name="artist" id="v">
+		                                            	<option id="artist<{$v.id}>" value="<{$v.id}>"><{$v.name}></option>
+		                                            	</volist>
+		                                            </select> -->
+		                                        </div>
+		                                    </div>
+		                                    
+		                                    <!-- <div class="form-group">
+		                                        <label class="col-sm-2 control-label"> 商品货号：</label>
+		                                        <div class="col-sm-2">
+		                                            <input  name="goods_no" value="<{$data.goods_no}>" class="form-control" type="text" maxlength="50">
+		                                        </div>
+		                                    </div> -->
+		                                    
+		                                    
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 商品分类：</label>
+		                                        <div class="col-sm-8">
+		                                            <select name="cat_id" class="btn-sm btn-white">
+		                                            	<option value="">请选择</option>
+		                                            	<volist name="cats" id="v">
+		                                            	<option name="cat_id" value="<{$v.id}>" <if condition="$v.id eq $cat_id">selected="selected"</if>> <{$v.name}></option>
+		                                            	</volist>
+		                                            </select><!-- 
+		                                            <select name="second_cate" class="btn-sm btn-white">
+		                                            	<option value="">请选择</option>
+		                                            	<volist name="son_cate" id="v">
+		                                            	<option id="second<{$v.id}>" value="<{$v.id}>"><{$v.name}></option>
+		                                            	</volist>
+		                                            </select> -->
+		                                        </div>
+		                                    </div>
+
+											<div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 商品题材：</label>
+		                                        <div class="col-sm-8">
+		                                            <select name="sub_id" class="btn-sm btn-white">
+		                                            	<option value="">请选择</option>
+		                                            	<volist name="subs" id="v">
+		                                            	<option name="sub_id" value="<{$v.id}>" <if condition="$v.id eq $sub_id">selected="selected"</if>> <{$v.name}></option>
+		                                            	</volist>
+		                                            </select>
+		                                        </div>
+		                                    </div>
+
+
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 是否为询价商品：</label>
+		                                        <div class="col-sm-3">
+		                                         	<div class="radio radio-success" style="float:left;margin-right:10px;">
+		                                                <input type="radio" name="is_enquiry" id="is_enquiry1" value="1">
+		                                                <label for="is_enquiry1">
+		                                                  	  是
+		                                                </label>
+		                                            </div>
+		                                            
+		                                            <div class="radio radio-danger" style="float:left;">
+		                                                <input type="radio" name="is_enquiry" id="is_enquiry0" value="0"  checked=''>
+		                                                <label for="is_enquiry0">
+		                                               		   否
+		                                                </label>
+		                                            </div>
+		                                        </div>
+		                                    </div>
+
+		                                    
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"> 年化率：</label>
+		                                        <div class="col-sm-2">
+		                                            <input  name="rate" value="<{$data.rate|default=8}>" class="form-control" type="text" maxlength="255">
+		                                        </div>
+		                                        <div class="col-sm-2" style="padding-top:7px;">
+		                                        	单位(%)
+		                                        </div>
+		                                    </div>
+		                                    
+			                                    
+			                                <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 商品价格：</label>
+		                                        <div class="col-sm-2">
+		                                            <input  name="price" value="<{$data.price}>" class="form-control" type="text" maxlength="11">
+		                                        </div>
+		                                    </div>
+		                                    
+		                                    <!-- <div class="form-group">
+		                                        <label class="col-sm-2 control-label"> 市场价格：</label>
+		                                        <div class="col-sm-2">
+		                                            <input  name="market_price" value="<{$data.market_price}>" class="form-control" type="text" maxlength="11">
+		                                        </div>
+		                                    </div> -->
+		                                    
+		                                    <!-- <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 库存量：</label>
+		                                        <div class="col-sm-2">
+		                                            <input  name="stock" value="<{$data.stock|default=1}>" class="form-control" type="text" maxlength="20">
+		                                        </div>
+		                                    </div> -->
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 尺寸：</label>
+		                                        <div class="col-sm-2" style="overflow:hidden;">
+		                                            <input  name="size" value="<{$data.size}>" class="form-control" type="text" maxlength="20">
+		                                           
+		                                        </div>
+		                                        <div class="col-sm-2" style="padding-top:7px;">单位(cm)</div>
+		                                        
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 材质：</label>
+		                                        <div class="col-sm-2">
+		                                            <input  name="material" value="<{$data.material}>" class="form-control" type="text" maxlength="20">
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 适用场景：</label>
+		                                        <div class="col-sm-2">
+		                                            <input  name="scene" value="<{$data.scene}>" class="form-control" type="text" maxlength="40" style="width: 600px;">
+		                                        </div>
+		                                    </div>
+
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 场景描述：</label>
+		                                        <div class="col-sm-2">
+		                                            <input  name="scene_desc" value="<{$data.scene_desc}>" class="form-control" type="text" maxlength="40" style="width: 600px;">
+		                                        </div>
+		                                    </div>
+
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 年代：</label>
+		                                        <div class="col-sm-2">
+		                                            <input  name="years" value="<{$data.years}>" class="form-control" type="text" maxlength="20">
+		                                        </div>
+		                                    </div>
+		                                    
+		                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 排序：</label>
+			                                        <div class="col-sm-2">
+			                                            <input name="sort" value="<{$data.sort|default=0}>"  class="form-control" type="text" maxlength="5">
+			                                        </div>
+			                                </div>
+		                                    
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 状态：</label>
+		                                        <div class="col-sm-3">
+		                                         	<div class="radio radio-success" style="float:left;margin-right:10px;">
+		                                                <input type="radio" name="status" id="status1" value="1" checked=''>
+		                                                <label for="status1">
+		                                                  	  上架
+		                                                </label>
+		                                            </div>
+		                                            
+		                                            <div class="radio radio-danger" style="float:left;">
+		                                                <input type="radio" name="status" id="status0" value="0">
+		                                                <label for="status0">
+		                                               		   下架
+		                                                </label>
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                    
+										</div>
+										
+										
+										<!--商品相册-->
+										<div class="tab-pane" id="picture">
+											<div class="form-group">
+		                                        <div class="col-sm-12" id="sortable">
+		                                        	 <div class="goods-img"></div>
+		                                        	
+		                                        	 <if condition="$pictures neq null">
+		                                        	 	
+		                                        	 		<div class="single-picture-div goods-img imgpic_11 one" name="<{$pictures.id}>">
+			                                        	 		<img class="single-picture img-rounded" src="__ROOT__<{$pictures.pic_11}>"/>
+			                                        	 		<div id="<{$pictures.id}>" name="old" class="delimg btn btn-xs btn-danger" rel='<{$pictures.pic_11}>' pic_type='pic_11'>删除</div>
+		                                        	 		</div>
+
+		                                        	 		<div class="single-picture-div goods-img imgpic_over_11 one" name="<{$pictures.id}>">
+			                                        	 		<img class="single-picture img-rounded" src="__ROOT__<{$pictures.pic_over_11}>"/>
+			                                        	 		<div id="<{$pictures.id}>" name="old" class="delimg btn btn-xs btn-danger" rel='<{$pictures.pic_over_11}>' pic_type='pic_over_11'>删除</div>
+		                                        	 		</div>
+
+		                                        	 		<div class="single-picture-div goods-img imgpic_21 one" name="<{$pictures.id}>">
+			                                        	 		<img class="single-picture img-rounded" src="__ROOT__<{$pictures.pic_21}>"/>
+			                                        	 		<div id="<{$pictures.id}>" name="old" class="delimg btn btn-xs btn-danger" rel='<{$pictures.pic_21}>' pic_type='pic_21'>删除</div>
+		                                        	 		</div>
+
+		                                        	 		<div class="single-picture-div goods-img imgpic_spec1 one" name="<{$pictures.id}>">
+			                                        	 		<img class="single-picture img-rounded" src="__ROOT__<{$pictures.pic_spec1}>"/>
+			                                        	 		<div id="<{$pictures.id}>" name="old" class="delimg btn btn-xs btn-danger" rel='<{$pictures.pic_spec1}>' pic_type='pic_spec1'>删除</div>
+		                                        	 		</div>
+
+		                                        	 		<div class="single-picture-div goods-img imgpic_spec2 one" name="<{$pictures.id}>">
+			                                        	 		<img class="single-picture img-rounded" src="__ROOT__<{$pictures.pic_spec2}>"/>
+			                                        	 		<div id="<{$pictures.id}>" name="old" class="delimg btn btn-xs btn-danger" rel='<{$pictures.pic_spec2}>' pic_type='pic_spec2'>删除</div>
+		                                        	 		</div>
+
+		                                        	 		<div class="single-picture-div goods-img imgpic_spec3 one" name="<{$pictures.id}>">
+			                                        	 		<img class="single-picture img-rounded" src="__ROOT__<{$pictures.pic_spec3}>"/>
+			                                        	 		<div id="<{$pictures.id}>" name="old" class="delimg btn btn-xs btn-danger" rel='<{$pictures.pic_spec3}>' pic_type='pic_spec3'>删除</div>
+		                                        	 		</div>
+
+		                                        	 		<div class="single-picture-div goods-img imgpic_scene one" name="<{$pictures.id}>">
+			                                        	 		<img class="single-picture img-rounded" src="__ROOT__<{$pictures.pic_scene}>"/>
+			                                        	 		<div id="<{$pictures.id}>" name="old" class="delimg btn btn-xs btn-danger" rel='<{$pictures.pic_scene}>' pic_type='pic_scene'>删除</div>
+		                                        	 		</div>
+		                                        	 	
+		                                        	 </if>
+		                                        	 
+		                                        	 <div style="float:left;margin:10px;">
+		                                        	 <i class="fa fa-plus-square" style="font-size:80px;cursor:pointer;"></i>
+		                                        	 <input id="fileupload" type="file" name="mypic">
+		                                        	 </div>
+		                                        </div>
+		                                    </div>
+										</div>
+										
+										
+										<!--商品类型-->
+										
+										
+										<div class="tab-pane" id="comment"><!-- 艺术顾问点评 -->
+											<div class="form-group">
+												<label class="col-sm-1 control-label"></label>
+		                                        <div class="col-sm-10" id="sortable2">
+		                                        	<div class="expert-info"></div>
+		                                        	
+		                                        	<volist name="experts" id="v">
+		                                          	<div class="expert-info one expert<{$v.id}>" name="<{$v.id}>">
+		                                          		<if condition="$v.picture neq null">
+			                                          	<img class="img-circle expert-avatar" src="__ROOT__<{$v.picture}>"/>
+			                                          	</if>
+			                                          	
+			                                          	<font class="expert-name"><{$v.name}></font>
+			                                          	<span><i class="fa fa-trash text-danger delcomment" id="<{$v.id}>" name="old"></i></span>
+			                                          	<input type="hidden" name="expertold[]" value="<{$v.id}>"/>
+			                                          	<textarea name="commentold[]" class="form-control"><{$v.comment}></textarea>
+		                                          	</div>
+		                                          	</volist>
+		                                          	
+		                                          	<div style="margin-top:10px;">
+		                                        	<i class="fa fa-plus-square addcomment" style="font-size:40px;cursor:pointer;"></i>
+		                                        	</div>
+		                                        	
+		                                        </div>
+		                                    </div>
+										</div>
+										
+										
+										<div class="tab-pane" id="introl">
+											<div class="form-group">
+												<label class="col-sm-2 control-label"></label>
+		                                        <div class="col-sm-6">
+		                                            <textarea  name="detail"  class="content form-control" rows="6" cols="6"><{$data.detail}></textarea>
+		                                        </div>
+		                                    </div>
+										</div>
+									
+								 	</div>
+								 	
+								 	<div class="form-group">
+                                        <label class="col-sm-2 control-label"></label>
+                                        <div class="col-sm-10">
+                                        	<input  type="hidden" value="<{$data.id}>" name="id"/>
+                                            <button class="btn btn-sm btn-primary" type="submit">保存</button>
+                                          	<button class="btn btn-sm btn-warning" type="reset">重置</button>
+                                        </div>
+                                    </div>
+                                    
+		                                    
+								 	</form>
+                                </div>
+                            </div>
+                        </div>
+	                </div>
+	                
+                </div>
+
+            </div>
+            <!--上传图片  -->
+            <include file="Public:upload"/>
+            <!--上传图片  -->
+        </div>
+    </div>
+    <!-- 放置缩略图显示的 -->
+    <div style="display:none;padding:0px;" class="open1">
+	<img src="" alt="" class="fancybox-image carousel-inne img-rounded img-responsive openimg1"/>
+	</div>
+	<!-- 放置画籍证书显示的 -->
+    <div style="display:none;padding:0px;" class="open2">
+	<img src="" alt="" class="fancybox-image carousel-inne img-rounded img-responsive openimg2"/>
+	</div>
+	<script type="text/javascript" src="__CJS__/jquery.form.js"></script>
+	<script type="text/javascript">
+		//删除ajax上传的图片和已经上传的图片
+		function delimg(){
+			$(".delimg").bind('click',function(){
+				var pic = $(this).attr("rel");//图片地址
+				var pic_type = $(this).attr("pic_type");
+				var name=$(this).attr("name");//如果是old 就是删除已经上传的
+				var rand=$(this).attr("id");//随机或者是图片id
+				layer.confirm('确定删除吗？', {
+					icon:7,btn: ['删除','取消'] //按钮
+				}, function(){
+					$.ajax({
+						url:"__APP__/Goods/delimg",
+						type:"post",
+						data:"picture="+pic+"&id="+rand+"&name="+name+"&pic_type="+pic_type,
+						success:function(re){
+							if(re=="ok"){
+								//$(".img"+rand).remove();
+								$(".img"+pic_type).remove();
+								$(".layui-layer-btn1").trigger("click");
+							}else{
+								layer.msg("删除失败！");
+							}
+						}
+					})
+				});
+			});
+		}
+		$(function () {
+			var bar = $('.bar');
+			var percent = $('.percent');
+			var showimg = $('#showimg');
+			var progress = $(".progress");
+			var files = $(".files");
+			var btn = $(".btn span");
+			$("#fileupload").wrap("<form id='myupload' action='<{:U('Goods/ajaxuploadpicture')}>' method='post' enctype='multipart/form-data'></form>");
+		    $("#fileupload").change(function(){
+				$("#myupload").ajaxSubmit({
+					dataType:  'json',
+					beforeSend: function() {
+		        		showimg.empty();
+						progress.show();
+		        		var percentVal = '0%';
+		        		bar.width(percentVal);
+		        		percent.html(percentVal);
+						btn.html("上传中...");
+		    		}, 
+		    		uploadProgress: function(event, position, total, percentComplete) {
+		        		var percentVal = percentComplete + '%';
+		        		bar.width(percentVal);
+		        		percent.html(percentVal);
+		    		},
+					success: function(data) {
+						//alert("成功");
+						var img = data.pic;
+						var rand= data.rand;
+						$(".goods-img:last").after('<div class="single-picture-div goods-img img'+rand+'"><img class="single-picture img-rounded" src="'+img+'"/><div id="'+rand+'" class="delimg btn btn-xs btn-danger delimg-ajax" rel='+img+'>删除</div><input name="img[]" type="hidden" value="'+img+'"/></div>');
+						//delimg();
+					},
+					error:function(xhr){
+						alert(xhr.name);
+						btn.html("上传失败");
+						bar.width('0')
+						files.html(xhr.responseText);
+					}
+				});
+			});
+		    delimg();
+	});
+	</script>
+    <script type="text/javascript" src='__ROOT__/Public/Kindeditor/kindeditor.js'></script>
+	<script type="text/javascript">
+	  	 var editor;//编辑器的调用对象
+	  	 	KindEditor.ready(function(e){
+	      	 editor=e.create(".content",{
+			"width":"100%",
+			"height":"500px",
+			"items":[
+			         'source', '|', 'undo', 'redo', '|', 'preview', 'justifyleft', 'justifycenter', 'justifyright',
+			         'justifyfull',  'indent', 'outdent',  'clearhtml', 'selectall', '|',
+			         'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+			         'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|','image',
+			         'hr', 'emoticons',
+			         'anchor', 'link', 'unlink','|','baidumap'
+			 ],
+			 afterBlur: function(){this.sync();}
+	          	});
+	  		 });
+	</script>
+	
+	<script type="text/javascript">
+	
+	function call_back_art(id,name,picture){//选择艺术家返回
+		 $("[name='artist_id']").val(id);
+		 $(".art").remove();
+		 $(".choseart").after('<img class="img-circle expert-avatar art" src="'+picture+'"/><font class="art" style="font-weight:bold;">'+name+' </font> <i class="fa fa-close art"></i>');
+		 reset();
+		 layer.closeAll('iframe');
+	}
+	
+	/*重置艺术家*/
+	function reset(){
+		$(".fa-close").click(function(){
+			layer.confirm('确定删除吗？', {
+				icon:7,btn: ['删除','取消'] //按钮
+			}, function(){
+				$("[name='artist_id']").val("");
+	    		$(this).remove();
+	    		$(".art").remove();
+	    		$(".layui-layer-btn1").trigger("click");
+			});
+    	})
+	}
+	
+	function call_back(id,name,picture){//艺术顾问点评返回
+		 $(".expert-info:last").after('<div class="expert-info expert'+id+'"><img class="img-circle expert-avatar" src="'+picture+'"/><font class="expert-name">'+name+'</font><span><i class="fa fa-trash text-danger delcomment" id="'+id+'"></i></span><input type="hidden" name="expert[]" value="'+id+'"/><textarea name="comment[]" class="form-control"></textarea></div>');
+		 delComment();
+		 layer.closeAll('iframe');
+	}
+	
+	//删除艺术顾问评价
+	function delComment(){
+		$(".delcomment").bind('click',function(){
+			var eid = $(this).attr("id");//艺术顾问id或者comment的id
+			var name=$(this).attr("name");//如果是old 就是删除已经上传的
+			layer.confirm('确定删除吗？', {
+				icon:7,btn: ['删除','取消'] //按钮
+			}, function(){
+				if(name=='old'){
+					$.ajax({
+						url:"__APP__/Goods/delComment",
+						type:"post",
+						data:"id="+eid,
+						success:function(re){
+							if(re=="success"){
+								$(".expert"+eid).remove();
+								$(".layui-layer-btn1").trigger("click");
+							}else{
+								layer.msg("删除失败！");
+							}
+						}
+					})
+				}else{
+					$(".expert"+eid).remove();
+					$(".layui-layer-btn1").trigger("click");
+				}
+			});
+		});
+	}
+	
+	function check(){
+		 var gid="<{$data.id}>";//商品id
+		 
+		 if(!gid){
+			//商品图片
+				var picture=$("[name='picture']").val();
+				if(picture==""){
+					layer.msg("请上传商品缩略图");
+					$("[name='picture']").focus();
+					return false;
+				}
+		}
+		
+		
+		//商品名称
+		var name=$("[name='name']").val();
+		if(name==""){
+			layer.msg("请输入商品名称");
+			$("[name='name']").focus();
+			return false;
+		}
+
+		//艺术家
+		var name=$("[name='artist_id']").val();
+		if(name==""){
+			layer.msg("请选择艺术家");
+			$("[name='artist_id']").focus();
+			return false;
+		}
+		
+		//商品分类
+		var first_cate=$("[name='cat_id']").val();
+		if(first_cate==""){
+			layer.msg("请选择商品分类");
+			$("[name='first_cate']").focus();
+			return false;
+		}
+
+		//商品题材
+		var sub_id=$("[name='sub_id']").val();
+		if(sub_id==""){
+			layer.msg("请选择商品题材");
+			$("[name='sub_id']").focus();
+			return false;
+		}
+		
+		// //商品二级分类
+		// var second_cate=$("[name='second_cate']").val();
+		// if(second_cate==""){
+		// 	layer.msg("请选择商品二级分类");
+		// 	$("[name='second_cate']").focus();
+		// 	return false;
+		// }
+		
+		//商品价格
+		var reg1 = /^[0-9]{0,9}[\.][0-9]{1,2}$/;
+	    var reg2 = /^[0-9]{0,9}$/;
+	    var price=$("[name='price']").val();
+	    if(price==""){
+	    	layer.msg("请输入商品价格");
+			$("[name='price']").focus();
+			return false;
+	    }
+	    
+	    if(!reg1.test(price) && !reg2.test(price)){
+	    	layer.msg("请输入合法的商品价格");
+			$("[name='price']").focus();
+			return false;
+		}
+	    
+	    //市场价格
+	  //   var market_price=$("[name='market_price']").val();
+	  //   if(market_price!=""){
+	  //   	if(!reg1.test(market_price) && !reg2.test(market_price)){
+		 //    	layer.msg("请输入合法的市场价格");
+			// 	$("[name='market_price']").focus();
+			// 	return false;
+			// }
+	  //   }
+	    
+	    //年华率
+	    var rate=$("[name='rate']").val();
+	    if(rate!=""){
+	    	if(!reg1.test(rate) && !reg2.test(rate)){
+		    	layer.msg("请输入合法的年华率");
+				$("[name='rate']").focus();
+				return false;
+			}
+	    }
+	    
+	    
+	    //库存量
+	  //   var stock=$("[name='stock']").val();
+	  //   if(stock!=""){
+	  //   	if(!reg2.test(stock)){
+		 //    	layer.msg("请输入合法的库存量");
+			// 	$("[name='stock']").focus();
+			// 	return false;
+			// }
+	  //   }
+	    
+	    
+	    //排序
+	    var sort=$("[name='sort']").val();
+	    if(sort!=""){
+	    	if(!reg2.test(sort)){
+		    	layer.msg("请输入合法的排序");
+				$("[name='sort']").focus();
+				return false;
+			}
+	    }
+	    
+		
+		
+		return true;
+	}
+    $().ready(function(){
+    	 $("#status<{$data.status}>").prop("checked","checked");//状态
+    	 $("#artist<{$data.arter_id}>").prop("selected","selected");//艺术家
+    	 $("#goods_type<{$data.goods_type}>").prop("selected","selected");//商品类型
+    	 $("#first<{$data.first_cate}>").prop("selected","selected");//商品一级分类
+    	 $("#second<{$data.second_cate}>").prop("selected","selected");//商品二级分类
+    	 $("#is_enquiry<{$data.is_enquiry}>").prop("checked","checked");
+    	 
+    	 delComment();//删除评论
+    	 reset();//重置艺术家
+    	 
+    	 var gid="<{$data.id}>";//商品id
+    	 
+    	 //选择商品分类时
+    	 // $("[name='first_cate']").click(function(){
+    		//  var first_cate=$(this).val();//当前选中商品类型
+    		//  if(first_cate>0){
+    		// 	 $.ajax({
+    		// 		 url:"__APP__/Goods/getSecondCate",
+    		// 		 type:"post",
+    		// 		 data:"first_cate="+first_cate+"&gid="+gid,
+    		// 		 success:function(re){
+    		// 			$("[name='second_cate']").html(re);
+    		// 		 }
+    		// 	 })
+    		//  }else{
+    		// 	 $("[name='second_cate']").html("<option value=''>请选择</option>"); 
+    		//  }
+    	 // })
+    	 
+    	 
+    	 //选择商品类型时
+    	 $("[name='goods_type']").change(function(){
+    		 var id=$(this).val();//当前选中商品类型
+    		 if(id>0){
+    			 $.ajax({
+    				 url:"__APP__/Goods/getGoodsOther",
+    				 type:"post",
+    				 dataType:"json",
+    				 data:{"id":id,"gid":gid},
+    				 success:function(re){
+    					var flag=re.flag;
+    					var msg=re.msg;
+    					if(flag=="1"){
+    						$("#attribute").html(re.attribute);
+    					}else{
+    						layer.msg(msg);
+    					}
+    				 }
+    			 })
+    		 }else{
+    			 $("#attribute").html(""); 
+    		 }
+    	 })
+    	 
+    	 
+    	//选择艺术家
+    	$(".choseart").click(function(){
+    		layer.open({
+    			  type: 2,
+    			  title: '选择艺术家',
+    			  shadeClose: true,
+    			  shade: 0.8,
+    			  area: ['80%', '90%'],
+    			  content: '__APP__/User/artistList/action/list/types/chose' //iframe的url
+   			}); 
+    	})
+    	
+    	
+    	
+    	
+    	 
+    	 //添加艺术顾问点评
+    	$(".addcomment").click(function(){
+    		layer.open({
+    			  type: 2,
+    			  title: '选择艺术顾问',
+    			  shadeClose: true,
+    			  shade: 0.8,
+    			  area: ['80%', '90%'],
+    			  content: '__APP__/User/expertList/types/chose' //iframe的url
+   			}); 
+    	})
+    	 
+    	 
+    })
+    </script>
+</body>
+<!-- <script src="__PUBLIC__/Home/js/goods_details.js"></script> -->
+</html>

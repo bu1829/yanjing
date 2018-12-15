@@ -1,0 +1,144 @@
+<div class="row border-bottom" style='border:0px solid red;'>
+    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    </div>
+     </nav>
+     <ul id="wintop" class="nav navbar-top-links navbar-right">
+    	 <li class='time'>
+             <{$TIME}>
+         </li>
+    	
+    	 <li>
+             <a style="color:#337ab7;font-size:12px;"  href="" title="刷新">
+             	<i class="fa fa-repeat"></i> 刷新
+             </a>
+         </li>
+         
+         <li>
+             <a style="color:#337ab7;font-size:12px;" href="<{:U('Index/index')}>" title="后台主页">
+                <i class="fa fa-home"></i> 主页
+             </a>
+         </li>
+             
+         <li>
+             <a style="color:#337ab7;font-size:12px;" href="__ROOT__/phone.php" target="_blank" title="网站首页">
+                 <i class="fa fa-mobile"></i> 手机
+             </a>
+         </li>  
+               
+		 <li>
+             <a style="color:#337ab7;font-size:12px;" href="__ROOT__/index.php" target="_blank" title="网站首页">
+                 <i class="fa fa-desktop"></i> 电脑
+             </a>
+         </li>
+         
+         <li>
+             <a onclick="del('<{:U('Index/cleanCache')}>','您确定清理么？','3','清理','暂不清理')" style="color:#337ab7;font-size:12px;"  title="清除缓存">
+             	<i class="fa fa-trash"></i> 清理
+             </a>
+         </li>
+         
+         <li>
+             <a onclick="del('<{:U('Public/lockscreen')}>','确定锁定系统么？','3','锁定','暂不锁定')" style="color:#337ab7;font-size:12px;" title="锁定">
+             	<i class="fa fa-lock"></i> 锁定
+             </a>
+         </li>
+         
+         <li>
+             <a class="count-info"  href="<{:U('Message/receiveList',array('action'=>'inbox'))}>"  style="color:#337ab7;font-size:12px;">
+                 <i class="fa fa-envelope"></i> 
+                 <span class="label label-info noread">
+	                 <{$noReadNum.noread}>
+                 </span>
+             </a>
+         </li>
+         
+         <li>
+             <a style="color:#337ab7;font-size:12px;"  onclick="del('<{:U('Public/out')}>','您确定退出系统么？','3','退出')">
+                 <i class="fa fa-sign-out"></i> 退出
+             </a>
+         </li>
+         
+         <li id="music">
+         
+         </li>
+     </ul>
+</div>
+<!-- 这是提醒的方法 -->
+     <script type="text/javascript">
+        $(function () {
+        	var AUTO_REFRESH_TIME="<{$CONFIG.AUTO_REFRESH_TIME}>";
+        	setInterval("getRemindNum()", AUTO_REFRESH_TIME);//获得提醒数量
+        })
+        
+        //获得提醒的数量
+        function getRemindNum(){
+        	$.ajax({
+    			url:'__APP__/Message/getMessageNum',
+    			type:'post',
+    			data:'json',
+    			success:function(json){
+    				$(".noread").html(json.noread);//未读数量
+    				for (var i = 0; i < json.message.length; i++) {
+    					$("#music").html("<audio src='__ROOT__/Public/Common/music/order.mp3'  autoplay='autoplay'></audio>");
+    				    var title=json.message[i]['title'];
+    				    var message_id=json.message[i]['message_id'];
+    				    var msg=json.message[i]['content'];
+    				    var content=msg.substring(0,50);
+    				    var title="<a style='color:white;' title='查看详情' href='__APP__/Message/messageInfo/action/inbox/message_id/"+message_id+".html' target='_blank'>"+title+"</a>";
+    				    var content="<a style='color:white;' title='查看详情' href='__APP__/Message/messageInfo/action/inbox/message_id/"+message_id+".html' target='_blank'>"+content+"</a>";
+    				    remind(title,content);
+    				}
+    			}
+    		})//ajax的结束
+        }
+        
+        //执行提醒
+        function remind(title,msg,timeOut){
+        	 var i = -1;
+             var toastCount = 0;
+             var $toastlast;
+             var remind_type="<{$CONFIG.REMIND_TYPE}>";//提醒类型
+             var remind_position="<{$CONFIG.REMIND_POSITION}>";//提醒位置
+             var showEasing="<{$CONFIG.SHOWEASING}>";//显示动画
+             var hideEasing="<{$CONFIG.HIDEEASING}>";//隐藏动画
+             var showMethod="<{$CONFIG.SHOWMETHOD}>";//显示方法
+             var hideMethod="<{$CONFIG.HIDEMETHOD}>";//隐藏方法
+             var timeOut="<{$CONFIG.TIMEOUT}>";//超时
+             var extendedTimeOut="<{$CONFIG.EXTENDEDTIMEOUT}>";//延长时间
+             var isprogressbar="<{$CONFIG.PROGRESSBAR}>";//是否显示进度条
+             if(isprogressbar=="true"){
+            	 isprogressbar=true; 
+             }else if(isprogressbar=="false"){
+            	 isprogressbar=false; 
+             }
+             
+             var iscloseButton= "<{$CONFIG.CLOSEBUTTON}>";//是否显示关闭按钮
+             if(iscloseButton=="true"){
+            	 iscloseButton=true; 
+             }else if(iscloseButton=="false"){
+            	 iscloseButton=false; 
+             }
+             
+             var toastIndex = toastCount++;
+             toastr.options = {
+                 closeButton: iscloseButton,
+                 debug: true,
+                 progressBar:  isprogressbar,
+                 positionClass: remind_position,
+                 onclick: null
+             };
+             
+             toastr.options.showDuration = remind_type;
+             toastr.options.hideDuration =remind_position;
+             toastr.options.showEasing = showEasing;
+             toastr.options.hideEasing = hideEasing;
+             toastr.options.showMethod = showMethod;
+             toastr.options.hideMethod = hideMethod;
+             toastr.options.timeOut = timeOut;
+             toastr.options.extendedTimeOut = extendedTimeOut;
+             var $toast = toastr[remind_type](msg, title); // Wire up an event handler to a button in the toast, if it exists
+             $toastlast = $toast;
+		}
+    </script>

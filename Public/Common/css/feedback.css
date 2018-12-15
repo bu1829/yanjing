@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+/*右侧*/
+#leftsead{width:131px;height:143px;position:fixed;top:258px;right:0px;}
+*html #leftsead{margin-top:258px;position:absolute;top:expression(eval(document.documentElement.scrollTop));}
+#leftsead li{list-style:none;height:60px;}
+#leftsead li img{float:right;}
+#leftsead li a{height:49px;float:right;display:block;min-width:47px;max-width:131px;}
+#leftsead li a .shows{display:block;}
+#leftsead li a .hides{margin-right:-143px;cursor:pointer;cursor:hand;}
+#leftsead li a.youhui .hides{display:none;position:absolute;right:190px;top:2px;}
+
+
+
+#pop_ly_id_div{ height:360px; overflow:hidden; width:500px; position:fixed; left:50%;margin:-180px 0 0 -250px; top:50%; _position:absolute; z-index:9999;display:none;border:1px solid #ccc;background:#fff; border-radius:5px;}
+#pop_ly_id_div dl{margin:0 auto;text-align:left}
+#pop_ly_id_div dl dt{border-bottom:1px #ccc solid;height:24px;line-height:24px;text-indent:10px;padding:5px; font-size:15px; color:#0091db;}
+#pop_ly_id_div dl dt span{float:right;cursor:pointer;font-size:18px;margin-right:5px; font-family:Verdana, Geneva, sans-serif;}
+#pop_ly_id_div dl dd{padding:10px 5px 0;text-indent:30px;text-align:left; }
+#pop_ly_id_div input, #pop_ly_id_div textarea{background: none repeat scroll 0 0 rgba(0, 0, 0, 0);border: 1px solid #DDDDDD;height:28px;line-height:28px;width:340px;color:#999;text-indent:5px;vertical-align:middle;text-align:left;}
+#pop_ly_id_div textarea{ height:87px;line-height:22px;}
+#pop_ly_id_div #msg_vcode{width:80px;}
+#pop_ly_id_div dd img{vertical-align:middle;margin-left:5px;height:22px;width:80px;}
+.msg_button{color: #fff;border:1px solid #0091db;width: 110px;line-height: 30px;text-align: center;font-size:15px;margin:0 20px 20px 0;overflow: hidden;cursor:pointer;text-indent:0px; border-radius:3px; background:#0091db; font-family: "microsoft yahei","微软雅黑";}
+.msg_button:hover{ background:#26b0f6}
+.box_os .osqq p.wxClassText{margin-bottom:6px;}
+.shade{z-index: 9998;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;opacity:0.4;filter:alpha(opacity=40);display:none}

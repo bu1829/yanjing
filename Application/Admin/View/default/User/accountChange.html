@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+</head>
+
+<body>
+    <div id="wrapper">
+        <!--菜单项 -->
+        <include file="Public:menu"/>
+        <!--菜单项 -->
+        
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+        	<!--头部项 -->
+	        <include file="Public:header"/>
+	        <!--头部项 -->
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            <a href="<{:U('Index/index')}>">主页</a>
+                        </li>
+                        <li>
+                            	配置管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+            
+                <!-- <div class="alert alert-danger alert-dismissable">
+                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                  	  温馨提示：配置管理关系到系统的运行，请谨慎操作。
+                </div> -->
+                
+                <div style="margin-bottom:10px;">
+            		<a href="<{:U('User/accountLog',array('user_id'=>1))}>" class="btn btn-sm btn-success" type="submit">会员账户变更明细</a>
+            	</div>
+                <div class="row">
+                    
+                    <div class="col-lg-12">
+	                    <div class="panel panel-primary">
+	                        <div class="panel-heading">
+	                            	<{$meta_title}>
+	                        </div>
+	                        <div class="panel-body">
+	                        	 <form action="<{:U()}>" method="post" class="form-horizontal m-t" id="signupForm">
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">当前会员：</label>
+                                        <div class="col-sm-3">
+                                        	<div style="margin:6px;">zhimajiang</div>
+                                        	<input value="<{$user_id}>" type="hidden">
+                                        </div>
+                                    </div>
+                                    
+                                   
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font>账户变动原因：</label>
+                                        <div class="col-sm-3">
+                                            <textarea name="value" rows="3"  class="form-control"><{$data.value|default=''}></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font>可用资金账户：</label>
+                                        <div class="col-sm-1" style="border:0px solid red;">
+                                        	<select style="margin:5px;width:80px;">
+                                        	 	<option>增加</option>
+                                        	 	<option>减少</option>
+                                        	 </select>
+                                        </div>
+                                        <div class="col-sm-2" style="margin:5px;text-align:right;">
+                                        	 <input value="0" type="text" style="text-align:right" maxlength="30">
+                                        </div>
+                                        <div class="col-sm-2" style="margin:5px;">
+                                        	当前值：100.00
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font>冻结资金账户：</label>
+                                        <div class="col-sm-1" style="border:0px solid red;">
+                                        	<select style="margin:5px;width:80px;">
+                                        	 	<option>增加</option>
+                                        	 	<option>减少</option>
+                                        	 </select>
+                                        </div>
+                                        <div class="col-sm-2" style="margin:5px;text-align:right;">
+                                        	 <input value="0" type="text" style="text-align:right" maxlength="30">
+                                        </div>
+                                        <div class="col-sm-2" style="margin:5px;">
+                                        	当前值：0.00
+                                        </div>
+                                    </div>
+                                   
+                                    
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-3">
+                                        	<input type="hidden" value="<{$data.id|default=''}>" name="id"/>
+                                            <button class="btn btn-sm btn-primary" type="submit">保存</button>
+                                            <button class="btn btn-sm btn-primary" type="reset">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
+	                        </div>
+	                    </div>
+	                </div>
+	                
+                </div>
+
+            </div>
+            <!-- 尾部项 -->
+            <include file="Public:footer"/>
+            <!-- 尾部项 -->
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<include file="Public:metas"/>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	系统设置
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                
+                <div class="col-lg-2" id="fubiaoti">
+					<a href="<{:U('Menu/index',array('action'=>'list'))}>" class="btn btn-xs btn-primary">菜单列表</a>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                
+                <div class="row">
+                    
+                    <div class="col-lg-12">
+	                    <div class="panel panel-primary">
+	                        <div class="panel-heading">
+	                            	<{$meta_title}>
+	                        </div>
+	                        <div class="panel-body">
+	                        	 <form action="" method="post" class="form-horizontal m-t" id="signupForm">
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font color="#a40000">*</font> 菜单名称：</label>
+                                        <div class="col-sm-3">
+                                            <input id="title" name="title" class="form-control" type="text" value="<{$data.title|default=''}>" maxlength="100">
+                                            <input id="oldtitle" type="hidden" value="<{$data.title}>">
+                                        </div>
+                                        <div class="col-sm-3 title comm">
+                                           
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font color="#a40000">*</font> 上级菜单：</label>
+                                        <div class="col-sm-3">
+                                        	<select class="form-control" name="pid">
+                                                <option value='0'>顶级菜单</option>
+												<volist name='cat' id='v'>
+													<option id="menu<{$v.id}>" value='<{$v.id}>'><{$v.title}></option>
+												</volist>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"> 链接：</label>
+                                        <div class="col-sm-3">
+                                            <input name="url" class="form-control" type="text" value="<{$data.url|default=''}>" maxlength="255">
+                                        </div>
+                                        <div class="col-sm-3 name comm">
+                                           
+                                        </div>
+                                    </div> 
+                                    
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font color="#a40000">*</font> 显示状态：</label>
+                                        <div class="col-sm-3">
+                                       	    <div class="radio radio-success" >
+                                                <input type="radio" name="status" id="status1" value="1" checked=''>
+                                                <label for="status1">
+                                                  	  显示
+                                                </label>
+                                            </div>
+                                            <div class="radio radio-danger">
+                                                <input type="radio" name="status" id="status0" value="0">
+                                                <label for="status0">
+                                               		    隐藏
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font color="#a40000">*</font> 排序：</label>
+                                        <div class="col-sm-1">
+                                            <input  name="sort" class="form-control" type="text" value="<{$data.sort|default='100'}>" maxlength="10">
+                                        </div>
+                                        <div class="col-sm-3 sort comm">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"> 图标：</label>
+                                        <div class="col-sm-3" style="position:relative;">
+                                            <input  name="icon" class="form-control" type="text" value="<{$data.icon}>" maxlength="50">
+                                            <span class='icon-show' style="position:absolute;top:8px;right:30px;"><i class='<{$data.icon}>'></i></span>
+                                        </div>
+                                        <div class="col-sm-3">
+                                        	<button class="btn btn-sm btn-info chose" type="button">选择图标</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-3">
+                                        	<input type="hidden" value="<{$data.id|default=''}>" name="id"/>
+                                            <button class="btn btn-sm btn-primary" type="submit">保存</button>
+                                            <button class="btn btn-sm btn-warning" type="reset">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
+	                        </div>
+	                    </div>
+	                </div>
+	                
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+	function call_back(icon){
+		 $("[name='icon']").val(icon);
+		 $(".icon-show").html("<i class='"+icon+"'></i>")
+		 layer.closeAll('iframe');
+	}
+    $().ready(function(){
+    	//匹配图标
+    	$("[name='icon']").keyup(function(){
+    		var icon=$(this).val();
+    		$(".icon-show").html("<i class='"+icon+"'></i>")
+    	})
+    	
+    	
+    	//选择图标
+    	$(".chose").click(function(){
+    		layer.open({
+    			  type: 2,
+    			  title: '选择图标,点击图标选中',
+    			  shadeClose: true,
+    			  shade: 0.8,
+    			  area: ['80%', '90%'],
+    			  content: '__APP__/Menu/icon' //iframe的url
+   			}); 
+    	})
+    	$("#status<{$data.status}>").prop("checked","checked");//状态
+    })
+    </script>
+     <script>
+     	var pid='<{$data.pid}>';
+     	$("#menu"+pid).prop("selected","selected");//修改的父节点|添加子菜单
+     	
+     	$("#status<{$data.status}>").prop("selected","selected");//修改的父节点
+     </script>
+	 <script>
+	 
+        //以下为修改jQuery Validation插件兼容Bootstrap的方法，没有直接写在插件中是为了便于插件升级
+        //以下为官方示例
+        $().ready(function () {
+        	//设置默认选项的
+        	
+            // validate the comment form when it is submitted
+            $("#commentForm").validate();
+
+            var id=$("[name='id']").val();
+            
+            if(!id){
+            	 // validate signup form on keyup and submit
+                $("#signupForm").validate({
+                    rules: {
+                    	 title: {
+                             required: true,
+                             rangelength:[1,100],
+                             menutitlesame:true,
+                         },
+                        sort: {
+                            required: true,
+                            digits:true
+                        }
+                        
+                    },
+                    messages: {
+                    	title: {
+                            required: no+"请输入菜单名称",
+                            rangelength:no+"100字符以内",
+                            menutitlesame:no+"此名称已存在",
+                        },
+                        sort: {
+                            required: no+"请输入排序",
+                            digits:no+"请输入整数"
+                        }
+                    },
+                    onfocus: false,　　　　
+                    onkeyup: false,　　　　//这个地方要注意，修改去控制器验证的事件。
+                    onsubmit: true
+                });
+            }else{
+            	 // validate signup form on keyup and submit
+                $("#signupForm").validate({
+                    rules: {
+                    	 title: {
+                             required: true,
+                             rangelength:[1,100],
+                             remote: {
+	                              url: "__APP__/Admin/checkOnly",
+	                              type: "post",
+	                              dataType: "json",
+	                              data: {
+	                                  tablename: function () {
+	                                      return "menu";　　　　//数据表名称
+	                                  },
+	                                  fieldname: function () {
+	                                      return "title";　　　　//要查找的字段
+	                                  },
+	                                  value: function () {
+	                                      return $("#title").val();　　　　//新值
+	                                  },
+	                                  oldvalue: function () {
+	                                      return $("#oldtitle").val();　　　　//老值
+	                                  }
+	                              },
+	                              dataFilter: function (msg) {　　　　//判断控制器返回的内容
+	                            	  if (msg == "1") {
+	                                      return true;
+	                                  }
+	                                  else {
+	                                      return false;
+	                                  }
+	                              }
+	                          }
+                         },
+                        sort: {
+                            required: true,
+                            digits:true
+                        }
+                    },
+                    messages: {
+                    	title: {
+                            required: no+"请输入菜单名称",
+                            rangelength:no+"100字符以内",
+                            remote:no+"此菜单名称已存在",
+                        },
+                        sort: {
+                            required: no+"请输入排序",
+                            digits:no+"请输入整数"
+                        }
+                    },
+                    onfocus: false,　　　　
+                    onkeyup: false,　　　　//这个地方要注意，修改去控制器验证的事件。
+                    onsubmit: true
+                });
+            }
+        });
+    </script>
+</body>
+</html>

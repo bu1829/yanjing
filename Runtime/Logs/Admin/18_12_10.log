@@ -1,0 +1,1331 @@
+[ 2018-12-10T12:30:46+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001430s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_menu` [ RunTime:0.0147s ]
+SQL: SELECT * FROM `gls_menu` WHERE `status` = 1 AND `pid` = 0 ORDER BY sort  [ RunTime:0.0018s ]
+SQL: SELECT * FROM `gls_menu` WHERE `status` = 1 AND `pid` = 1 ORDER BY sort  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000318s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000356s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 9 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 204 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 204 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 205 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 210 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 211 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 216 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 239 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 239 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 240 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 248 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 248 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 249 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 253 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 254 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 260 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 260 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 261 行.
+NOTIC: [8] Undefined variable: noReadNum D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 388 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 588 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 589 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 590 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 591 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 592 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 593 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 594 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 595 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 596 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 603 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031569s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031607s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001105s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001133s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001970s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002022s ]
+
+[ 2018-12-10T12:30:47+08:00 ] 127.0.0.1 /index.php/Index/home.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001127s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000928s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000987s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000206s ]
+NOTIC: [8] Undefined variable: meta_title D:\PHP\yanjing\Runtime\Cache\Admin\9c5d20aa0e9b8893a9d043a77e86c28e.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\9c5d20aa0e9b8893a9d043a77e86c28e.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\9c5d20aa0e9b8893a9d043a77e86c28e.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\9c5d20aa0e9b8893a9d043a77e86c28e.php 第 9 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010076s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010128s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001350s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001400s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001634s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001734s ]
+
+[ 2018-12-10T12:30:47+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000758s ]
+
+[ 2018-12-10T12:30:50+08:00 ] 127.0.0.1 /index.php/Lens/userLensAdd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000725s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000964s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001026s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user` [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0136s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000440s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000492s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 4 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 5 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 6 行.
+NOTIC: [8] Undefined variable: artist D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 273 行.
+NOTIC: [8] Undefined variable: data D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 277 行.
+NOTIC: [8] Undefined variable: artist D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 280 行.
+NOTIC: [8] Undefined variable: data D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 362 行.
+NOTIC: [8] Undefined variable: data D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 382 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 402 行.
+NOTIC: [8] Undefined variable: data D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 472 行.
+NOTIC: [8] Undefined variable: data D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 473 行.
+NOTIC: [8] Undefined variable: data D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 474 行.
+NOTIC: [8] Undefined variable: data D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 475 行.
+NOTIC: [8] Undefined variable: data D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 476 行.
+NOTIC: [8] Undefined variable: data D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 477 行.
+NOTIC: [8] Undefined variable: data D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 482 行.
+NOTIC: [8] Undefined variable: data D:\PHP\yanjing\Runtime\Cache\Admin\bdf82f1201fbca4150e1defeddfa6302.php 第 543 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017545s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017602s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000972s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001334s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001391s ]
+
+[ 2018-12-10T12:30:50+08:00 ] 127.0.0.1 /Public/Home/js/e-smart-zoom-jquery.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000879s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001159s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001226s ]
+ERR: 非法操作:Home
+
+[ 2018-12-10T12:30:58+08:00 ] 127.0.0.1 /index.php/Lens/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000910s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000969s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user` [ RunTime:0.0112s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `gls_user` LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `gls_user` ORDER BY add_time desc LIMIT 0,20   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000200s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000240s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 190 行.
+NOTIC: [8] Undefined variable: keyword D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 230 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 260 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 260 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 276 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 276 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 281 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 325 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 325 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 276 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 276 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 281 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 325 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 325 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 356 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 357 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 358 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 359 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 360 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 361 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 362 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 363 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 364 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 365 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012137s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012173s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000688s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000718s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001084s ]
+
+[ 2018-12-10T12:31:04+08:00 ] 127.0.0.1 /index.php/Lens/userEdit/user_id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000875s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000871s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000916s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `gls_user` WHERE `user_id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000217s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000251s ]
+NOTIC: [8] Undefined variable: meta_title D:\PHP\yanjing\Runtime\Cache\Admin\09ed6016d6ef2fefc56020f273cf1cbb.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\09ed6016d6ef2fefc56020f273cf1cbb.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\09ed6016d6ef2fefc56020f273cf1cbb.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\09ed6016d6ef2fefc56020f273cf1cbb.php 第 9 行.
+NOTIC: [8] Undefined variable: meta_title D:\PHP\yanjing\Runtime\Cache\Admin\09ed6016d6ef2fefc56020f273cf1cbb.php 第 222 行.
+NOTIC: [8] Undefined variable: meta_title D:\PHP\yanjing\Runtime\Cache\Admin\09ed6016d6ef2fefc56020f273cf1cbb.php 第 240 行.
+NOTIC: [8] Undefined variable: list D:\PHP\yanjing\Runtime\Cache\Admin\09ed6016d6ef2fefc56020f273cf1cbb.php 第 244 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\09ed6016d6ef2fefc56020f273cf1cbb.php 第 324 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\09ed6016d6ef2fefc56020f273cf1cbb.php 第 344 行.
+NOTIC: [8] Undefined index: arter_id D:\PHP\yanjing\Runtime\Cache\Admin\09ed6016d6ef2fefc56020f273cf1cbb.php 第 416 行.
+NOTIC: [8] Undefined index: goods_type D:\PHP\yanjing\Runtime\Cache\Admin\09ed6016d6ef2fefc56020f273cf1cbb.php 第 417 行.
+NOTIC: [8] Undefined index: first_cate D:\PHP\yanjing\Runtime\Cache\Admin\09ed6016d6ef2fefc56020f273cf1cbb.php 第 418 行.
+NOTIC: [8] Undefined index: second_cate D:\PHP\yanjing\Runtime\Cache\Admin\09ed6016d6ef2fefc56020f273cf1cbb.php 第 419 行.
+NOTIC: [8] Undefined index: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\09ed6016d6ef2fefc56020f273cf1cbb.php 第 420 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\09ed6016d6ef2fefc56020f273cf1cbb.php 第 425 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\09ed6016d6ef2fefc56020f273cf1cbb.php 第 486 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026499s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026534s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000715s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001096s ]
+
+[ 2018-12-10T12:31:04+08:00 ] 127.0.0.1 /Public/Home/js/e-smart-zoom-jquery.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000726s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001102s ]
+ERR: 非法操作:Home
+
+[ 2018-12-10T12:31:10+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000658s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001088s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0109s ]
+SQL: SHOW COLUMNS FROM `gls_user` [ RunTime:0.0068s ]
+SQL: SELECT `name` FROM `gls_user` WHERE `user_id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `gls_user_lens` WHERE `user_id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `gls_user_lens` WHERE `user_id` = 2 ORDER BY add_time desc LIMIT 0,20   [ RunTime:0.0006s ]
+SQL: SELECT `lens_id` FROM `gls_user_lens` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: data D:\PHP\yanjing\Application\Admin\Controller\LensController.class.php 第 375 行.
+NOTIC: [8] Undefined variable: data D:\PHP\yanjing\Application\Admin\Controller\LensController.class.php 第 378 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000214s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000250s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 337 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018251s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018291s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000698s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001006s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001062s ]
+
+[ 2018-12-10T12:43:42+08:00 ] 127.0.0.1 /index.php/Lens/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000997s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000886s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000932s ]
+
+[ 2018-12-10T12:44:03+08:00 ] 127.0.0.1 /index.php/Lens/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000863s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000866s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user` [ RunTime:0.0125s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `gls_user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `gls_user` ORDER BY add_time desc LIMIT 0,20   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000396s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000458s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 190 行.
+NOTIC: [8] Undefined variable: keyword D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 230 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 260 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 260 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 276 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 276 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 281 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 325 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 325 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 276 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 276 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 281 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 325 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 325 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 356 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 357 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 358 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 359 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 360 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 361 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 362 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 363 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 364 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 365 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030514s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030570s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000959s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000999s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001175s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001228s ]
+
+[ 2018-12-10T12:44:06+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000787s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0096s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '2' ORDER BY ul.add_time desc  [ RunTime:0.0009s ]
+
+[ 2018-12-10T12:44:32+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000634s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000807s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0112s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0080s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '2' ORDER BY ul.add_time desc  [ RunTime:0.0005s ]
+
+[ 2018-12-10T12:44:42+08:00 ] 127.0.0.1 /index.php/Lens/userList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000669s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001337s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user` [ RunTime:0.0115s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `gls_user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `gls_user` ORDER BY add_time desc LIMIT 0,20   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000201s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000235s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 190 行.
+NOTIC: [8] Undefined variable: keyword D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 230 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 260 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 260 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 276 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 276 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 281 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 325 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 325 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 276 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 276 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 281 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 325 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 325 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 356 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 357 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 358 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 359 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 360 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 361 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 362 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 363 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 364 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 365 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011907s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011952s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000972s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001331s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001389s ]
+
+[ 2018-12-10T12:44:45+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000723s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000795s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0139s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0080s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0008s ]
+
+[ 2018-12-10T12:44:54+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000604s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000815s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0253s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0082s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0005s ]
+
+[ 2018-12-10T12:46:28+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000754s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000910s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000958s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0115s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0072s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000223s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000258s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: user D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 227 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 337 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011741s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011776s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000849s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000880s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001175s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001230s ]
+
+[ 2018-12-10T12:49:08+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000750s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001014s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001075s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0112s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0069s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000223s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: user D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 227 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 327 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012043s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012080s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000805s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000834s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001213s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001271s ]
+
+[ 2018-12-10T12:50:07+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000712s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000845s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000885s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0209s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0077s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000224s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000260s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: user D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 227 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 327 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010529s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010563s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000698s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001019s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001074s ]
+
+[ 2018-12-10T12:55:10+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000780s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001336s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001411s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0178s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0070s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000219s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000255s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: user D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 227 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 327 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018965s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018999s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000745s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000773s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001046s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001089s ]
+
+[ 2018-12-10T12:56:18+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000866s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000910s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0072s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000220s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000253s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: user D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 227 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 327 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010342s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010377s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000691s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000719s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001084s ]
+
+[ 2018-12-10T12:56:34+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000764s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000889s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000946s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0121s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0072s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000220s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000254s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: user D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 227 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 327 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010286s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010328s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000726s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001020s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001077s ]
+
+[ 2018-12-10T12:56:50+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000651s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000829s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000876s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0090s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000218s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000253s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: user D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 227 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 327 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010425s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010460s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000678s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001017s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001071s ]
+
+[ 2018-12-10T13:01:36+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000730s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000861s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000904s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0129s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0071s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0022s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000233s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000269s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: user D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 227 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 327 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019280s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019316s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000798s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001060s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001106s ]
+
+[ 2018-12-10T13:02:10+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000891s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000795s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000836s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0075s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000233s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000267s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: user D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 227 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 327 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010175s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010210s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000695s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000934s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000975s ]
+
+[ 2018-12-10T18:32:41+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000838s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001167s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001221s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_menu` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `gls_menu` WHERE `status` = 1 AND `pid` = 0 ORDER BY sort  [ RunTime:0.0026s ]
+SQL: SELECT * FROM `gls_menu` WHERE `status` = 1 AND `pid` = 1 ORDER BY sort  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000310s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000352s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 9 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 204 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 204 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 205 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 210 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 211 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 216 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 239 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 239 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 240 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 248 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 248 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 249 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 253 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 254 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 260 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 260 行.
+NOTIC: [8] Undefined variable: personal D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 261 行.
+NOTIC: [8] Undefined variable: noReadNum D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 388 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 588 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 589 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 590 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 591 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 592 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 593 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 594 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 595 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 596 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\085b574956cdc611cfedaace62cf4e64.php 第 603 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023701s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023745s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000774s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000802s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001055s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001101s ]
+
+[ 2018-12-10T18:32:42+08:00 ] 127.0.0.1 /index.php/Index/home.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000879s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001105s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000173s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000224s ]
+NOTIC: [8] Undefined variable: meta_title D:\PHP\yanjing\Runtime\Cache\Admin\9c5d20aa0e9b8893a9d043a77e86c28e.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\9c5d20aa0e9b8893a9d043a77e86c28e.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\9c5d20aa0e9b8893a9d043a77e86c28e.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\9c5d20aa0e9b8893a9d043a77e86c28e.php 第 9 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009487s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009523s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001047s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001013s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001057s ]
+
+[ 2018-12-10T18:32:42+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000719s ]
+
+[ 2018-12-10T18:33:10+08:00 ] 127.0.0.1 /index.php/Lens/userList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000886s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user` [ RunTime:0.0112s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `gls_user` LIMIT 1   [ RunTime:0.0021s ]
+SQL: SELECT * FROM `gls_user` ORDER BY add_time desc LIMIT 0,20   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000205s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000241s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 190 行.
+NOTIC: [8] Undefined variable: keyword D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 230 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 260 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 260 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 276 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 276 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 281 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 325 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 325 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 274 行.
+NOTIC: [8] Use of undefined constant sort - assumed 'sort' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 276 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 276 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 281 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 325 行.
+NOTIC: [8] Undefined index: id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 325 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 356 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 357 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 358 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 359 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 360 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 361 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 362 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 363 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 364 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\a3fac09a93f074ed285df3671a78f30b.php 第 365 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013305s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013344s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000805s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000851s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001410s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001466s ]
+
+[ 2018-12-10T18:33:13+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000796s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0179s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0077s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000406s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000467s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: user D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 227 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 327 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014295s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014342s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000798s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001051s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001108s ]
+
+[ 2018-12-10T18:35:02+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000775s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000925s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0112s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0082s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000394s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000450s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: user D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 227 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 337 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013385s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013428s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000725s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000751s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001177s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001231s ]
+
+[ 2018-12-10T18:36:23+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000724s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0107s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0084s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000216s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000254s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: user D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 227 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 337 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011985s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012035s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000789s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001090s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001142s ]
+
+[ 2018-12-10T18:36:57+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000842s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000812s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0154s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0064s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000209s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000246s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: user D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 227 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 337 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010506s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010543s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000701s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001121s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001180s ]
+
+[ 2018-12-10T18:37:51+08:00 ] 127.0.0.1 /toastr.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001305s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001382s ]
+ERR: 无法加载控制器:Toastr.js.map
+
+[ 2018-12-10T18:37:55+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000683s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000831s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0215s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0069s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000209s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000243s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: user D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 227 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 337 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011161s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011194s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000832s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000863s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001131s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001197s ]
+
+[ 2018-12-10T18:40:14+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000794s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001014s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001085s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0159s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0082s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000217s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: user D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 227 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 337 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030751s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030796s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000805s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000843s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001308s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001368s ]
+
+[ 2018-12-10T18:40:33+08:00 ] 127.0.0.1 /index.php/Lens/userLensInfo/user_id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000822s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001015s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001092s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 6 行.
+NOTIC: [8] Undefined index:  D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 30 行.
+NOTIC: [8] Undefined index: authName D:\PHP\yanjing\Application\Admin\Controller\AdminController.class.php 第 31 行.
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0146s ]
+SQL: SHOW COLUMNS FROM `gls_user_lens` [ RunTime:0.0069s ]
+SQL: SELECT ul.*,u.name,u.age,u.sex,u.mobile,u.address FROM gls_user_lens ul INNER JOIN gls_user as u on u.user_id=ul.user_id  WHERE u.user_id = '1' ORDER BY ul.add_time desc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000208s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000243s ]
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 7 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 8 行.
+NOTIC: [8] Undefined variable: CONFIG D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 9 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: btn D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 189 行.
+NOTIC: [8] Undefined variable: action D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 190 行.
+NOTIC: [8] Undefined variable: user D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 227 行.
+NOTIC: [8] Undefined variable: status D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 328 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 329 行.
+NOTIC: [8] Undefined variable: is_enquiry D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 330 行.
+NOTIC: [8] Undefined variable: is_sell D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 331 行.
+NOTIC: [8] Undefined variable: artist_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 332 行.
+NOTIC: [8] Undefined variable: cat_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 333 行.
+NOTIC: [8] Undefined variable: sub_id D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 334 行.
+NOTIC: [8] Undefined variable: is_new D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 335 行.
+NOTIC: [8] Undefined variable: is_best D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 336 行.
+NOTIC: [8] Undefined variable: is_discount D:\PHP\yanjing\Runtime\Cache\Admin\4b7ec1881b5de92d245e05543d63bbd2.php 第 337 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010304s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010339s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000701s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001033s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001087s ]
+

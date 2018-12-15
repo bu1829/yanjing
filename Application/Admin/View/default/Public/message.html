@@ -1,0 +1,33 @@
+<div class="col-sm-3">
+<div class="ibox float-e-margins">
+    <div class="ibox-content mailbox-content">
+        <div class="file-manager">
+            <a class="btn btn-block btn-info compose-mail" href="<{:U('Message/messageAdd')}>">发送新消息</a>
+            <div class="space-25"></div>
+            <h5>文件夹</h5>
+            <ul class="folder-list m-b-md" style="padding: 0">
+                    <li>
+                        <a href="<{:U('Message/receiveList',array('action'=>'inbox'))}>"> <i class="fa fa-inbox "></i>已接收 
+                        <span class="label label-warning pull-right"><{$messages.receive_count}></span> 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<{:U('Message/sendList',array('action'=>'sent'))}>"> <i class="fa fa-envelope-o"></i>已发送
+                        <span class="label label-primary pull-right"><{$messages.send_count}></span> 
+                        </a>
+                    </li>
+            </ul>
+            <!-- <h5>注意事项</h5>
+            <ul class="category-list" style="padding: 0">
+                <li>
+                    <a href="script:"> <i class="fa fa-circle text-navy"></i> </a>
+                </li>
+                <li>
+                    <a href="mail_compose.html#"> <i class="fa fa-circle text-danger"></i> 文档</a>
+                </li>
+            </ul> -->
+            <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>

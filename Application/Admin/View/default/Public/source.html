@@ -1,0 +1,51 @@
+<a title="来源" class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal">
+  				选择来源
+</a>	
+<div class="ibox">
+                 <div class="modal inmodal" id="myModal">
+                     <div class="modal-dialog">
+                         <div class="modal-content animated bounceInRight">
+                             <div class="modal-header">
+                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" style="color:black;">&times;</span><span class="sr-only">关闭</span>
+                            </button>
+                            <h4 class="modal-title">选择来源</h4>
+                    </div>
+                    <div class="modal-body">
+                       <volist name=":parse_config_attr(C('SOURCE'))" id="vo">
+                          <a class='btn btn-xs btn-default chosesource' style='margin:5px;'><{$vo}></a>
+                    </volist>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<script type="text/javascript">
+  $().ready(function(){
+  	$('.hello').on('click', function(){
+  		var index=layer.open({
+  			type: 1,
+  			title: false,
+  			closeBtn:2,
+  			area:['auto', 'auto'],
+  			move: false,
+  			scrollbar: false,
+  			content: $(".layer_notice")
+  		});
+  		parent.layer.iframeAuto(index);
+  	});
+  	
+  	//选择来源
+  	$(".chosesource").on('click',function(){
+  		$(".chosesource").removeClass("btn-primary");
+  		$(".chosesource").addClass("btn-default");
+  		$(this).removeClass("btn-default");
+  		$(this).addClass("btn-primary");
+  		var val=$(this).html();
+  		$("[name='source']").val(val);
+  	})
+  	
+  })
+</script>

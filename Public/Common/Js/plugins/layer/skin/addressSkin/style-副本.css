@@ -1,0 +1,76 @@
+html #layui_layer_skinaddressSkinstylecss{display:none; position: absolute; width:1989px;}
+body .layer-ext-addressSkin .layui-layer-title{
+	/*padding: 0 80px 0 30px;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #f7f7f7;
+    font-size: 14px;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: #f7f7f7;*/
+}
+body .layer-ext-addressSkin{
+	/*border: 6px solid #8D8D8D;
+    border: 6px solid rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    box-shadow: none;*/
+ 
+}
+body .layer-ext-addressSkin .layui-layer-rim {
+    border: 6px solid rgba(0, 0, 0, 0.2);
+}
+body .layer-ext-addressSkin .layui-layer-setwin .layui-layer-close1{
+	/* background-position: -228px -53px; */
+}
+body .layer-ext-addressSkin .layui-layer-setwin {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 0;
+    line-height: initial;
+    }
+body .layer-ext-addressSkin .layui-layer-content{
+	padding: 20px 35px;
+}
+body .layer-ext-addressSkin .layui-layer-content input,
+body .layer-ext-addressSkin .layui-layer-content textarea,
+body .layer-ext-addressSkin .layui-layer-content select{
+	/*width: 100%;*/
+	border: 1px solid #b2b2b2;
+	/*padding: 10px;
+	margin-bottom: 10px;*/
+	/*border-radius: 3px;*/
+	outline: 0;
+}
+body .layer-ext-addressSkin .layui-layer-btn{
+	position: absolute;
+	width: 100%;
+	bottom: 15px;
+}
+body .layer-ext-addressSkin .layui-layer-btn .layui-layer-btn0,
+body .layer-ext-addressSkin .layui-layer-btn .layui-layer-btn1{
+	/*float: right;*/
+	/*width: 50%;*/
+	width:140px;
+	height:40px;
+	background-color:#7b6961;
+	border:none;
+	text-align:center;
+	line-height:40px;
+	margin-bottom:55px;
+	/*font-size: 12px;
+	margin: 0;
+	background: #e9781c;
+	border-radius: 4px;
+	font-weight: normal;
+    height: 27px;
+    line-height: 27px;
+    margin: 0 8px;*/
+}
+body .layer-ext-addressSkin .layui-layer-btn .layui-layer-btn1{
+	color: #666666;
+	background: #f4f4f4;
+	border: 1px solid #c9c9c9;
+}

@@ -1,0 +1,50 @@
+<link rel="stylesheet" type="text/css" href="__CJS__/webupload/webuploader.css"/>
+<link rel="stylesheet" type="text/css" href="__CJS__/webupload/style.css"/>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row" id="wrapper1">
+                	<div class='mail-tools tooltip-demo m-t-md' style='border-bottom:1px dotted #ccc;padding-bottom:5px;'>
+                	<a class='btn btn-sm btn-primary' style='margin-right:10px;'>
+                                                                      选择水印
+                   	</a>
+                   	<input data-toggle="tooltip" data-placement="top" title="不添加任何水印" type="radio"  id='water0' value="0" name="water" checked/>无水印&nbsp;
+                   	<input data-toggle="tooltip" data-placement="top" title="只添加文字水印" type="radio" id='water1' value="1" name="water"/>文字水印&nbsp;
+                   	<input data-toggle="tooltip" data-placement="top" title="只添加图片水印" type="radio" id='water2' value="2" name="water"/>图片水印&nbsp;
+                   	<input data-toggle="tooltip" data-placement="top" title="添加全部水印" type="radio" id='water3' value="3" name="water"/>全部水印&nbsp;
+                   	</div>
+                   	<!-- 存放水印的值 -->
+                   	<input class='water' value='<{$CONFIG.DEFAULT_WATER_TYPE}>' type='hidden'/>
+                   	
+			        <div id="container1">
+			            <!--头部，相册选择和格式选择-->
+			            <div id="uploader">
+			                <div class="queueList">
+			                    <div id="dndArea" class="placeholder">
+			                        <div id="filePicker"></div>
+			                        <p>或将文件拖到这里，单次最多可选<{$CONFIG.MORE_PICTURE_MAX_NUM}>个,总大小不超过<{$CONFIG.MORE_PICTURE_MAX_SIZE|getfilesize=###}></p>
+			                    </div>
+			                </div>
+			                <div class="statusBar" style="display:none;">
+			                    <div class="progress" style='display:block;'>
+			                        <span class="text">0%</span>
+			                        <span class="percentage"></span>
+			                    </div>
+			                    <div class="info">
+			                    </div>
+			                    <div class="btns">
+			                        <div id="filePicker2"></div><div class="uploadBtn">开始上传</div>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+            <!-- 尾部项 -->
+            <include file="Public:footer"/>
+            <!-- 尾部项 -->
+<script>
+$().ready(function(){
+	$("#water<{$CONFIG.DEFAULT_WATER_TYPE}>").attr("checked","checked");
+})
+</script>
+<script type="text/javascript" src="__CJS__/webupload/webuploader.js"></script>
+<script type="text/javascript" src="__CJS__/webupload/upload.js"></script>

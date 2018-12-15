@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+#showtime {
+	width: 100%;
+	color: #fff;
+	font-size: 40px;
+	margin-bottom: 30px;
+	margin-top: 50px;
+	display: inline-block;
+	text-align: center;
+	font-weight: 400;
+}
+.password{
+	font-size:13px;
+	border-radius:3px;
+}
+
+.lock-screen {
+	text-align: center;
+}
+
+.lock-screen i {
+	font-size: 60px;
+}
+
+.lock-screen .modal-content {
+	position: relative;
+	background-color: #f2f2f2;
+	background-clip: padding-box;
+	border: 1px solid #999;
+	border: 1px solid rgba(0, 0, 0, .2);
+	border-radius: 5px;
+}
+
+/*弹出窗口效果*/
+.modal-title{color:white;}
+.modal-header{background:#68dff0;}
+
+
+.modal-footer{text-align:center;}
+.modal-body div{text-align:left;margin:3px 0px;}
+.modal-body div font{font-weight:600;}
+.error{text-align:left;}
+.close{opacity:1;}
+

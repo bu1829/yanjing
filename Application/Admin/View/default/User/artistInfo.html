@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	用户管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+					<a href="<{:U('User/artistList',array('action'=>'list'))}>" class="btn btn-xs btn-primary">艺术家列表</a>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                    <div class="col-lg-12">
+                    
+                    	<div class="panel blank-panel">
+
+                            <div class="panel-heading">
+                                <div class="panel-options">
+                                    <ul class="nav nav-tabs">
+										<li class="active">
+											<a href="#basic"  data-toggle="tab">
+												基本信息
+											</a>
+										</li>
+										<li>
+											<a href="#detail"  data-toggle="tab">
+												详细介绍
+											</a>
+										</li>
+									</ul>
+									
+									<form id="signupForm" action="<{:U()}>"  method="post" class="form-horizontal m-t" enctype="multipart/form-data">
+									<div class="tab-content">
+										<div class="tab-pane active" id="basic">
+											<div class="form-group">
+			                                        <label class="col-sm-2 control-label"> 用户名：</label>
+			                                        <div class="col-sm-8" style="padding-top:6px;font-weight:bold;">
+			                                           <{$data.username}>
+			                                        </div>
+			                                </div>
+			                                    
+											  <div class="form-group">
+			                                        <label class="col-sm-2 control-label"> 艺术家头像：</label>
+			                                        <div class="col-sm-2">
+			                                            <div class="details" style="width:100px;">
+										                   <div style='border:0px solid red;position:relative;'><!-- 第一张-->
+																	<div class='yulan yulan1'></div><!-- 预览  -->
+																	<div class='detail detail1'><!--预览详细和关闭  -->
+																		<div>
+																		<a title=''  rel="1" class='close close1'>×</a>
+																		</div>
+																		<div>
+																		<a class="picture picture1" id="1" title="图片预览">
+																		查看
+			                               								</a>
+																		</div>
+																	</div>
+																	<div><input type="file" name="picture"  value='' class="inputimg inputimg1" id="1" /></div><!-- input插入 -->
+														  </div>
+										                </div>
+			                                        </div>
+			                                        <div class="col-sm-3">
+			                                            <if condition="$data.picture neq null">
+			                                			<a class="fancybox"  href="__ROOT__<{$data.picture}>" title="{$data.title}>">
+			                            					<img alt="image" class="feed-photo" style="border:0px solid red;width:100px;height:100px;" src="__ROOT__<{$data.picture}>" />
+			                       						</a>
+			                       						</if>
+			                                        </div>
+			                                    </div>
+
+			                                    
+			                                    
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"> 作品收藏趋势图：</label>
+			                                        <div class="col-sm-2">
+			                                            <div class="details" style="width:200px;">
+										                   <div style='border:0px solid red;position:relative;'><!-- 第一张-->
+																	<div class='yulan yulan2'></div><!-- 预览  -->
+																	<div class='detail detail2'><!--预览详细和关闭  -->
+																		<div>
+																		<a title=''  rel="2" class='close close2'>×</a>
+																		</div>
+																		<div>
+																		<a class="picture picture2" id="2" title="图片预览">
+																		查看
+			                               								</a>
+																		</div>
+																	</div>
+																	<div><input type="file" name="chart"  value='' class="inputimg inputimg2" id="2" /></div><!-- input插入 -->
+														  </div>
+										                </div>
+			                                        </div>
+			                                        <div class="col-sm-3">
+			                                            <if condition="$data.chart neq null">
+			                                			<a class="fancybox"  href="__ROOT__<{$data.chart}>" title="{$data.title}>">
+			                            					<img alt="image" class="feed-photo" style="border:0px solid red;width:100px;height:100px;" src="__ROOT__<{$data.chart}>" />
+			                       						</a>
+			                       						</if>
+			                                        </div>
+			                                    </div>
+
+
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"> 艺术家真品承若书：</label>
+			                                        <div class="col-sm-2">
+			                                            <div class="details" style="width:100px;">
+										                   <div style='border:0px solid red;position:relative;'><!-- 第一张-->
+																	<div class='yulan yulan3'></div><!-- 预览  -->
+																	<div class='detail detail3'><!--预览详细和关闭  -->
+																		<div>
+																		<a title=''  rel="3" class='close close3'>×</a>
+																		</div>
+																		<div>
+																		<a class="picture picture3" id="3" title="图片预览">
+																		查看
+			                               								</a>
+																		</div>
+																	</div>
+																	<div><input type="file" name="genuine"  value='' class="inputimg inputimg3" id="3" /></div><!-- input插入 -->
+														  </div>
+										                </div>
+			                                        </div>
+			                                        <div class="col-sm-3">
+			                                            <if condition="$data.genuine neq null">
+			                                			<a class="fancybox"  href="__ROOT__<{$data.genuine}>" title="{$data.title}>">
+			                            					<img alt="image" class="feed-photo" style="border:0px solid red;width:100px;height:100px;" src="__ROOT__<{$data.genuine}>" />
+			                       						</a>
+			                       						</if>
+			                                        </div>
+			                                    </div>
+
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 视频封面：</label>
+			                                        <div class="col-sm-2">
+			                                            <div class="details" style="width:100px;">
+										                   <div style='border:0px solid red;position:relative;'><!-- 第一张-->
+																	<div class='yulan yulan4'></div><!-- 预览  -->
+																	<div class='detail detail4'><!--预览详细和关闭  -->
+																		<div>
+																		<a title=''  rel="4" class='close close4'>×</a>
+																		</div>
+																		<div>
+																		<a class="picture picture4" id="4" title="图片预览">
+																		查看
+			                               								</a>
+																		</div>
+																	</div>
+																	<div><input type="file" name="video_cover"  value='' class="inputimg inputimg4" id="4" /></div><!-- input插入 -->
+														  </div>
+										                </div>
+			                                        </div>
+			                                        <div class="col-sm-3">
+			                                            <if condition="$data.video_cover neq null">
+			                                			<a class="fancybox"  href="__ROOT__<{$data.video_cover}>" title="{$data.title}>">
+			                            					<img alt="image" class="feed-photo" style="border:0px solid red;width:100px;height:100px;" src="__ROOT__<{$data.video_cover}>" />
+			                       						</a>
+			                       						</if>
+			                                        </div>
+			                                    </div>
+
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 艺术家视频连接：</label>
+			                                        <div class="col-sm-8">
+			                                            <input name="video_url" value="<{$data.video_url}>"  class="form-control" type="text" maxlength="255">
+			                                        </div>
+			                                    </div> 
+			                       
+			                                    <!--水印种类  -->
+			                                    <!-- <include file="Public:water2"/> -->
+			                                    <!--水印种类  -->
+			                                    
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 最低提现金额：</label>
+			                                        <div class="col-sm-8">
+			                                            <input name="min_withdraw" value="<{$data.min_withdraw}>"  class="form-control" type="text" maxlength="30" placeholder="单位元">
+			                                        </div>
+			                                    </div> 
+			                                    
+			                                    
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"> 姓名：</label>
+			                                        <div class="col-sm-8">
+			                                            <input name="name" value="<{$data.name}>"  class="form-control" type="text" maxlength="20">
+			                                        </div>
+			                                    </div> 
+			                                    
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"> 简单描述：</label>
+			                                        <div class="col-sm-8">
+			                                            <textarea name="description" class="form-control"><{$data.description}></textarea>
+			                                        </div>
+			                                    </div>
+			                                    
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"> 笔名：</label>
+			                                        <div class="col-sm-8">
+			                                            <input name="pseudonym" value="<{$data.pseudonym}>"  class="form-control" type="text" maxlength="30">
+			                                        </div>
+			                                    </div> 
+			                                    
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"> 籍贯：</label>
+			                                        <div class="col-sm-8">
+			                                            <input name="roots" value="<{$data.roots}>"  class="form-control" type="text" maxlength="100">
+			                                        </div>
+			                                    </div> 
+			                                    
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"> 毕业院校：</label>
+			                                        <div class="col-sm-8">
+			                                            <input name="colleges" value="<{$data.colleges}>"  class="form-control" type="text" maxlength="100">
+			                                        </div>
+			                                    </div> 
+			                                    
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"> 创作方向：</label>
+			                                        <div class="col-sm-8">
+			                                            <input name="direction" value="<{$data.direction}>"  class="form-control" type="text" maxlength="100">
+			                                        </div>
+			                                    </div> 
+			                                    
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"> 润格：</label>
+			                                        <div class="col-sm-8">
+			                                            <input name="wage" value="<{$data.wage}>"  class="form-control" type="text" maxlength="50">
+			                                        </div>
+			                                    </div> 
+			                                    
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"> 常驻城市：</label>
+			                                        <div class="col-sm-8">
+			                                            <input name="city" value="<{$data.city}>"  class="form-control" type="text" maxlength="50">
+			                                        </div>
+			                                    </div> 
+			                                    
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"> 代表作品：</label>
+			                                        <div class="col-sm-8">
+			                                            <textarea name="works" class="form-control"><{$data.works}></textarea>
+			                                        </div>
+			                                    </div>
+			                                    
+			                                    
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 排序：</label>
+			                                        <div class="col-sm-8">
+			                                            <input name="sort" value="<{$data.sort|default=1000}>"  class="form-control" type="text" maxlength="10">
+			                                        </div>
+			                                    </div> 
+			                                    
+			                                   <div class="form-group">
+			                                        <label class="col-sm-2 control-label"><font color="#a40000">*</font> 首页推荐状态：</label>
+			                                        <div class="col-sm-3">
+			                                       	    <div class="radio radio-success" style="float:left;margin-right:15px;">
+			                                                <input type="radio" name="recommend" id="recommend1" value="1" >
+			                                                <label for="recommend1">
+			                                                  	 推荐
+			                                                </label>
+			                                            </div>
+			                                            <div class="radio radio-danger" style="float:left;">
+			                                                <input type="radio" name="recommend" id="recommend0" value="0" checked=''>
+			                                                <label for="recommend0">
+			                                               		  不推荐
+			                                                </label>
+			                                            </div>
+			                                        </div>
+			                                    </div>
+										</div>
+										
+										<div class="tab-pane" id="detail">
+											<div class="form-group">
+												<label class="col-sm-2 control-label"></label>
+		                                        <div class="col-sm-6">
+		                                            <textarea  name="detail"  class="content form-control" rows="6" cols="6"><{$data.detail}></textarea>
+		                                        </div>
+		                                    </div>
+										</div>
+										
+								 	</div>
+								 	
+								 	<div class="form-group">
+                                        <label class="col-sm-2 control-label"></label>
+                                        <div class="col-sm-10">
+                                        	<input name="id" value="<{$data.id}>" type="hidden">
+                                            <button class="btn btn-sm btn-primary" type="submit">保存</button>
+                                          	<button class="btn btn-sm btn-warning" type="reset">重置</button>
+                                        </div>
+                                    </div>
+		                                    
+								 	</form>
+                                </div>
+                            </div>
+                        </div>
+	                </div>
+	                
+                </div>
+
+            </div>
+            <!--上传图片  -->
+            <include file="Public:upload"/>
+            <!--上传图片  -->
+        </div>
+    </div>
+    <!-- 放置图片显示的 -->
+    <div style="display:none;padding:10px;" class="open1">
+	<img src="" alt="" class="fancybox-image carousel-inne img-rounded img-responsive openimg1"/>
+	</div>
+	<!-- 放置图片显示的 -->
+    <div style="display:none;padding:10px;" class="open2">
+	<img src="" alt="" class="fancybox-image carousel-inne img-rounded img-responsive openimg2"/>
+	</div>
+	<!-- 放置图片显示的 -->
+    <div style="display:none;padding:10px;" class="open3">
+	<img src="" alt="" class="fancybox-image carousel-inne img-rounded img-responsive openimg3"/>
+	</div>
+	<script type="text/javascript" src='__ROOT__/Public/Kindeditor/kindeditor.js'></script>
+	<script type="text/javascript">
+	  	 var editor;//编辑器的调用对象
+	  	 	KindEditor.ready(function(e){
+	      	 editor=e.create(".content",{
+			"width":"100%",
+			"height":"500px",
+			"items":[
+			         'source', '|', 'undo', 'redo', '|', 'preview', 'justifyleft', 'justifycenter', 'justifyright',
+			         'justifyfull',  'indent', 'outdent',  'clearhtml', 'selectall', '|',
+			         'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+			         'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|','image',
+			         'hr', 'emoticons',
+			         'anchor', 'link', 'unlink','|'
+			 ],
+			 afterBlur: function(){this.sync();}
+	          	});
+	  		 });
+	</script>
+    <script type="text/javascript">
+    $().ready(function(){
+    	 $("#recommend<{$data.recommend}>").attr("checked","checked");//首页推荐状态
+    })
+    </script>
+</body>
+</html>

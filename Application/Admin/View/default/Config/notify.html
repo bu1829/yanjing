@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<include file="Public:metas"/>
+</head>
+
+<body class="gray-bg">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="wrapper wrapper-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>通知设置</h5>
+                            </div>
+                            <form action="" method="post">
+                            <div class="ibox-content">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                    	<div class="form-group" id="toastTypeGroup">
+                                            <label>显示类型 </label>
+                                            <div class="radio radio-success">
+	                                                <input type="radio" name="REMIND_TYPE" id="remindsuccess" value="success" checked=''>
+	                                                <label for="remindsuccess" style="font-weight:bold;color:#51a351;">
+	                                                  	  成功
+	                                                </label>
+                                            </div>
+                                            <div class="radio radio-info">
+                                                    <input type="radio" name="REMIND_TYPE" value="info" id="remindinfo">
+                                                    <label for="remindinfo" style="font-weight:bold;color:#2f96b4;">
+                                                    	信息
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-warning">
+                                                    <input type="radio" name="REMIND_TYPE" value="warning" id="remindwarning">
+                                                    <label for="remindwarning" style="font-weight:bold;color:#f8ac59;">
+                                                    	警告
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-danger">
+                                                    <input type="radio" name="REMIND_TYPE" value="error" id="reminderror">
+                                                    <label for="reminderror" style="font-weight:bold;color:#ed5565;">
+                                                    	错误
+                                                    </label>
+                                            </div>
+                                        </div>
+                                    	<label>面板设置</label>
+                                        <div class="checkbox checkbox-primary">
+                                                <input id="closeButton" class="input-mini closetrue" name="CLOSEBUTTON" type="checkbox">
+                                                <label for="closeButton">
+                                              	  关闭按钮
+                                              	</label>
+                                        </div>
+                                        <div class="checkbox checkbox-primary">
+                                                <input name="PROGRESSBAR" class="progressbartrue" id="progressBar" type="checkbox" class="input-mini">
+                                                <label for="progressBar">
+                                                	进度条
+                                                </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group" id="positionGroup">
+                                            <label>位置设置</label>
+                                            <div class="radio radio-primary">
+                                                   <input type="radio" name="REMIND_POSITION" value="toast-top-right" id="position-toast-top-right">
+                                                   <label  for="position-toast-top-right">
+                                                  		右上
+                                                   </label>
+                                            </div>
+                                            <div class="radio radio-primary">
+                                                    <input type="radio" name="REMIND_POSITION" value="toast-bottom-right" id="position-toast-bottom-right">
+                                                    <label  for="position-toast-bottom-right">
+                                                     	右下
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-primary">
+                                                    <input type="radio" name="REMIND_POSITION" value="toast-bottom-left" id="position-toast-bottom-left">
+                                                    <label  for="position-toast-bottom-left">
+                                                    	左下
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-primary">
+                                                    <input type="radio" name="REMIND_POSITION" value="toast-top-left" id="position-toast-top-left">
+                                                    <label  for="position-toast-top-left">
+                                                    	左上
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-primary">
+                                                    <input type="radio" name="REMIND_POSITION" value="toast-top-full-width" id="position-toast-top-full-width">
+                                                    <label  for="position-toast-top-full-width">
+                                                    	顶部全宽
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-primary">
+                                                    <input type="radio" name="REMIND_POSITION" value="toast-bottom-full-width" id="position-toast-bottom-full-width">
+                                                    <label  for="position-toast-bottom-full-width">
+                                                    	底部全宽
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-primary">
+                                                    <input type="radio" name="REMIND_POSITION" value="toast-top-center" id="position-toast-top-center">
+                                                    <label  for="position-toast-top-center">
+                                                    	顶部居中
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-primary">
+                                                    <input type="radio" name="REMIND_POSITION" value="toast-bottom-center" id="position-toast-bottom-center">
+                                                    <label  for="position-toast-bottom-center">
+                                                    	底部居中
+                                                    </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="showMethod">显示方法</label>
+                                            <input name="SHOWMETHOD" id="showMethod" type="hidden" placeholder="show,fadeIn,slideDown" class="form-control" value="<{$data.SHOWMETHOD}>">
+                                        	<div style="margin-top:10px;">
+                                        	<button class="btn btn-sm btn-default showMethod show-show" value="show" type="button">伸缩</button>
+                                        	<button class="btn btn-sm btn-default showMethod show-fadeIn" value="fadeIn" type="button">淡入</button>
+                                        	<button class="btn btn-sm btn-default showMethod show-slideDown" value="slideDown" type="button">拉伸</button>
+                                        	<script>
+                                        	$().ready(function(){
+                                        		$(".showMethod").click(function(){
+                                        			var val=$(this).val();
+                                        			$("[name='SHOWMETHOD']").val(val);
+                                        			$(".showMethod").removeClass("btn-success btn-default");
+                                        			$(".showMethod").addClass("btn-default");
+                                        			$(this).removeClass("btn-default");
+                                        			$(this).addClass("btn-success");
+                                        		})
+                                        	})
+                                        	</script>
+                                        	</div>
+                                        </div>
+                                        <div class="form-group">
+											<label for="timeOut">显示时间（毫秒）</label>
+                                            <input id="timeOut" name="TIMEOUT" type="text" placeholder="ms" class="form-control" value="<{$data.TIMEOUT|default=5000}>" maxlength="11">
+                                       		<div class="timeout"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                        	<label for="hideMethod">隐藏方法</label>
+                                            <input name="HIDEMETHOD" id="hideMethod" type="hidden" placeholder="hide,fadeOut,slideUp" class="form-control" value="<{$data.HIDEMETHOD}>">
+                                        	<div style="margin-top:10px;">
+                                        	<button class="btn btn-sm btn-default hideMethod hide-hide" value="hide" type="button">伸缩</button>
+                                        	<button class="btn btn-sm btn-default hideMethod hide-fadeOut" value="fadeOut" type="button">淡出</button>
+                                        	<button class="btn btn-sm btn-default hideMethod hide-slideUp" value="slideUp" type="button">拉伸</button>
+                                        	<script>
+                                        	$().ready(function(){
+                                        		$(".hideMethod").click(function(){
+                                        			var val=$(this).val();
+                                        			$("[name='HIDEMETHOD']").val(val);
+                                        			$(".hideMethod").removeClass("btn-success btn-default");
+                                        			$(".hideMethod").addClass("btn-default");
+                                        			$(this).removeClass("btn-default");
+                                        			$(this).addClass("btn-success");
+                                        		})
+                                        	})
+                                        	</script>
+                                        	</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="extendedTimeOut">延长时间（毫秒）</label>
+                                            <input id="extendedTimeOut" name="EXTENDEDTIMEOUT" type="text" placeholder="ms" class="form-control" value="<{$data.EXTENDEDTIMEOUT|default=1000}>" maxlength="11">
+                                        	<div class="extendedTimeOut"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                    <div class="col-lg-12">
+                                        <button type="button" class="btn btn-sm btn-warning" id="showtoast">预览</button>
+                                        <button type="button" class="btn btn-sm btn-white" id="cleartoasts">清除所有</button>
+                                        <button type="button" class="btn btn-sm btn-white" id="clearlasttoast">清除最后一个</button>
+                                        <button type="submit" class="btn btn-sm btn-primary" style="float:right;">保存</button>
+                                    </div>
+                                	</div>
+                                </div>
+
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    function decimal(num,v){
+			var vv = Math.pow(10,v);
+			return Math.round(num*vv)/vv;
+		}
+		
+		function time(times){
+			if(times<1000){
+				times= times+"毫秒";
+			}else if(times>=1000 && times<1000*60){
+			times= decimal((times/1000),1)+"秒";
+		}else if(times>=1000*60 && times<1000*60*60){
+			times= decimal((times/1000/60),1)+"分钟";
+		}else if(times>=1000*60*60){
+			times= decimal((times/1000/60/60),1)+"小时";
+		}
+			return times;
+		}
+		
+		$().ready(function(){
+			//根据毫秒计算时间,显示时间
+			$("#timeOut").keyup(function(){
+				var times=$(this).val();
+				$(".timeout").html(time(times));
+			})
+			
+			//根据毫秒计算时间,延长时间
+			$("#extendedTimeOut").keyup(function(){
+				var times=$(this).val();
+				$(".extendedTimeOut").html(time(times));
+			})
+		})
+    </script>
+    <script type="text/javascript">
+    	$("#remind<{$data.REMIND_TYPE}>").prop("checked","checked");//显示类型
+    	$(".close<{$data.CLOSEBUTTON}>").prop("checked","checked");//关闭按钮
+    	$(".progressbar<{$data.PROGRESSBAR}>").prop("checked","checked");//进度条
+    	$("#position-<{$data.REMIND_POSITION}>").prop("checked","checked");//提醒位置
+    	$(".show-<{$data.SHOWMETHOD}>").removeClass("btn-default");//显示方法
+    	$(".show-<{$data.SHOWMETHOD}>").addClass("btn-success");//显示方法
+    	
+    	$(".hide-<{$data.HIDEMETHOD}>").removeClass("btn-default");//隐藏方法
+    	$(".hide-<{$data.HIDEMETHOD}>").addClass("btn-success");//隐藏方法
+        $(function(){var i=-1;var toastCount=0;var $toastlast;var getMessage=function(){var msg="hi，欢迎来到淘艺宝！";return msg};$("#showsimple").click(function(){toastr.success("Without any options","Simple notification!")});$("#showtoast").click(function(){var shortCutFunction=$("#toastTypeGroup input:radio:checked").val();var msg=$("#message").val();var title=$("#title").val()||"";var $timeOut=$("#timeOut");var $extendedTimeOut=$("#extendedTimeOut");var $showMethod=$("#showMethod");var $hideMethod=$("#hideMethod");var toastIndex=toastCount++;toastr.options={closeButton:$("#closeButton").prop("checked"),debug:$("#debugInfo").prop("checked"),progressBar:$("#progressBar").prop("checked"),positionClass:$("#positionGroup input:radio:checked").val()||"toast-top-right",onclick:null};if($("#addBehaviorOnToastClick").prop("checked")){toastr.options.onclick=function(){alert("You can perform some custom action after a toast goes away")}}if($timeOut.val().length){toastr.options.timeOut=$timeOut.val()}if($extendedTimeOut.val().length){toastr.options.extendedTimeOut=$extendedTimeOut.val()}if($showMethod.val().length){toastr.options.showMethod=$showMethod.val()}if($hideMethod.val().length){toastr.options.hideMethod=$hideMethod.val()}if(!msg){msg=getMessage()}$("#toastrOptions").text("Command: toastr["+shortCutFunction+']("'+msg+(title?'", "'+title:"")+'")\n\ntoastr.options = '+JSON.stringify(toastr.options,null,2));var $toast=toastr[shortCutFunction](msg,title);$toastlast=$toast;if($toast.find("#okBtn").length){$toast.delegate("#okBtn","click",function(){alert("you clicked me. i was toast #"+toastIndex+". goodbye!");$toast.remove()})}if($toast.find("#surpriseBtn").length){$toast.delegate("#surpriseBtn","click",function(){alert("Surprise! you clicked me. i was toast #"+toastIndex+". You could perform an action here.")})}});function getLastToast(){return $toastlast}$("#clearlasttoast").click(function(){toastr.clear(getLastToast())});$("#cleartoasts").click(function(){toastr.clear()})});
+    </script>
+</body>
+</html>

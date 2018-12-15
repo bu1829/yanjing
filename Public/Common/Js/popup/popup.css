@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+/*
+Style Name: 弹窗中的样式。
+Author:     Fifthmouse
+Email:      fifthmouse@qq.com;
+Notice:     弹窗样式
+*/
+.popup {
+	display: none;
+}
+.popup p {
+	margin: 0 0 5px;
+}
+.popup-header {
+	background-color: #F7F7F7;
+}
+.popup-header ,
+.popup-body {
+	border-bottom: 1px solid #EDEDED;
+}
+.popup-header ,
+.popup-body ,
+.popup-footer {
+	padding: 10px;
+}
+.popup-footer {
+	text-align: right;
+}
+
+.pay-popup .popup-header ,
+.pay-popup .popup-body ,
+.pay-popup .popup-footer {
+	padding: 10px 40px;
+}
+.pay-popup .btn-box {
+	margin-bottom: 10px;
+}
+.pay-popup p {
+	font-size: 14px;
+}
+
+
+

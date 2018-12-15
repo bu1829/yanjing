@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<include file="Public:metas"/>
+<script>
+ $(function() {
+	 $("#<{$action}>").addClass("<{$btn}>");
+	 var action="<{$action}>";
+	 if(action=="sort"){
+		 changeSort("flower_type","id","sort");
+	 }
+ });
+</script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <!--菜单项 -->
+        <include file="Public:menu"/>
+        <!--菜单项 -->
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <!--头部项 -->
+	        <include file="Public:header"/>
+	        <!--头部项 -->
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            <a href="<{:U('Index/index')}>">主页</a>
+                        </li>
+                        <li>
+                            	花材种类管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+
+            <div class="wrapper wrapper-content animated fadeInRight">
+            	<div style="margin-bottom:10px;">
+            	<a id="list" href="<{:U('Column/flowerTypeList',array('action'=>'list','title'=>$title))}>" class="btn btn-sm" type="submit">列表</a>
+            	<a id="sort" href="<{:U('Column/flowerTypeList',array('action'=>'sort','title'=>$title))}>" class="btn btn-sm" type="submit">排序</a>
+            	</div>
+
+            	<div style="margin-bottom:10px;">
+            	<form action='' method='get' id='signupForm'>
+            		<input placeholder="请输入分类名称" name="title" value="<{$title}>">
+            		<button class="btn btn-xs btn-info" type="submit">查询</button>
+            	</form>
+            	</div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="ibox float-e-margins panel panel-primary">
+
+                            <div class="ibox-content">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <if condition="$action eq sort">
+                                            	<th></th>
+                                            	</if>
+                                                <th>
+                                                	分类名称
+                                                </th>
+                                                <th>显示</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="sortable">
+
+                                        	<volist name="list" id="v">
+                                            <tr name="<{$v.id}>" <if condition="$action eq sort">style="cursor:move;"</if>>
+                                                <if condition="$action eq sort">
+                                            	<td>
+                                            	<i class="fa fa-arrows"></i>
+                                            	</td>
+                                            	</if>
+
+                                                <td>
+                               						<input  class="name"  value="<{$v.name}>"  type="text" maxlength="100" title='<{$v.id}>'>
+                                                </td>
+
+                                                <td style="cursor:pointer;" class="status status<{$v.id}>" id="<{$v.id}>" name="<{$v.status}>">
+                                                	<switch name="v.status">
+                                                	<case value="0"><img alt="image" class="img-responsive" src="__IMG__/no.gif"></case>
+                                                	<case value="1"><img alt="image" class="img-responsive" src="__IMG__/yes.gif"></case>
+                                               	</switch>
+                                                </td>
+                                                <td>
+                                                	<a class="delete" rel="<{$v.id}>">删除</a>
+                                                </td>
+                                            </tr>
+                                            </volist>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-center">
+                                    <if condition='$page neq null'>
+                                    	<{$page}>
+                                    <else/>
+                                    	共<{$count}>条记录
+                                    </if>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                	<div class="col-lg-4">
+                	<div>
+	                    <div class="panel panel-primary">
+	                        <div class="panel-heading">
+	                            	添加花材种类
+	                        </div>
+	                        <div class="panel-body">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font>分类名称：</label>
+                                        <div class="col-sm-9">
+                                            <input  name="name" class="form-control" type="text" maxlength="11">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-8">
+                                            <button class="btn btn-sm btn-primary" type="submit" id="add">添加</button>
+                                        </div>
+                                    </div>
+	                        </div>
+	                    </div>
+	                </div>
+                	</div>
+                </div>
+            </div>
+            <!-- 尾部项 -->
+            <include file="Public:footer"/>
+            <!-- 尾部项 -->
+        </div>
+    </div>
+    <script>
+    $().ready(function(){
+
+    	//修改分类名称
+    	$(".name").change(function(){
+    		var name=trim($(this).val());
+    		var id=$(this).attr("title");
+    		if(name==""){
+    			parent.layer.msg("请输入分类名称");
+    			$("[name='name']").focus();
+    		}else{
+    			$.ajax({
+    				url:"__APP__/Column/changeFlowerTypeName",
+    				type:"post",
+    				data:"name="+name+"&id="+id,
+    				success:function(re){
+    					if(re=="1"){
+        					parent.layer.msg("修改成功");
+        				}else if(re=="2"){
+        					parent.layer.msg("修改失败");
+        				}else{
+        					parent.layer.msg(re);
+        				}
+    				}
+    			})
+    		}
+    	})
+
+    	//分类添加
+    	$("#add").click(function(){
+    		var name=$("[name='name']").val();
+    		if(name==""){
+    			parent.layer.msg("请输入分类名称");
+    			$("[name='name']").focus();
+    			return false;
+    		}
+
+    		$.ajax({
+    			url:"__APP__/Column/flowerTypeAdd",
+    			type:"post",
+    			data:"name="+name,
+    			success:function(re){
+    				if(re=="1"){
+    					parent.layer.msg("添加成功");
+    					location.reload();
+    				}else if(re=="2"){
+    					parent.layer.msg("添加失败");
+    					$("[name='name']").focus();
+    				}else{
+    					parent.layer.msg(re);
+    					$("[name='name']").focus();
+    				}
+    			}
+    		})
+    	})
+
+    	//分类删除
+    	$(".delete").click(function(){
+    		var id=$(this).attr("rel");
+    		layer.confirm("确定删除此分类么？", {icon: 3,btn:["确定","取消"]}, function(index){
+    			$.ajax({
+        			url:"__APP__/Column/floweTypeDeleteOne",
+        			type:"post",
+        			data:"id="+id,
+        			success:function(re){
+        				if(re=="1"){
+        					$("[name='"+id+"']").fadeOut();
+        					parent.layer.msg("删除成功");
+        				}else if(re=="2"){
+        					parent.layer.msg("删除失败");
+        				}else{
+        					parent.layer.msg(re);
+        				}
+        			}
+        		})
+    		});
+    	})
+
+    	$(".status").click(function(){
+       		var id=$(this).attr("id");//这是数据id
+       		var status=$(this).attr("name");//这是当前状态 0禁用1正常
+       		changeStatusOne('flower_type','id',id,status);
+       	})
+    })
+    </script>
+</body>
+
+</html>

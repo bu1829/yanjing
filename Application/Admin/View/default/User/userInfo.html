@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+</head>
+<body>
+    <div>
+        <div>
+	        <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	用户管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+					<include file="Public:return"/>
+                </div>
+            </div>
+             <div class="wrapper wrapper-content">
+                <div class="row animated fadeInRight">
+                    <div class="col-md-3">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title" style="">
+                                <h5><{$meta_title}></h5>
+                            </div>
+		                    <div class="lazur-bg ibox-content text-center">
+                                        <h1><{$data.username}></h1>
+                                        <div class="m-b-sm">
+                                            <a class="fancybox"  href="<if condition='$data.avatar neq null'>__ROOT__<{$data.avatar}><else/>__ROOT__<{:C('DEFAULT_AVATAR')}></if>" title="">
+		                                    <img class="img-circle circle-border m-b-md" alt="profile" style="width:120px;height:120px;" src="<if condition='$data.avatar neq null'>__ROOT__<{$data.avatar}><else/>__ROOT__<{:C('DEFAULT_AVATAR')}></if>" />
+		                                    </a>
+                                        </div>
+                                        <p class="font-bold">
+	                                        <switch name="data.role"> 
+	                                        	<case value="1">普通会员</case>
+	                                        	<case value="2">艺术家
+	                                        	<a style="font-size:10px;color:white;" href="<{:U('User/artistInfo',array('user_id'=>$data[user_id]))}>" title="修改信息">&nbsp;<i class="fa fa-edit"></i></a>
+	                                        	</case>
+	                                        </switch>
+                                        </p>
+
+                                        <div class="text-center">
+                                            <a href="<{:U('Message/messageAdd',array('user_id'=>$data[user_id],'username'=>$data[username]))}>" class="btn btn-sm btn-danger"><i class="fa fa-bell"></i> 发消息</a>
+                                        </div>
+                                    </div>
+                            <div>
+                                <div class="ibox-content profile-content">
+                                    <if condition="$data.role eq 2">
+                                    <p><i class="fa fa-edit"></i> 
+                                    	艺术家资料:&nbsp;	
+                                    	<a style="font-size:10px;" href="<{:U('User/artistInfo',array('user_id'=>$data[user_id]))}>" title="修改信息">&nbsp;修改</a>【可设置最低提现金额】
+                                    </p>
+                                    </if>
+                                    <p><i class="fa fa-clock-o"></i> 
+                                    	最后登录时间:&nbsp;	
+                                    	<if condition="$data.last_login_time neq 0">
+                                    	<{$data.last_login_time|date="Y-m-d H:i:s",###}>
+                                    	</if>
+                                    </p>
+                                    
+                                    <p><i class="fa fa-map-marker"></i> 
+                                    	最后登录地址:&nbsp;
+                                    	<if condition="$data.last_login_location neq null">
+                                    	<{$data.last_login_location}>
+                                    	</if>
+                                    </p>
+                                    
+                                    <p><i class="fa fa-check-circle-o"></i> 
+                                    	最后登录IP:&nbsp;
+                                    	<if condition="$data.last_login_ip neq 0">
+                                    	<{$data.last_login_ip}>
+                                    	</if>
+                                    </p>
+                                    
+                                    <p><i class="fa fa-check-circle-o"></i> 
+                                    	最后登录方式:&nbsp;
+                                    	<switch name="data.login_types">
+                                    					<case value="1">网页</case>
+                                                		<case value="2">APP</case>
+                                                		<case value="3">微信</case>
+                                                		<case value="4">QQ</case>
+                                        </switch>
+                                    </p>
+                                    
+                                    <p><i class="fa fa-check-circle-o"></i> 
+                                    	注册IP:&nbsp;	<{$data.reg_ip}>
+                                    </p>
+                                    
+                                    <p><i class="fa fa-clock-o"></i> 
+                                    	注册时间:&nbsp;	<{$data.reg_time|date="Y-m-d H:i:s",###}>
+                                    </p>
+                                    
+                                    <p><i class="fa fa-rocket"></i> 
+                                    	注册来源:&nbsp;<switch name="data.reg_source">
+                                    					<case value="0">未知</case>
+                                                		<case value="1">后台添加</case>
+                                                		<case value="2">APP注册</case>
+                                                		<case value="3">网站注册</case>
+                                                	</switch>
+                                    </p>
+                                    
+                                    <p><i class="fa fa-calendar"></i> 
+                                    	登录次数:&nbsp;	<a href="<{:U('User/userLogin',array('user_id'=>$data[user_id]))}>"><{$data.login}>【查看记录】</a>
+                                    </p>
+                                   
+                                   	<p><i class="fa fa-cny"></i> 
+                                    	<a class="text-primary" href="<{:U('Money/userMoney',array('user_id'=>$data['user_id']))}>">增减资金(余额:<{$data.money}>)</a> |
+                                    	<a href="<{:U('Money/moneyList',array('username'=>$data['username']))}>">【查看记录】</a>
+                                    </p>
+                                    
+                                    <p><i class="fa fa-home"></i> 
+                                    	<a class="text-primary" href="<{:U('User/userAddressList',array('user_id'=>$data['user_id']))}>">收货地址列表 ( <{$data.addressnum}> )</a> |
+                                    	<a class="text-primary" href="<{:U('User/userAddressAdd',array('user_id'=>$data['user_id']))}>">添加收货地址</a>
+                                    </p>
+                                    
+                                    <p><i class="fa fa-shopping-cart"></i> 
+                                    	<a class="text-primary" href="<{:U('Order/index',array('keywords'=>$data['username']))}>">会员订单 ( <{$data.ordernum}> )</a>
+                                    </p>
+                                    
+                                    <p><i class="fa fa-money"></i> 
+                                    	<a class="text-primary" href="<{:U('Promotion/couponUserList',array('keyword'=>$data['username']))}>">优惠券 ( <{$data.couponnum}> )</a>
+                                    </p>
+                                    
+                                    <!-- <p><i class="fa fa-flag"></i> 
+	                                    	一级推荐：<a href="<{:U('User/index',array('presenter'=>$data[sharecode]))}>"><{$data.first}></a> |   二级推荐：<{$data.second}>
+                                    </p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>修改会员角色</h5>
+                            </div>
+                            <div class="ibox-content">
+									<form action="<{:U('User/updateInfo')}>" method="post" class="form-horizontal m-t" id="signupForm" onsubmit="return check()">
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font>姓名：</label>
+                                        <div class="col-sm-5">
+                                            <input  id="name" name="name" value="<{$data.name|default=''}>" class="form-control" type="text" maxlength="10">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"> 所属团队：</label>
+                                        <div class="col-sm-9">
+                                            <select name="first_team" class="btn-sm btn-white">
+                                                <option value="">请选择</option>
+                                                <volist name="father_team" id="v">
+                                                <option id="first<{$v.id}>" value="<{$v.id}>"><{$v.name}></option>
+                                                </volist>
+                                            </select>
+                                            <select name="second_team" class="btn-sm btn-white">
+                                                <option value="">请选择</option>
+                                                <volist name="son_team" id="v">
+                                                <option id="second<{$v.id}>" value="<{$v.id}>"><{$v.name}></option>
+                                                </volist>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- <div class="form-group">
+                                    <label class="col-sm-3 control-label">所属团队：</label>
+                                        <select name="" id="cattype">
+                                        <option value="">请选择类别</option>
+                                        <volist name="team" id="val">
+                                        <option value="<{$val.id}>"><{$val.name}></option>
+                                        </volist>
+                                        </select>
+                                        </select><select name="lable" id="catchild">
+
+                                        </select>
+                                    </div> -->
+
+                                    <!-- <div class="form-group">
+                                        <label class="col-sm-3 control-label">业务员：</label>
+                                        <div class="col-sm-9">
+                                                <div class="radio radio-success" style="float:left;margin-right:10px;">
+                                                    <input type="radio" name="role" id="role3" value="3"<if condition="$data.role eq 3"> checked=''</if>>
+                                                    <label for="role3">
+                                                             是
+                                                    </label>
+                                                </div>
+                                                <div class="radio radio-danger" style="float:left;margin-right:10px;">
+                                                    <input type="radio" name="role" id="role1" value="1"<if condition="$data.role eq 1"> checked=''</if>>
+                                                    <label for="role1">
+                                                            否
+                                                    </label>
+                                                </div>
+                                        </div>
+                                    </div> -->
+
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">角色：</label>
+                                        <div class="col-sm-9">
+                                                <div class="radio radio-success" style="margin-right:10px;">
+                                                    <input type="radio" name="role" id="role1" value="1"<if condition="$data.role eq 1"> checked=''</if>>
+                                                    <label for="role1">
+                                                             普通会员
+                                                    </label>
+                                                </div>
+                                                <div class="radio radio-danger" style="margin-right:10px;">
+                                                    <input type="radio" name="role" id="role3" value="3"<if condition="$data.role eq 3"> checked=''</if>>
+                                                    <label for="role3">
+                                                            业务员（内部）
+                                                    </label>
+                                                </div>
+                                                <!-- <div class="radio radio-danger" style="margin-right:10px;">
+                                                    <input type="radio" name="role" id="role4" value="4"<if condition="$data.role eq 4"> checked=''</if>>
+                                                    <label for="role4">
+                                                            加盟商（内部）
+                                                    </label>
+                                                </div> -->
+
+                                                <div class="radio radio-danger" style="margin-right:10px;">
+                                                    <input type="radio" name="role" id="role5" value="5"<if condition="$data.role eq 5"> checked=''</if>>
+                                                    <label for="role5">
+                                                            业务员（外部）
+                                                    </label>
+                                                </div>
+
+                                                <div class="radio radio-danger" style="margin-right:10px;">
+                                                    <input type="radio" name="role" id="role61" value="61"<if condition="$data.role eq 6 AND $data.level eq 1"> checked=''</if>>
+                                                    <label for="role61">一级加盟商</label>
+                                                </div>
+
+                                                <div class="radio radio-danger" style="margin-right:10px;">
+                                                    <input type="radio" name="role" id="role62" value="62"<if condition="$data.role eq 6 AND $data.level eq 2"> checked=''</if>>
+                                                    <label for="role62">二级加盟商</label>
+                                                </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">邀请码：</label>
+                                        <div class="col-sm-5">
+                                            <input  id="inviter" name="inviter" value="<{$data.inviter|default=''}>" class="form-control" type="text" maxlength="30">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-3">
+                                        	<input type="hidden" value="<{$data.user_id}>" name="user_id"/>
+                                            <button class="btn btn-sm btn-primary" type="submit">保存</button>
+                                        </div>
+                                    </div>
+                                </form>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-5">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>更改密码</h5>
+                            </div>
+                            <div class="ibox-content">
+									<form action="<{:U('User/userPw')}>" method="post" class="form-horizontal m-t" id="signupForm2">
+                                    
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font>新密码：</label>
+                                        <div class="col-sm-8">
+                                            <input name="password" id="password" class="form-control" type="password" maxlength="20">
+                                        </div>
+                                    </div> 
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"></label>
+                                        <div class="col-sm-8">
+                                            <div style="border:0px solid red;overflow:auto;zoom:1;">
+	                                        	<div class="ywz_zhuce_huixian" id='pwdLevel_1'> </div>
+									            <div class="ywz_zhuce_huixian" id='pwdLevel_2'> </div>
+									            <div class="ywz_zhuce_huixian" id='pwdLevel_3'> </div>
+								            </div>
+								            <div>
+								            <div class="ywz_zhuce_hongxianwenzi"> 弱</div>
+								            <div class="ywz_zhuce_hongxianwenzi"> 中</div>
+								            <div class="ywz_zhuce_hongxianwenzi"> 强</div>
+								            </div>
+                                        </div>
+                                    </div> 
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font>确认密码：</label>
+                                        <div class="col-sm-8">
+                                            <input  name="confirm_password" class="form-control" type="password" maxlength="20">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-3">
+                                        	<input type="hidden" value="<{$data.user_id}>" name="user_id"/>
+                                            <button class="btn btn-sm btn-primary" type="submit">保存</button>
+                                            <button class="btn btn-sm btn-primary" type="reset">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function check(){
+        //姓名
+        var role = $("input:radio:checked").val();
+        var name=$("[name='name']").val();
+        if(name=="" && role!=1){
+            layer.msg("请输入姓名");
+            $("[name='name']").focus();
+            return false;
+        }
+
+     }
+        //以下为修改jQuery Validation插件兼容Bootstrap的方法，没有直接写在插件中是为了便于插件升级
+        //以下为官方示例
+        $().ready(function () {
+        	$("#sex<{$data.sex}>").prop("checked","checked");//性别
+        	$("#status<{$data.status}>").prop("checked","checked");//用户状态
+        	
+
+        $("[name='first_team']").change(function(){
+             var first_team=$(this).val();
+             if(first_team>0){
+                 $.ajax({
+                     url:"__APP__/User/getSecondTeam",
+                     type:"post",
+                     data:"first_team="+first_team,
+                     success:function(re){
+                        $("[name='second_team']").html(re);
+                     }
+                 })
+             }else{
+                 $("[name='second_team']").html("<option value=''>请选择</option>"); 
+             }
+         })
+
+        	
+        	//设置默认选项的
+            // validate the comment form when it is submitted
+            $("#commentForm").validate();
+
+            // validate signup form on keyup and submit
+            $("#signupForm").validate({
+                rules: {
+                     username:{
+                    	required:true,
+                    	phone: true,
+                   		remote: {
+                            url: "__APP__/Admin/checkOnly",
+                            type: "post",
+                            dataType: "json",
+                            data: {
+                           	 tablename: function () {
+                                    return "admin";　　　　//数据表名称
+                                },
+                                fieldname: function () {
+                                    return "username";　　　　//要查找的字段
+                                },
+                                value: function () {
+                                    return $("#username").val();　　　　//新值
+                                },
+                                oldvalue: function () {
+                                    return $("#oldusername").val();　　　　//老值
+                                }
+                            },
+                            dataFilter: function (msg) {　　　　//判断控制器返回的内容
+                           	 if (msg == "1") {
+                                    return true;
+                                }
+                                else {
+                                    return false;
+                                }
+                            }
+                        }
+                     }
+                },
+                messages: {
+                    username:{
+                   	 	required:no+"请输入手机号",
+                   		phone:no+"请输入正确的手机号",
+                   	 	remote:no+"该用户名已经存在"
+                    }
+                },
+                onfocus: true,　　　　
+                onkeyup: false,　　　　//这个地方要注意，修改去控制器验证的事件。
+                onsubmit: true
+            });
+        });
+    </script>
+    <script>
+        //以下为修改jQuery Validation插件兼容Bootstrap的方法，没有直接写在插件中是为了便于插件升级
+        //以下为官方示例
+        //$().ready(function () {
+        	//设置默认选项的
+        	
+        //     // validate the comment form when it is submitted
+        //     $("#commentForm").validate();
+
+        //     // validate signup form on keyup and submit
+        //     $("#signupForm2").validate({
+        //         rules: {
+        //         	 password: {
+        //                  required: true,
+        //                  password: true,
+        //              },
+        //              confirm_password:{
+        //             	 required: true,
+        //             	 password:true,
+        //             	 equalTo:"#password",
+        //              }
+        //         },
+        //         messages: {
+        //         	password: {
+        //                 required:no+"密码6-20位，由数字、字母、下划线组成",
+        //                 password:no+"密码6-20位，由数字、字母、下划线组成",
+        //             },
+        //             confirm_password:{
+        //             	required: no+"密码6-20位，由数字、字母、下划线组成",
+        //                 password:no+"密码6-20位，由数字、字母、下划线组成",
+        //                 equalTo:no+"两次密码不一致"
+        //             }
+        //         },
+        //         onfocus: true,　　　　
+        //         onkeyup: false,　　　　//这个地方要注意，修改去控制器验证的事件。
+        //         onsubmit: true
+        //     });
+        // });
+
+
+
+
+    </script>
+</body>
+</html>

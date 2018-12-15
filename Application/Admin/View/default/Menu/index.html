@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+<script type="text/javascript" src="__ROOT__/Public/Common/Js/collapsing.js"></script>
+<script>
+$().ready(function(){
+	
+})
+</script>
+<script>
+ $(function() {
+	 $("#<{$action}>").addClass("<{$btn}>");
+	 var action="<{$action}>";
+	 if(action=="sort"){
+		 changeSort("menu","id","sort");
+	 } 
+	 
+	 //默认显示
+ });
+</script>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-sm-10" id="biaoti">
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	系统设置
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-sm-2" id="fubiaoti">
+					<a href="<{:U('Menu/add')}>" class="btn btn-xs btn-primary">
+	            	<i class="fa fa-plus">&nbsp;</i>添加菜单
+	            	</a>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+             	<div style="margin-bottom:10px;">
+            	</div>
+                <div style="margin-bottom:10px;">
+            	<a id="list" href="<{:U('Menu/index',array('action'=>'list'))}>" class="btn btn-sm" type="submit">列表</a>
+            	<a id="sort" href="<{:U('Menu/index',array('action'=>'sort'))}>" class="btn btn-sm" type="submit">排序</a>
+            	</div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            
+                            <div class="ibox-content">
+                                <div class="table-responsive">
+                                    <table class="table table-hover tooltip-demo">
+                                        <thead>
+                                            <tr>
+                                            	<if condition="$action eq sort">
+                                            	<th></th>
+                                            	</if>
+                                                <th>名称</th>
+                                                <th>链接</th>
+                                                <th>左边菜单显示</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="sortable">
+                                        
+                                            <volist name='list' id='v'>
+                                            <tr class="grade<{$v.grade}> one" name="<{$v.id}>" <if condition="$action eq sort">style="cursor:move;"</if>>
+                                                
+                                                <if condition="$action eq sort">
+                                            	<td>
+                                            	<i class="fa fa-arrows"></i>
+                                            	</td>
+                                            	</if>
+                                                
+                                                <td id="<{$v.grade}>_<{$v.id}>" class="td_click" <if condition="$v.grade neq 2">style="cursor:pointer;"</if>>
+                                                	<!-- 节点中文名称 -->
+													<i class="<{$v.icon}>"></i> <{$v.title}>
+							                    </td>
+                                                <td>
+                                                	<!-- 节点英文名称 -->
+													<{$v.url}>
+                                                </td>
+                                                
+                                                <td style="padding-top:10px;cursor:pointer;" class="status status<{$v.id}>" id="<{$v.id}>" name="<{$v.status}>">
+                                                	<switch name="v.status">
+                                                	<case value="0"><img alt="image" class="img-responsive" src="__IMG__/no.gif"></case>
+                                                	<case value="1"><img alt="image" class="img-responsive" src="__IMG__/yes.gif"></case>
+                                               	</switch>
+                                                </td>
+                                                
+                                                <td>
+                                                	<if condition="$v.pid eq 0">
+													<a data-toggle="tooltip" data-placement="top" title="添加子菜单"  class="btn btn-sm btn-warning" href="<{:U('Menu/Add',array('id'=>$v['id'],'level'=>$v['level']))}>">
+														<i class="fa fa-plus"></i>
+													</a>&nbsp;
+													</if>
+													<a data-toggle="tooltip" data-placement="top" title="编辑" class="btn btn-sm btn-info" href="<{:U('Menu/edit',array('id'=>$v['id']))}>">
+														<i class="fa fa-edit"></i>
+													</a>&nbsp;
+                                                	<a data-toggle="tooltip" data-placement="top" title="删除" class="btn btn-sm btn-danger" onclick="del('<{:U('Menu/deleteOne',array('id'=>$v[id]))}>','您确定删除此菜单么？子菜单也会被删除。','3')">
+                                                		<i class="fa fa-trash-o"></i>
+                                                	</a>
+                                                </td>
+                                            </tr>
+                                            </volist>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <script>
+    $().ready(function(){
+    	$(".status").click(function(){
+       		var id=$(this).attr("id");//这是数据id
+       		var status=$(this).attr("name");//这是当前状态 0禁用1正常
+       		changeStatusOne('menu','id',id,status);
+       	})   
+    })
+    </script>
+</body>
+</html>

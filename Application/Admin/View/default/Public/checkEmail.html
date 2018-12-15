@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 	<include file='Public:metas'/>
+	<style>
+	.title{width:22%;font-size:13px;padding:8px;margin-right:10px;float:left;}
+	</style>
+</head>
+
+<body style='background:white;'>
+	<!-- 尾部项 -->
+    <include file="Public:footer"/>
+    <!-- 尾部项 -->
+    <div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h5>找回密码</h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                            	<div style="overflow:auto;zoom:1;width:100%;">
+                            		 <div class="panel title" style="color:white;background:#6fd1bd;">1.填写用户名</div>
+                                	 <div class="panel title" style="color:#aaa;background:#1AB394;color:white;">2.设置新密码</div>
+                            		 <div class="panel title" style="color:#aaa;background:#eee">3.完成</div>
+                            		 
+                            	</div>
+                               
+                                <form action="" class="form-horizontal m-t" id="signupForm" method="post">
+                                        <div class="row panel" style="background:#EEEEEE;border:0px solid red;margin:0px 0px;padding:50px;">
+                                            <div class="col-lg-12">
+                                                
+                                                <div class="form-group">
+			                                        <label class="col-sm-2 control-label">已绑定邮箱</label>
+			                                        <div class="col-sm-3" style="padding:6px 15px;">
+			                                           <{$email|hidestring=###,'*****',3,5}>
+			                                        </div>
+			                                        <div style="padding:6px 0px;" id="codebutton">
+			                                        	<a class='btn btn-xs btn-success send'>发送验证码</a>
+			                                        </div>
+			                                    </div>
+                                    
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"></label>
+			                                        <div class="col-sm-10" id="warn">
+			                                          	
+			                                        </div>
+			                                    </div>
+                                    
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font>验证码</label>
+			                                        <div class="col-sm-3">
+			                                            <input name="emailcode" value="<{$user.emailcode}>" class="form-control" type="text" maxlength="6">
+			                                        </div>
+			                                    </div>
+			                                    
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font>密码：</label>
+			                                        <div class="col-sm-3">
+			                                            <input name="password" value="<{$user.password}>" id="password" class="form-control" type="password" maxlength="20">
+			                                        </div>
+			                                        <div class="col-sm-6">
+			                                        	<div style="border:0px solid red;overflow:auto;zoom:1;">
+				                                        	<div class="ywz_zhuce_huixian" id='pwdLevel_1'> </div>
+												            <div class="ywz_zhuce_huixian" id='pwdLevel_2'> </div>
+												            <div class="ywz_zhuce_huixian" id='pwdLevel_3'> </div>
+											            </div>
+											            <div>
+											            <div class="ywz_zhuce_hongxianwenzi"> 弱</div>
+											            <div class="ywz_zhuce_hongxianwenzi"> 中</div>
+											            <div class="ywz_zhuce_hongxianwenzi"> 强</div>
+											            </div>
+			                                        </div>
+			                                    </div> 
+			                                    <div class="form-group">
+			                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font>确认密码：</label>
+			                                        <div class="col-sm-3">
+			                                            <input  name="confirm_password" value="<{$user.confirm_password}>" class="form-control" type="password" maxlength="20">
+			                                        </div>
+			                                    </div>
+			                                                
+			                                    <div class="form-group" style="color:#a40000">
+			                                    	<label class="col-sm-2 control-label"></label>
+	                                                <div class="col-sm-3">
+	                                                 	<{$error}>
+			                                        </div>
+                                                </div>
+                                                <div class="form-group">
+                                                	<label class="col-sm-2 control-label">
+                                                	<button class="btn btn-sm btn-primary" type="submit" >提交</button>
+                                               		</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <script>
+        //以下为修改jQuery Validation插件兼容Bootstrap的方法，没有直接写在插件中是为了便于插件升级
+        
+
+         //以下为官方示例
+        $().ready(function () {
+            // validate the comment form when it is submitted
+            $("#commentForm").validate();
+
+            // validate signup form on keyup and submit
+            $("#signupForm").validate({
+                rules: {
+                	 emailcode: {
+                        required: true,
+                        rangelength: [6,6]
+                     },
+                	 password: {
+                         required: true,
+                         password: true,
+                     },
+                     confirm_password:{
+                    	 required: true,
+                    	 password:true,
+                    	 equalTo:"#password",
+                     }
+                },
+                messages: {
+                	emailcode: {
+                        required: "请输入邮箱验证码",
+                        rangelength: "请输入六位邮箱验证码"
+                    },
+                	password: {
+                        required:"密码6-20位，由数字、字母、符号组成",
+                        password:"密码6-20位，由数字、字母、符号组成",
+                    },
+                    confirm_password:{
+                    	required:"密码6-20位，由数字、字母、符号组成",
+                        password:"密码6-20位，由数字、字母、符号组成",
+                        equalTo:"两次密码不一致"
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+	     function run1(){
+	    	 var time = $("#time").html();
+	         if(time == 0){
+	        	 $("#codebutton").html("<a class='btn btn-xs btn-success send'>重新发送验证码</a>")
+	        	 sendclick();
+	        	 $("#warn").html("");
+	        	 window.flag = true;
+	             return false;
+	         }
+	         setTimeout("run1()", 1000);
+	         $("#time").html(time - 1);
+	     }
+	     function sendclick(){
+	    	 $(".send").click(function(){
+	    			$.ajax({
+	    				url:'__APP__/Public/checkCode',
+	    				type:"post",
+	    				success:function(re){
+	    					if(re=="wrong"){
+	    						$("[name='email']").focus();
+	    						layer.confirm('请输入正确的邮箱地址', {icon: 5}, function(index){
+	    							layer.close(index);
+	    						});
+	    					}else if(re=="outtime"){
+	    						layer.confirm('请过60秒后重新发送', {icon: 5}, function(index){
+	    							layer.close(index);
+	    						});
+	    					}else if(re=="ok"){
+	    						$("#codebutton").html("<a class='btn btn-xs btn-default'>发送验证码</a>")
+	    						$("#warn").html("校验码已发出，请注意查收邮件，如果没有收到，你可以在<a id='time' style='color:red;'>60</a>秒后要求系统重新发送")
+	    						setTimeout("run1()", 1000);
+	    						//验证和发送
+	    	    		 		$.ajax({
+	    		    				url:'__APP__/Public/sendCode',
+	    		    				type:"post",
+	    		    				success:function(re){
+	    		    					if(re=="success"){
+	    		    						//成功
+	    		    					}else if(re=="fail"){
+	    		    						//失败
+	    		    					}
+	    		    				}
+	    		    			})
+	    					}
+	    				}
+	    			})
+	    		})
+	     }
+    	$().ready(function(){
+    		sendclick();
+    	})
+     </script>
+</body>
+
+</html>

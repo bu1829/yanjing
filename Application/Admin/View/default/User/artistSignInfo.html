@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	用户管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+					<include file="Public:return"/>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                    <div class="col-lg-12">
+                    
+                    	<div class="panel blank-panel">
+
+                            <div class="panel-heading">
+                                <div class="panel-options">
+                                    <ul class="nav nav-tabs">
+										<li  class="active">
+											<a href="#qianyue"  data-toggle="tab">
+												签约信息
+											</a>
+										</li>
+									</ul>
+									
+									<form id="signupForm" action="<{:U()}>"  method="post" class="form-horizontal m-t" enctype="multipart/form-data">
+									<div class="tab-content">
+										
+										<div class="tab-pane active" id="qianyue">
+											<div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 签约会员：</label>
+		                                        <div class="col-sm-3" style="padding:7px 20px;">
+		                                       		<a href="<{:U('User/userInfo',array('username'=>$data[username]))}>">
+		                                       			<{$data.username}>
+		                                       		</a>
+		                                        </div>
+		                                    </div> 
+										
+										
+											<div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 是否签约：</label>
+		                                        <div class="col-sm-3">
+		                                        	<if condition="$data.id eq null">
+		                                            <div class="radio radio-primary" style="float:left;margin-right:10px;">
+		                                                <input type="radio" name="is_sign" id="is_sign1" value="1" checked=''>
+		                                                <label for="is_sign1">
+		                                                  	 是
+		                                                </label>
+		                                            </div>
+		                                            
+		                                            <div class="radio radio-danger" style="float:left;">
+		                                                <input type="radio" name="is_sign" id="is_sign0" value="0">
+		                                                <label for="is_sign0">
+		                                               		   否
+		                                                </label>
+		                                            </div>
+		                                            <else/>
+		                                           		<div style="padding: 6px 12px;">
+		                                            	<if condition="$data.is_sign eq 1">
+		                                            		是
+		                                            	<else/>
+		                                            		否
+		                                            	</if>
+		                                            	</div>
+		                                            </if>
+		                                        </div>
+		                                    </div> 
+		                                    
+											<!-- <div class="form-group">
+		                                        <label class="col-sm-2 control-label"> 签约时间：</label>
+		                                        <div class="col-sm-3">
+		                                            <input name="sign_time" value="<{$data.sign_time}>"  class="form-control" type="text" maxlength="10">
+		                                        </div>
+		                                    </div> --> 
+		                                    
+											<div class="form-group nosign">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 签约金额：</label>
+		                                        <div class="col-sm-3">
+		                                        	<if condition="$data.id eq null">
+		                                            <input name="sign_money" value=""  class="form-control" type="text" maxlength="10" placeholder="单位元">
+		                                            <else/>
+		                                       		<div style="padding: 6px 12px;">
+		                                       			<{$data.sign_money}>
+		                                       		</div>
+		                                       		</if>
+		                                        </div>
+		                                    </div> 
+		                                    
+		                                    <div class="form-group nosign">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 签约年限：</label>
+		                                        <div class="col-sm-3">
+		                                        	<if condition="$data.id eq null">
+		                                            <input name="sign_year" value="<{$data.sign_year}>"  class="form-control" type="text" maxlength="10" placeholder="单位年"> 
+		                                            <else/>
+		                                            <div style="padding: 6px 12px;">
+		                                       			<{$data.sign_year}>
+		                                       		</div>
+		                                            </if>
+		                                        </div>
+		                                    </div> 
+		                                    
+		                                    
+		                                    <div class="form-group">
+												<label class="col-sm-2 control-label">备注信息</label>
+		                                        <div class="col-sm-8">
+		                                        	<if condition="$data.id eq null">
+		                                            <textarea  name="sign_remark"  class="form-control" rows="6" cols="6" placeholder="签约备注信息"></textarea>
+		                                            <else/>
+		                                            <div style="padding: 6px 12px;">
+		                                       			<{$data.sign_remark}>
+		                                       		</div>
+		                                            </if>
+		                                        </div>
+		                                    </div>
+		                                    
+		                                    
+		                                    <if condition="($data.is_sign eq 1) and ($data.return_time eq null)">
+		                                    <!-- <div class="form-group">
+		                                        <label class="col-sm-2 control-label"> 收益返回情况：</label>
+		                                        <div class="col-sm-3">
+		                                        	返还天数：<br/>
+		                                        	每天返还金额：
+		                                        </div>
+		                                    </div>  -->
+		                                    
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"> 确认开始收益分成：</label>
+		                                        <div class="col-sm-3">
+		                                        	返回收益开始时间：
+		                                            <input name="return_time" value=""  class="btn btn-sm btn-white" type="text" id="start"> 
+		                                        	<script>
+													laydate({
+													    elem: '#start',
+													    format: 'YYYY-MM-DD', // 分隔符可以任意定义，该例子表示只显示年月
+													    min: laydate.now(), //设定最小日期为当前日期
+													    festival: true, //显示节日
+													    choose: function(datas){ //选择日期完毕的回调
+													    }
+													});
+													laydate.skin("molv");
+													</script>
+		                                        	<button class="btn btn-sm btn-primary" type="button" id="send">确认</button>
+		                                        </div>
+		                                    </div> 
+		                                    </if>
+		                                    
+										</div>
+								 	</div>
+								 	
+								 	<div class="form-group">
+                                        <label class="col-sm-2 control-label"></label>
+                                        <div class="col-sm-10">
+                                        	<if condition="$data.id eq null">
+                                            <button class="btn btn-sm btn-primary" type="button" id="save">保存</button>
+                                            </if>
+                                        </div>
+                                    </div>
+		                                    
+								 	</form>
+                                </div>
+                            </div>
+                        </div>
+	                </div>
+	                
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $().ready(function(){
+    	var aid="<{$data.aid}>";
+    	
+    	
+    	//点击是否签约
+    	$("[name='is_sign']").click(function(){
+    		var is_sign=$(this).val();
+    		if(is_sign==0){
+    			$('.nosign').hide();
+    		}else{
+    			$('.nosign').show();
+    		}
+    	})
+    	
+    	$("#save").click(function(){
+    		var is_sign=$("[name='is_sign']:checked").val();
+    		if(is_sign==1){//是签约
+        		var sign_money=$("[name='sign_money']").val();
+        		//签约金额
+        		var reg1 = /^[0-9]{0,9}[\.][0-9]{1,2}$/;
+        	    var reg2 = /^[0-9]{0,9}$/;
+        	    if(sign_money<=0){
+        	    	layer.msg("请输入签约金额");
+        			$("[name='sign_money']").focus();
+        			return false;
+        	    }
+        	    if(!reg1.test(sign_money) && !reg2.test(sign_money)){
+        	    	layer.msg("请输入合法的签约金额");
+        			$("[name='sign_money']").focus();
+        			return false;
+        		}
+        	    
+        	    //签约年限
+        	    var sign_year=$("[name='sign_year']").val();
+        	    if(sign_year>0){
+        	    }else{
+        	    	layer.msg("请输入合法的签约年限");
+        			$("[name='sign_year']").focus();
+        			return false;
+        	    }
+    		}
+    		
+    		var sign_remark=$("[name='sign_remark']").val();
+    		
+    		layer.confirm('确认保存么？保存后无法修改！', {
+    			icon:7,btn: ['确认','不了'] //按钮
+    		}, function(){
+    			$.ajax({
+        			url:"__APP__/User/artistSignInfo",
+        			type:"post",
+        			data:"aid="+aid+"&is_sign="+is_sign+"&sign_money="+sign_money+"&sign_year="+sign_year+"&sign_remark="+sign_remark,
+        			success:function(re){
+        				if(re=="success"){
+        					layer.msg("设置成功！");
+        					 window.location.reload()
+        				}else{
+        					layer.msg(re);
+        				}
+        			}
+        		})
+    		});
+    	})
+    	
+    	
+    	//确认分派利益
+    	$("#send").click(function(){
+    		var return_time=$("[name='return_time']").val();
+    		if(!return_time){
+    			layer.msg("请选择返回收益开始时间！");
+    			$("[name='return_time']").focus();
+    			return false;
+    		}
+    		layer.confirm('确认么？确认后无法撤回！', {
+    			icon:7,btn: ['确认','不了'] //按钮
+    		}, function(){
+    			$.ajax({
+        			url:"__APP__/User/confirmProfit",
+        			type:"post",
+        			data:"aid="+aid+"&return_time="+return_time,
+        			success:function(re){
+        				if(re=="success"){
+        					 layer.msg("操作成功！");
+        					 window.location.reload();
+        				}else{
+        					layer.msg(re);
+        				}
+        			}
+        		})
+    		});
+    	})
+    })
+    </script>
+</body>
+</html>

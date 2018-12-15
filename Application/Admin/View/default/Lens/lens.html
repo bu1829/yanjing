@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+<style>
+.single-picture-div{float:left;margin:10px}
+.single-picture{width:80px;height:80px;}
+#picture{margin-bottom:40px;}
+#fileupload{width:80px;height:80px;margin-left:0px;position:absolute;top:10px;opacity:0;z-index:999;}
+.delimg{position:relative;left:-60px;bottom:-55px;}
+.expert-info{margin-bottom:15px;}
+.expert-avatar{width:30px;height:30px;margin-right:10px;}
+.expert-name{font-weight:bold;margin-right:10px;}
+.delcomment{cursor:pointer;}
+
+</style>
+<!-- <link rel="stylesheet" href="__PUBLIC__/Home/css/goods_details.css"> -->
+<script src="__PUBLIC__/Home/js/e-smart-zoom-jquery.min.js"></script>
+<script>
+ $(function() {
+	 changeSort("goods_picture","id","sort");
+	 //默认显示
+	 
+	 changeSort("goods_expert_comment","id","sort","sortable2");
+	 //默认显示
+ });
+</script>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	镜片管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+					<a href="<{:U('Lens/lensList')}>" class="btn btn-xs btn-info">镜片列表</a>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                
+                <div class="row">
+                    
+                    <div class="col-lg-12">
+                    
+                    	<div class="panel blank-panel">
+
+                            <div class="panel-heading">
+                                <div class="panel-title m-b-md">
+                                    <h4><{$meta_title}></h4>
+                                </div>
+                                <div class="panel-options">
+                                    <ul class="nav nav-tabs">
+                                    	<!-- <volist name="list" key="k" id="v">
+										<li class="<eq name='key' value='基本设置'> active</eq>">
+										<a href="#<{$key}>"  data-toggle="tab">
+												<{$key}>
+										</a>
+										</li>
+										</volist> -->
+										
+										<li class="active">
+											<a href="#basic"  data-toggle="tab">
+												基本信息
+											</a>
+										</li>
+										
+										
+									</ul>
+									
+									<form id="signupForm5" action=""  method="post" class="form-horizontal m-t" enctype="multipart/form-data" onsubmit="return check()">
+									<div class="tab-content">
+										<div class="tab-pane active" id="basic">
+											 
+											
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 镜片名称：</label>
+		                                        <div class="col-sm-4">
+		                                            <input  name="name" value="<{$data.name}>" class="form-control" type="text" maxlength="255">
+		                                        </div>
+		                                    </div>
+
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 镜片编号：</label>
+		                                        <div class="col-sm-4">
+		                                            <input  name="len_no" value="<{$data.lens_no}>" class="form-control" type="text" maxlength="255">
+		                                        </div>
+		                                    </div>
+
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 镜片类型：</label>
+		                                        <div class="col-sm-4">
+		                                            <input  name="category" value="<{$data.category}>" class="form-control" type="text" maxlength="255">
+		                                        </div>
+		                                    </div>
+
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 镜片品牌：</label>
+		                                        <div class="col-sm-4">
+		                                            <input  name="brand" value="<{$data.brand}>" class="form-control" type="text" maxlength="255">
+		                                        </div>
+		                                    </div>
+
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 镜片度数：</label>
+		                                        <div class="col-sm-4">
+		                                            <input  name="degree" value="<{$data.degree}>" class="form-control" type="text" maxlength="255">
+		                                        </div>
+		                                    </div>
+
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 镜片材质：</label>
+		                                        <div class="col-sm-4">
+		                                            <input  name="material" value="<{$data.material}>" class="form-control" type="text" maxlength="255">
+		                                        </div>
+		                                    </div>
+
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 镜片颜色：</label>
+		                                        <div class="col-sm-4">
+		                                            <input  name="color" value="<{$data.color}>" class="form-control" type="text" maxlength="255">
+		                                        </div>
+		                                    </div>
+
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 镜片库存：</label>
+		                                        <div class="col-sm-4">
+		                                            <input  name="inventory" value="<{$data.inventory}>" class="form-control" type="text" maxlength="255">
+		                                        </div>
+		                                    </div>
+
+		                                    <div class="form-group">
+		                                        <label class="col-sm-2 control-label"><font class="text-danger">*</font> 镜片价格：</label>
+		                                        <div class="col-sm-4">
+		                                            <input  name="price" value="<{$data.price}>" class="form-control" type="text" maxlength="255">
+		                                        </div>
+		                                    </div>
+		                                    
+										</div>
+										
+								 	
+								 	<div class="form-group">
+                                        <label class="col-sm-2 control-label"></label>
+                                        <div class="col-sm-10">
+                                        	<input  type="hidden" value="<{$data.id}>" name="id"/>
+                                            <button class="btn btn-sm btn-primary" type="submit">保存</button>
+                                          	<button class="btn btn-sm btn-warning" type="reset">重置</button>
+                                        </div>
+                                    </div>
+                                    
+		                                    
+								 	</form>
+                                </div>
+                            </div>
+                        </div>
+	                </div>
+	                
+                </div>
+
+            </div>
+            <!--上传图片  -->
+            <include file="Public:upload"/>
+            <!--上传图片  -->
+        </div>
+    </div>
+    <!-- 放置缩略图显示的 -->
+    <div style="display:none;padding:0px;" class="open1">
+	<img src="" alt="" class="fancybox-image carousel-inne img-rounded img-responsive openimg1"/>
+	</div>
+	<!-- 放置画籍证书显示的 -->
+    <div style="display:none;padding:0px;" class="open2">
+	<img src="" alt="" class="fancybox-image carousel-inne img-rounded img-responsive openimg2"/>
+	</div>
+	<script type="text/javascript" src="__CJS__/jquery.form.js"></script>
+	<script type="text/javascript">
+		function check(){
+		 var gid="<{$data.id}>";//商品id
+		 
+		var reg1 = /^[0-9]{0,9}[\.][0-9]{1,2}$/;
+	    var reg2 = /^[0-9]{0,9}$/;
+		
+		
+		//商品名称
+		var name=$("[name='name']").val();
+		if(name==""){
+			layer.msg("请输入镜片名称");
+			$("[name='name']").focus();
+			return false;
+		}
+
+		//库存量
+	    var stock=$("[name='inventory']").val();
+	    if(stock==""){
+	    	layer.msg("请输入镜片库存量");
+			$("[name='inventory']").focus();
+			return false;
+	    }
+	    
+    	if(!reg2.test(stock)){
+	    	layer.msg("请输入合法的库存量");
+			$("[name='inventory']").focus();
+			return false;
+		}
+	    
+		
+		
+		//商品价格
+	    var price=$("[name='price']").val();
+	    if(price==""){
+	    	layer.msg("请输入镜片价格");
+			$("[name='price']").focus();
+			return false;
+	    }
+	    
+	    if(!reg1.test(price) && !reg2.test(price)){
+	    	layer.msg("请输入合法的镜片价格");
+			$("[name='price']").focus();
+			return false;
+		}
+	    
+	   
+	    
+	    
+		
+		
+		return true;
+	}
+	</script>
+</body>
+<!-- <script src="__PUBLIC__/Home/js/goods_details.js"></script> -->
+</html>

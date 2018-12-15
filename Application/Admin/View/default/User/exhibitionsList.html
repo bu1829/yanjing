@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+</head>
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                                会员管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+                    <a href="<{:U('User/exhibitionsAdd')}>" class="btn btn-xs btn-primary">添加个展</a>
+                </div>
+            </div>
+            
+            
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div style="margin-bottom:10px;">
+                    <form action='' method='get' id='signupForm'>
+                    <div style="margin-bottom:20px;">
+                    <input placeholder="请输入关键字" class="btn-sm btn-white" name="keyword" value="<{$keyword}>">
+                    <select name='status' class="btn-sm btn-white">
+                        <option value="">全部</option>
+                    </select>
+                    <button class="btn btn-sm btn-info" type="submit">查询</button>
+                    </div>
+                    </form>
+                </div>
+                <form action="<{:U('User/exhibitionsHandle')}>" method="post">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            
+                            <div class="ibox-content">
+                                <div class="row">
+                                    <div class="col-sm-2 m-b-xs">
+                                        <select name="handle" style="font-size:13px;" class="input-sm form-control input-s-sm inline">
+                                            <option value="2">删除</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4 m-b-xs">
+                                        <button class="deletechosebysubmit btn btn-sm btn-primary" type="submit">操作</button>
+                                    </div>
+                                    
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th><input type="checkbox" class="choseall" name="input[]"></th>
+                                                <th>ID</th>
+                                                <th>个展名称</th>
+                                                <th>艺术家</th>
+                                                <th>个展时间</th>
+                                                <th>个展地点</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+                                            <volist name="list" id="v">
+                                            <tr>
+                                                <td style="padding-top:10px;">
+                                                    <input type="checkbox"  class='i-checks' value="<{$v.id}>" name="check[]">
+                                                </td>
+                                                <td>
+                                                    <{$v.id}>
+                                                </td>
+                                                <td>
+                                                    <{$v.name}>
+                                                </td>
+                                                <td>
+                                                    <{$v.artist_name}>
+                                                </td>
+                                                <td>
+                                                    <{$v.start_time}>至<{$v.end_time}>
+                                                </td>
+                                                <td>
+                                                    <{$v.address}>
+                                                </td>
+                                                <td style="padding-top:10px;">
+                                                    <a data-toggle="tooltip" data-placement="top" title="编辑" class="btn btn-sm btn-info" href="<{:U('User/exhibitionsEdit',array('id'=>$v['id']))}>">
+                                                    <i class="fa fa-edit"></i>&nbsp;
+                                                    </a>&nbsp;
+                                                    <a data-toggle="tooltip" data-placement="top" title="删除" class="btn btn-sm btn-danger" onclick="del('<{:U('User/exhibitionsDeleteOne',array('id'=>$v[id]))}>','您确定删除此商品么？','3')">
+                                                    <i class="fa fa-trash-o"></i>
+                                                    </a>
+                                                                                                        
+                                                </td>
+                                            </tr>
+                                            </volist>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-center">
+                                    <if condition='$page neq null'>
+                                        <{$page}>
+                                    <else/>
+                                        共<{$count}>条记录
+                                    </if>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+    $().ready(function(){
+        $("#status<{$status}>").prop("selected","selected");
+
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<include file="Public:metas"/>
+<script>
+ $(function() {
+     $("#<{$action}>").addClass("<{$btn}>");
+     var action="<{$action}>";
+     if(action=="sort"){
+         changeSort("arter","id","sort");
+     }
+ });
+</script>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                                会员管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div style="margin-bottom:10px;">
+                    <form class='submitform' action='' method='get' id='signupForm'>
+                        <div style="margin-bottom:20px;">
+                            <input placeholder="请输入关键字" class="btn-sm btn-white" name="keyword" value="<{$keyword}>">
+                            <button class="btn btn-xs btn-info" type="submit" id="submit1">查询</button>
+                            <span class="input-group-btn mail-tools">
+                            </span>
+                            <button id="submit3" type="submit" class="btn btn-sm btn-danger">导出Excel报表</button>
+                        </div>
+                    </form>
+                </div>
+                <form>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            
+                            <div class="ibox-content">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>证件照片</th>
+                                                <th>姓名</th>
+                                                <th>电话号码</th>
+                                                <th>身份证</th>
+                                                <th>申请时间</th>
+                                                <th>审核状态</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="sortable">
+                                        
+                                            <volist name="data" id="v">
+                                            <tr name="" class="one">
+                                                <td>
+                                                   <volist name="v.photo" id="v1">
+                                                    <a class="fancybox"  href="<{$v1}>">
+                                                        <img alt="image" class="img-circle" style="border:0px solid red;width:50px;height:50px;" src="<{$v1}>" />
+                                                    </a>
+                                                   </volist>
+                                                </td>
+                                                <td>
+                                                    <{$v.realname}>
+                                                </td>
+                                                <td>
+                                                    <{$v.username}>
+                                                </td>                                                
+                                                <td style="padding-top:10px;">
+                                                     <{$v.cartid}>
+                                                </td> 
+                                                <td style="padding-top:10px;">
+                                                     <{$v.add_time|date="Y-m-d H:i:m",###}>
+                                                </td> 
+                                                <td style="padding-top:10px;width:300px;">
+                                                <if condition="$v.is_audit eq 0">
+                                                <font color="blue">待审核</font>
+                                                <elseif condition="$v.is_audit eq 1" />
+                                                <font color="green">审核成功</font>
+                                                <else />
+                                                <font color="red">审核失败</font>
+                                                </if>
+                                                </td>                                                
+                                                <td> 
+                                                <a href="<{:U('User/passCertification/id/'.$v['id'])}>">通过审核</a> | <a href="<{:U('User/notPass',array('id'=>$v[id]))}>">未通过</a>
+                                                </td>
+                                            </tr>
+                                            </volist>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-center">
+                                    <if condition='$page neq null'>
+                                        <{$page}>
+                                    <else/>
+                                        共<{$count}>条记录
+                                    </if>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+    $().ready(function(){
+        $("#position<{$position_id}>").prop("selected","selected");
+        $(".recommend").click(function(){
+            var id=$(this).attr("id");//这是数据id
+            var recommend=$(this).attr("name");//这是当前状态
+            changeStatusOne('artist','id',id,recommend,"recommend");
+        })  
+        
+        $(".status").click(function(){
+            var id=$(this).attr("id");//这是数据id
+            var recommend=$(this).attr("name");//这是当前状态
+            changeStatusOne('artist','id',id,recommend,"is_audit");
+        })  
+                
+        $("#submit1").click(function(){
+            $(".submitform").attr("action","<{:U('User/userCertification')}>");
+        })
+
+        $("#submit3").click(function(){
+            $(".submitform").attr("action","<{:U('User/userCertifiExport')}>");
+        })
+        
+    })
+    </script>
+</body>
+
+</html>

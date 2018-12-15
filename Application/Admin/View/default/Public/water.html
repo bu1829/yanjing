@@ -1,0 +1,17 @@
+<div class="form-group form-all haswater" style='display:none;'>
+ 	 	<div class="form-one">
+   	 	 <label class="control-label">&nbsp; 水印：</label>
+ 		</div>
+ 		<div class="form-two text">
+ 				<input type="radio" value="0" name="water" checked/>无水印
+                <input type="radio" value="1" name="water"/>文字水印
+                <input type="radio" value="2" name="water"/>图片水印
+                <input type="radio" value="3" name="water"/>全部水印
+ 		</div>
+ 		<div class="form-three col_sort comm"></div>
+</div>
+<script>
+$().ready(function(){
+	$("#water<{$default_water_type}>").attr("checked","checked");
+})
+</script>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	配置管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+					<a href="<{:U('Config/configList',array('action'=>'list'))}>" class="btn btn-xs btn-primary">配置列表</a>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="alert alert-danger alert-dismissable">
+                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                  	  温馨提示：配置管理关系到系统的运行，非系统开发者请谨慎操作。
+                </div>
+                <div class="row">
+                    
+                    <div class="col-lg-12">
+	                    <div class="panel panel-primary">
+	                        <div class="panel-heading">
+	                            	<{$meta_title}>
+	                        </div>
+	                        <div class="panel-body">
+	                        	 <form action="<{:U()}>" method="post" class="form-horizontal m-t" id="signupForm">
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font>配置标题：</label>
+                                        <div class="col-sm-3">
+                                            <input id="name" name="name" value="<{$data.name|default=''}>" class="form-control" type="text" maxlength="255">
+                                        	<input  id="oldname" value="<{$data.name}>" type="hidden">
+                                        </div>
+                                        <div class="col-sm-6 notice">
+                                         	（用于C函数调用，建议使用英文且不要重复）
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font>配置关键字：</label>
+                                        <div class="col-sm-3">
+                                            <input  name="title" value="<{$data.title|default=''}>" class="form-control" type="text" maxlength="255">
+                                        </div>
+                                        <div class="col-sm-6 notice">
+                                         	（用于后台显示的配置标题）
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font>配置内容：</label>
+                                        <div class="col-sm-3">
+                                            <textarea name="val" rows="3"  class="form-control"><{$data.val|default=''}></textarea>
+                                        </div>
+                                        <div class="col-sm-6 notice">
+                                         	（配置内容）
+                                        </div>
+                                    </div>
+                                   
+                                    <!-- <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font>配置类型：</label>
+                                        <div class="col-sm-3">
+                                        	<select class="form-control m-b" name="types">
+                                                <option value="0" id="types0">数字</option>
+                                                <option value="1" id="types1">字符</option>
+                                                <option value="2" id="types2">文本</option>
+                                                <option value="3" id="types3">枚举</option>
+                                                <option value="4" id="types4">自定义字段</option>
+                                                <option value="5" id="types5">富文本</option>
+                                                <option value="6" id="types6">图片</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-6 notice">
+                                         	（系统会根据不同类型解析配置值）
+                                        </div>
+                                    </div> -->
+                                    
+                                    <!-- <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font>设置分组：</label>
+                                        <div class="col-sm-3">
+                                        	<select class="form-control m-b" name="groups">
+                                                <volist name=":parse_config_attr($group)" id="vo">
+														<option value="<{$key}>" id="groups<{$key}>"><{$vo}></option>
+												</volist>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-6 notice">
+                                         	（在网站设置中的分组）
+                                        </div>
+                                    </div> -->
+
+                                    <div class="form-group">
+			                            <label class="col-sm-3 control-label"><font class="text-danger">*</font> 网站分类：</label>
+			                            <div class="col-sm-3">
+			                                <select class="form-control" name="position_id">
+			                                    <option value="">请选择</option>
+			                                    <volist name="position" id="v">
+			                                        <option value="<{$v.id}>" id="position<{$v.id}>">
+			                                            <{$v.title}>
+			                                        <if condition="$v.description neq null">
+			                                            (<{$v.description}>)
+			                                        </if>
+			                                    	</option>
+			                                    </volist>
+			                                </select>
+			                            </div>
+			                        </div>
+
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font>排序：</label>
+                                        <div class="col-sm-2">
+                                            <input  name="sort" value="<{$data.sort|default=0}>" class="form-control" type="text" maxlength="5" >
+                                        </div>
+                                        <div class="col-sm-6 notice">
+                                         	（用于排列位置，从小到大排列）
+                                        </div>
+                                    </div>
+
+                                                                        
+                                  <!--   <div class="form-group">
+                                        <label class="col-sm-3 control-label">配置项：</label>
+                                        <div class="col-sm-3">
+                                            <textarea name="extra" rows="3"  class="form-control"><{$data.extra|default=''}></textarea>
+                                        </div>
+                                        <div class="col-sm-6 notice">
+                                         	（如果是配置类型选择枚举，需要配置该项,例如 0:关闭）
+                                        </div>
+                                    </div> -->
+                                    
+                                   <!--  <div class="form-group">
+                                        <label class="col-sm-3 control-label">配置说明：</label>
+                                        <div class="col-sm-3">
+                                            <textarea name="remark" rows="3"  class="form-control"><{$data.remark|default=''}></textarea>
+                                        </div>
+                                        <div class="col-sm-6 notice">
+                                         	（配置详细说明）
+                                        </div>
+                                    </div> -->
+                                    
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">状态：</label>
+                                        <div class="col-sm-3">
+                                        		<div class="radio radio-success" >
+	                                                <input type="radio" name="status" id="status1" value="1" checked=''>
+	                                                <label for="status1">
+	                                                  		 正常
+	                                                </label>
+	                                            </div>
+	                                            <div class="radio radio-danger">
+	                                                <input type="radio" name="status" id="status0" value="0">
+	                                                <label for="status0">
+	                                               		    禁用
+	                                                </label>
+	                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-3">
+                                        	<input type="hidden" value="<{$data.id|default=''}>" name="id"/>
+                                            <button class="btn btn-sm btn-primary" type="submit">保存</button>
+                                            <button class="btn btn-sm btn-primary" type="reset">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
+	                        </div>
+	                    </div>
+	                </div>
+	                
+                </div>
+
+            </div>
+        </div>
+    </div>
+     <script type="text/javascript">
+		$("#groups"+<{$data.groups}>).attr("selected","selected");//设置分组
+		$("#types"+<{$data.types}>).attr("selected","selected");//配置类型
+		$("#status"+<{$data.status}>).attr("checked","checked");//状态
+     </script>
+	 <script>
+	 
+        //以下为修改jQuery Validation插件兼容Bootstrap的方法，没有直接写在插件中是为了便于插件升级
+        //以下为官方示例
+        $().ready(function () {
+        	//设置默认选项的
+				
+            // validate the comment form when it is submitted
+            $("#commentForm").validate();
+            var id=$("[name='id']").val();
+           	if(!id){
+            // validate signup form on keyup and submit
+	            $("#signupForm").validate({
+	                rules: {
+	                	name: {
+	                         required: true,
+	                         rangelength:[1,255],
+	                         remote: {
+	                              url: "__APP__/Admin/checkOnly",
+	                              type: "post",
+	                              dataType: "json",
+	                              data: {
+	                                  tablename: function () {
+	                                      return "config";　　　　//数据表名称
+	                                  },
+	                                  // fieldname: function () {
+	                                  //     return "name";　　　　//要查找的字段
+	                                  // },
+	                                  // value: function () {
+	                                  //     return $("#name").val();　　　　//新值
+	                                  // }
+	                              },
+	                              dataFilter: function (msg) {　　　　//判断控制器返回的内容
+	                            	  if (msg == "1") {
+	                                      return true;
+	                                  }
+	                                  else {
+	                                      return false;
+	                                  }
+	                              }
+	                          }
+	                     },
+	                     title: {
+	                         required: true,
+	                         rangelength:[1,255]
+	                     },
+	                    sort: {
+	                        required: true,
+	                        digits:true,
+	                        range:[0,65535],
+	                    }
+	                    
+	                },
+	                messages: {
+	                	name: {
+	                        required: no+"请输入配置标识",
+	                        rangelength:no+"请输入配置标识,1-30位字符",
+	                        //remote:no+"该配置标识已经存在"
+	                    },
+	                    title: {
+	                        required: no+"请输入配置标题",
+	                        rangelength:no+"请输入配置标题,1-30位字符"
+	                    },
+	    
+	                    sort: {
+	                        required: no+"请输入排序",
+	                        digits:no+"请输入整数",
+	                        range:no+"请输入0-65535",
+	                    }
+	                   
+	                },
+	                onfocus: true,　　　　
+	                onkeyup: false,　　　　//这个地方要注意，修改去控制器验证的事件。
+	                onsubmit: true
+	            });
+           	}else{
+           		$("#signupForm").validate({
+	                rules: {
+	                	name: {
+	                         required: true,
+	                         rangelength:[1,255],
+	                         remote: {
+	                              url: "__APP__/Admin/checkOnly",
+	                              type: "post",
+	                              dataType: "json",
+	                              data: {
+	                                  tablename: function () {
+	                                      return "config";　　　　//数据表名称
+	                                  },
+	                                  // fieldname: function () {
+	                                  //     return "name";　　　　//要查找的字段
+	                                  // },
+	                                  // value: function () {
+	                                  //     return $("#name").val();　　　　//新值
+	                                  // },
+	                                  // oldvalue: function () {
+	                                  //     return $("#oldname").val();　　　　//老值
+	                                  // }
+	                              },
+	                              dataFilter: function (msg) {　　　　//判断控制器返回的内容
+	                            	  if (msg == "1") {
+	                                      return true;
+	                                  }
+	                                  else {
+	                                      return false;
+	                                  }
+	                              }
+	                          }
+	                     },
+	                     title: {
+	                         required: true,
+	                         rangelength:[1,255]
+	                     },
+	                    sort: {
+	                        required: true,
+	                        digits:true,
+	                        range:[0,65535],
+	                    }
+	                    
+	                },
+	                messages: {
+	                	name: {
+	                        required: no+"请输入配置标识",
+	                        rangelength:no+"请输入配置标识,1-30位字符",
+	                        //remote:no+"该配置标识已经存在"
+	                    },
+	                    title: {
+	                        required: no+"请输入配置标题",
+	                        rangelength:no+"请输入配置标题,1-30位字符"
+	                    },
+	    
+	                    sort: {
+	                        required: no+"请输入排序",
+	                        digits:no+"请输入整数",
+	                        range:no+"请输入0-65535",
+	                    }
+	                   
+	                },
+	                onfocus: true,　　　　
+	                onkeyup: false,　　　　//这个地方要注意，修改去控制器验证的事件。
+	                onsubmit: true
+	            });
+           	}
+        });
+    </script>
+</body>
+
+</html>

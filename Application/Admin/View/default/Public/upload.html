@@ -1,0 +1,11 @@
+<script type="text/javascript">
+    $().ready(function(){
+    	//上传图片
+    	var picture_max_size="<{$CONFIG.PICTURE_MAX_SIZE}>";
+    	var picture_max_size=parseInt(picture_max_size) / 1024;
+    	$(".inputimg").each(function(){
+			//点击某一张的input框
+			upload(this,"","",picture_max_size);
+		})//each结束
+    })
+</script>

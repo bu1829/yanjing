@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<include file="Public:metas"/>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	商品管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            
+            <div class="wrapper wrapper-content animated fadeInRight">
+            	<div style="margin-bottom:10px;">
+				    <form action='' method='get' id='signupForm'>
+				    <div style="margin-bottom:20px;">
+				    <input placeholder="评论内容|会员名称|商品名称" class="btn-sm btn-white" name="keyword" value="<{$keyword}>">
+				    <button class="btn btn-sm btn-info" type="submit">查询</button>
+				    </div>
+				    </form>
+			    </div>
+            	<form action="<{:U('Goods/commentHandle')}>" method="post">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            
+                            <div class="ibox-content">
+                                <div class="row">
+                                    <div class="col-sm-2 m-b-xs">
+                                        <select name="handle" style="font-size:13px;" class="input-sm form-control input-s-sm inline">
+                                            <option value="1">启用</option>
+                                            <option value="0">禁用</option>
+                                            <option value="2">删除</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4 m-b-xs">
+                                        <button class="deletechosebysubmit btn btn-sm btn-primary" type="submit">操作</button>
+                                    </div>
+                                    
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th><input type="checkbox" class="choseall" name="input[]"></th>
+                                                <th>商品信息</th>
+                                                <th>用户</th>
+                                                <th>留言信息</th>
+                                                <th>点赞数量</th>
+                                                <th>留言时间</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="sortable">
+                                        
+                                        	<volist name="list" id="v" empty="暂无数据">
+                                            <tr id="comment<{$v.id}>">
+                                                <td>
+                                                    <input type="checkbox"  class='i-checks' value="<{$v.id}>" name="check[]">
+                                                </td>
+                                                
+                                                <td>
+                                                	<a href="<{:U('User/userInfo',array('user_id'=>$v[user_id]))}>">
+                                                	<{$v.name}>
+                               						</a>
+                                                </td>
+                                                
+                                                <td>
+                                                	<{$v.username}>
+                                                </td>
+                                                
+                                                <td>
+                                                	<a><{$v.words}></a>
+                                                </td>
+                                                
+                                                <td>
+                                                	<{$v.hitnum}>
+                                                </td>
+                                                <td>
+                                                	<{$v.add_time|date='Y-m-d H:i:s',###}><br/>
+                                                </td>
+                                                <td style="padding-top:10px;">
+                                                	<a data-toggle="tooltip" data-placement="top" title="详情" class="btn btn-sm btn-success" href="<{:U('Goods/wordsInfo',array('id'=>$v['id']))}>">
+                                                	<i class="fa fa-eye"></i>&nbsp;
+                                                	</a>&nbsp;
+                                                	<a data-toggle="tooltip" data-placement="top" title="删除" class="btn btn-sm btn-danger delete" rel="<{$v.id}>">
+                                                	<i class="fa fa-trash-o"></i>
+                                                	</a>
+                                                </td>
+                                            </tr>
+                                            </volist>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-center">
+                                    	<{$page}>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+    $().ready(function(){
+    	$("#position<{$position_id}>").prop("selected","selected");
+    	$(".status").click(function(){
+       		var id=$(this).attr("id");//这是数据id
+       		var status=$(this).attr("name");//这是当前状态 0禁用1正常
+       		changeStatusOne('comment','id',id,status);
+       	})  
+       	
+        //删除
+    	$(".delete").click(function(){
+    		var id=$(this).attr("rel");
+    		layer.confirm('确认删除此评论么？', {
+    			icon:7,btn: ['确认','取消'] //按钮
+    		}, function(){
+    			$.ajax({
+        			url:"__APP__/Goods/deleteCommentOne",
+        			type:"post",
+        			data:"id="+id,
+        			success:function(re){
+        				if(re=="success"){
+        					 layer.msg("删除成功");
+        					 $("#comment"+id).fadeOut();
+        				}else{
+        					layer.msg(re);
+        				}
+        			}
+        		})
+    		});
+    	})
+    	
+    })
+    </script>
+</body>
+
+</html>

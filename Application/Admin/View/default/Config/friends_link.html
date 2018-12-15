@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                              友链管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+                    <a href="<{:U('Config/friends_linkList',array('action'=>'list'))}>" class="btn btn-xs btn-primary">友链列表</a>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                    <div class="col-lg-12">
+                    
+                      <div class="panel blank-panel">
+
+                            <div class="panel-heading">
+                                <div class="panel-options">
+                                    <ul class="nav nav-tabs">
+                    
+                    <li class="active">
+                      <a href="#basic"  data-toggle="tab">
+                        基本信息
+                      </a>
+                    </li>
+                  </ul>
+                  
+                  <form id="signupForm" action="<{:U()}>"  method="post" class="form-horizontal m-t" enctype="multipart/form-data">
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="basic">
+                       
+                      <div class="form-group">                                          
+                          <div class="form-group">
+                              <label class="col-sm-2 control-label"><font class="text-danger">*</font> 广告名称：</label>
+                              <div class="col-sm-8">
+                                  <input name="title" value="<{$data.title|default=''}>"  class="form-control" type="text" maxlength="255">
+                              </div>
+                          </div> 
+                                                                                    
+                          <div class="form-group">
+                              <label class="col-sm-2 control-label">广告链接：</label>
+                              <div class="col-sm-8">
+                                  <input  name="url" value="<{$data.url|default=''}>" class="form-control" type="text" placeholder="以http://或https://开头">
+                              </div>
+                          </div> 
+                                          
+                          <div class="form-group">
+                              <label class="col-sm-2 control-label"><font class="text-danger">*</font> 排序：</label>
+                                  <div class="col-sm-8">
+                                      <input name="sort" value="<{$data.sort|default=0}>"  class="form-control" type="text" maxlength="10">
+                                  </div>
+                          </div> 
+                                          
+                          <div class="form-group">
+                              <label class="col-sm-2 control-label"><font color="#a40000">*</font> 状态：</label>
+                              <div class="col-sm-3">
+                                  <div class="radio radio-success" >
+                                      <input type="radio" name="status" id="status1" value="1" checked=''>
+                                          <label for="status1">
+                                               正常
+                                          </label>
+                                  </div>
+                                  <div class="radio radio-danger">
+                                      <input type="radio" name="status" id="status0" value="0">
+                                          <label for="status0">
+                                              禁用
+                                          </label>
+                                  </div>
+                              </div>
+                          </div>                  
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label class="col-sm-2 control-label"></label>
+                      <div class="col-sm-10">
+                          <input name="id" value="<{$data.id}>" type="hidden">
+                          <button class="btn btn-sm btn-primary" type="submit">保存</button>
+                          <button class="btn btn-sm btn-warning" type="reset">重置</button>
+                      </div>
+                  </div>                    
+                  </form>
+              </div>
+                            </div>
+                        </div>
+                  </div>
+                  
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        //以下为修改jQuery Validation插件兼容Bootstrap的方法，没有直接写在插件中是为了便于插件升级
+
+        $().ready(function () {
+          //设置默认选项的
+          $("#commentForm").validate();
+          var id=$("[name='id']").val();
+          if(!id){
+            a=true;
+          }else{
+            a=false;
+          }
+           $("#signupForm").validate({
+                    rules: {
+                       title:{
+                        required:true,
+                        rangelength:[1,255],
+                       },
+                       sort: {
+                           required: true,
+                           digits:true,
+                      },
+                      url:{
+                        url:true
+                      }
+                    },
+                    messages: {
+                       title:{
+                          required:no+"请输入友链名称",
+                          rangelength:no+"友链名称，1-255字符",
+                       },
+                        sort: {
+                            required: no+"请输入排序",
+                            digits:no+"请输入整数",
+                        },
+                        url:{
+                          url:no+"请输入正确的url地址" 
+                        }
+                    },
+                    
+                    onfocus: false,　　　　
+                    onkeyup: false,　　　　//这个地方要注意，修改去控制器验证的事件。
+                    onsubmit: true
+            });
+           // validate the comment form when it is submitted
+            // validate signup form on keyup and submit
+        });
+    </script>
+</body>
+</html>

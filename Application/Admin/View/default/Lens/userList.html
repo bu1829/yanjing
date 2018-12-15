@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+<script>
+ $(function() {
+   $("#<{$action}>").addClass("<{$btn}>");
+   var action="<{$action}>";
+   if(action=="sort"){
+     changeSort("goods","id","sort");
+   } 
+   
+   //默认显示
+ });
+</script>
+</head>
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	镜片管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+					<a href="<{:U('Lens/userLensAdd')}>" class="btn btn-xs btn-primary">新增配镜</a>
+                </div>
+            </div>
+            
+            
+            <div class="wrapper wrapper-content animated fadeInRight">
+            	<div style="margin-bottom:10px;">
+				    <form action='' method='get' id='signupForm'>
+				    <div style="margin-bottom:20px;">
+				    
+				    
+
+            <!-- 页数：
+            <input placeholder="页数" class="btn-sm btn-white" name="p" value="<{$p}>"> -->
+
+            <input placeholder="请输入客户姓名查询" class="btn-sm btn-white" name="keyword" value="<{$keyword}>">
+				    <button class="btn btn-sm btn-info" type="submit">查询</button>
+				    </div>
+				    </form>
+			    </div>
+            	<form action="<{:U('Goods/goodsHandle')}>" method="post">
+              <!-- <div style="margin-bottom:10px;">
+              <a id="list" href="<{:U('Goods/goodsList',array('action'=>'list'))}>" class="btn btn-sm" type="submit">列表</a>
+              <a id="sort" href="<{:U('Goods/goodsList',array('action'=>'sort'))}>" class="btn btn-sm" type="submit">排序</a>
+              
+              </div> -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            
+                            <div class="ibox-content">
+                                <div class="row">
+                                    
+                                    <div class="col-sm-1 m-b-xs">
+                                        <button class="deletechosebysubmit btn btn-sm btn-primary" type="submit">操作</button>
+                                    </div>
+                                    
+                                </div>
+                                <div class="table-responsive">
+                                	<if condition="$types eq 'chose-order-goods'">
+                                    <a class="btn btn-sm btn-info addOrder">
+                                            	确认选择
+                                    </a>&nbsp;
+                                    </if>
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <if condition="$action eq sort">
+                                                <th></th>
+                                                </if>
+                                                <th><input type="checkbox" class="choseall" name=""></th>
+                                                <th>ID</th>
+                                                <th>客户姓名</th>
+                                                <th>年龄</th>
+                                                <th>性别</th>
+                                                <th>手机号</th>
+                                                <th>住址</th>
+                                                <th>添加时间</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="sortable">
+                                        
+                                        	<volist name="list" id="v">
+                                            <tr class="grade0 one" name="<{$v.id}>" <if condition="$action eq sort">style="cursor:move;"</if>>
+
+                                              <if condition="$action eq sort">
+                                                <td id="0_<{$v.id}>" class="td_click">
+                                                <i class="fa fa-arrows"></i>
+                                                </td>
+                                              </if>
+                                                
+                                                <td style="padding-top:10px;">
+                                                    <input type="checkbox"  class='i-checks' value="<{$v.id}>" name="check[]">
+                                                </td>
+                                                
+                                                
+                                                <td>
+                                                	<{$v.user_id}>
+                                                </td>
+                                                
+                                                <td>
+                                                	<{$v.name}>
+                                                </td>
+
+                                                <td>
+                                                    <{$v.age}>
+                                                </td>
+
+                                                <td>
+                                                    <{$v.sex}>
+                                                </td>
+
+                                                <!-- <td>
+                                                <if condition="$v.sex eq 1">
+                                                男
+                                                <elseif condition="$v.sex eq 2"/>
+                                                女
+                                                <else />
+                                                未知
+                                                </if>
+                                                </td> -->
+
+                                                <td>
+                                                    <{$v.mobile}>
+                                                </td>
+                                                
+                                                <td style="padding-top:10px;">
+                                                		<{$v.address}>
+                                                </td>
+
+                                                <td style="padding-top:10px;">
+                                                  <{$v.add_time|date="Y-m-d H:i:s",###}>
+                                                </td>
+                                                
+
+                                                <td style="padding-top:10px;">
+                                                	<a data-toggle="tooltip" data-placement="top" title="配镜详情" class="btn btn-sm btn-success" href="<{:U('Lens/userLensInfo',array('user_id'=>$v['user_id']))}>">
+                                                	<i class="fa fa-commenting-o"></i>&nbsp;
+                                                	</a>&nbsp;
+                                                	<a data-toggle="tooltip" data-placement="top" title="修改信息" class="btn btn-sm btn-info" href="<{:U('Lens/userEdit',array('user_id'=>$v['user_id']))}>">
+                                                	<i class="fa fa-edit"></i>&nbsp;
+                                                	</a>&nbsp;
+                                                	<!-- <a data-toggle="tooltip" data-placement="top" title="删除" class="btn btn-sm btn-danger" onclick="del('<{:U('Lens/lensDel',array('id'=>$v[id]))}>','您确定删除此镜片么？','3')">
+                                                	<i class="fa fa-trash-o"></i>
+                                                	</a> -->
+
+                                                  <if condition="$types eq 'chose'">
+                                                  <a class="btn btn-sm btn-primary add" user_id="<{$v.user_id}>" name="<{$v.name}>" sex="<{$v.sex}>" address="<{$v.address}>" mobile="<{$v.mobile}>" age="<{$v.age}>">
+                                                  确认选择
+                                                  </a>&nbsp;
+                                                  </if>
+                                                  
+                                                </td>
+                                            </tr>
+                                            </volist>
+                                        </tbody>
+                                    </table>
+                                    <!-- <if condition="$types eq 'chose-order-goods'">
+                                    <a class="btn btn-sm btn-info addOrder">
+                                            	确认选择
+                                    </a>&nbsp;
+                                    </if> -->
+                                </div>
+                                <div class="text-center">
+                                    <if condition='$page neq null'>
+                                    	<{$page}>
+                                    <else/>
+                                    	共<{$count}>条记录
+                                    </if>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+    $().ready(function(){
+      $("#status<{$status}>").prop("selected","selected");
+      $("#is_best<{$is_best}>").prop("selected","selected");
+      $("#is_enquiry<{$is_enquiry}>").prop("selected","selected");
+      $("#is_sell<{$is_sell}>").prop("selected","selected");
+      $("#artist_id<{$artist_id}>").prop("selected","selected");
+      $("#cat_id<{$cat_id}>").prop("selected","selected");
+      $("#sub_id<{$sub_id}>").prop("selected","selected");
+      $("#is_new<{$is_new}>").prop("selected","selected");
+      $("#is_best<{$is_best}>").prop("selected","selected");
+      $("#is_discount<{$is_discount}>").prop("selected","selected");
+    	
+    	//修改库存
+    	$(".is_sell").change(function(){
+    		var id=$(this).attr("id");//商品id
+    		//var is_sell=$(this).val();//新库存
+       //alert(123);
+    		//if(is_sell==0){
+    			$.ajax({
+        			url:"__APP__/Goods/updateSell",
+        			type:"post",
+        			//data:"id="+id+"&is_sell="+is_sell,
+              $data:"id="+id,
+        			success:function(re){
+        				if(re!="success"){
+        					layer.msg(re);
+        				}
+        			},
+        			error:function(){
+        				layer.msg("错误,稍后重试！");
+        			}
+        		})
+    		// }else{
+    		// 	$(this).focus();
+    		// 	layer.msg("库存数只能为数字！");
+    		// }
+    	})
+    	
+    	
+    	//确认选择配镜的客户
+   		$(".add").click(function(){
+       		var user_id=$(this).attr("user_id");
+       		var name=$(this).attr("name");
+          var sex=$(this).attr("sex");
+          var address=$(this).attr("address");
+       		var mobile=$(this).attr("mobile");
+          var age=$(this).attr("age");
+       		window.parent.call_back_user(user_id,name,sex,address,mobile,age);
+       	})
+       	
+       	//确认选择参与添加订单
+   		$(".addOrder").click(function(){
+   			/* var ids="";
+       	 	$("[name='check[]']:checked").each(function(){
+       	   		var a=$(this).val();
+       	   		if(ids!=""){
+       	   			ids+=","+a;
+       	   		}else{
+       	   			ids+=a;
+       	   		}
+       	  	}); */
+       		
+       		var gid=$(this).attr("id");
+       		var name=$(this).attr("name");
+       		var price=$(this).attr("price");
+       		var is_sell=$(this).attr("is_sell");
+            var enquiry_price = $(this).attr("enquiry_price");
+       		//is_sell=is_sell-1;
+       		// $(this).attr("title",is_sell);
+       	  	// console.log(is_sell);
+       		window.parent.call_back_goods(gid,name,price,is_sell,enquiry_price);
+       	})
+    	
+    	
+    	//上下架
+    	$(".status").click(function(){
+       		var id=$(this).attr("id");//这是数据id
+       		var status=$(this).attr("name");//这是当前状态 0禁用1正常
+       		changeStatusOne('goods','id',id,status);
+       	})   
+       	
+       	
+
+
+    })
+    </script>
+</body>
+
+</html>

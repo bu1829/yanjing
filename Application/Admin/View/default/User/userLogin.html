@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<include file="Public:metas"/> 
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                         	  用户管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+					<include file="Public:return"/>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content">
+            	<!-- <form class='submitform' action="<{:U('Order/index')}>" method='get' id='signupForm'>
+                <div style="margin-bottom:20px;">
+	            	<input placeholder="请输入关键字" name="keywords" class="btn-xs btn-white" value="<{$keywords}>">
+	            	<button class="btn btn-xs btn-info" type="submit" id="submit1">查询</button>
+            	</div>
+            	</form> -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            
+                            <div class="ibox-content">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>登录时间</th>
+                                                <th>登录IP</th>
+                                                <th>登录位置 </th>
+                                                <th>登录方式</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        	
+                                        	<volist name='list' id="v" empty="暂无数据">
+                                            <tr>
+                                                <td>
+                                                	<{$v.login_time|date='Y-m-d H:i:s',###}>
+                                                </td>
+                                                <td>
+                                                	<{$v.login_ip}>
+                                                </td>
+                                                <td>
+                                                	<{$v.login_location}>
+                                                </td>
+                                               
+                                                <td>
+                                                <switch name="v.login_types">
+                                                	<case value="1">网页</case>
+                                                	<case value="2">APP</case>
+                                                	<case value="3">微信</case>
+                                                	<case value="4">QQ</case>
+                                                </switch>
+                                                </td>
+                                            </tr>
+                                            </volist>
+                                        </tbody>
+                                    </table>
+                                </div>
+								<div class="text-center">
+                                    <{$page}>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

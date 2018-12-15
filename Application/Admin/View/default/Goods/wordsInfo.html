@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+<style>
+.c_title{text-align:center;margin:5px 0px;width:140px;}
+.c_img{height:100px;margin:10px 20px;border:0px solid red;}
+table{border:0px solid blue;}
+table tr td{padding:12px 20px;}
+.photo_float{float:left;margin:10px;}
+</style>
+</head>
+
+<body>
+    <div style="margin:0px 10px;">
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	商品管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+					<include file="Public:return"/>
+                </div>
+            </div>
+           	<div class="col-lg-12" style="padding:0px;margin-top:10px;overflow:auto;zoom:1;">
+                    <div class="panel panel-primary" style="margin-bottom:80px;">
+                        <div class="panel-heading">
+                            	<{$meta_title}>
+                        </div>
+                        <div class="panel-body">
+                          		<label>商品信息</label>
+                          		<div style="border:0px solid red;padding:2px;" >
+                          			<div class="form-group">
+                                       <div class="col-sm-12">
+                                       <img class="img-rounded" src="__ROOT__<{$data.thumb}>" style="width:60px;height:60px;"/>
+                                       </div>
+                                    </div>
+                                    
+                          			<div class="form-group">
+                                       <div class="col-sm-12">
+                                       <{$data.name}> 
+                                       </div>
+                                    </div>
+                                    <button class="btn btn-xs btn-primary checkInfo">查看商品详情</button>
+                          		</div>
+                          		
+                                
+                                
+                                <label style="margin-top:20px;">
+                               		留言信息   &nbsp;&nbsp;
+                                </label>
+                          		<div style="border:0px solid red;">
+                          			
+                          			<div class="form-group">
+                                       <div class="col-sm-12">会员：
+                                       	 <a href="<{:U('User/userInfo',array('user_id'=>$data[user_id]))}>"><{$data.username}></a>
+                                       </div>
+                                    </div>
+                                 
+                                   
+                                   
+                                   <div class="form-group">
+                                       <div class="col-sm-12">留言时间：
+                                       <{$data.add_time|date="Y-m-d H:i:s",###}>
+                                       </div>
+                                   </div>
+
+
+                                   <div class="form-group">
+                                       <div class="col-sm-12">留言内容：
+                                       <{$data.words}>
+                                       </div>
+                                   </div>
+
+
+                                   <if condition="$data.revert neq ''">
+                                   <div class="form-group">
+                                       <div class="col-sm-12">回复时间：
+                                       <{$data.revert_time|date="Y-m-d H:i:s",###}>
+                                       </div>
+                                   </div>
+
+                                   
+                                   <div class="form-group">
+                                       <div class="col-sm-12">回复内容：
+                                       <{$data.revert}>
+                                       </div>
+                                   </div>
+                                   </if>
+
+                       
+                                  <div class="form-group">
+                                  <textarea placeholder="请输入回复内容" name="revert" type="textarea" value="" class="btn-sm" rows="6" cols="200"></textarea>
+                                  <botton type="button" class="btn btn-sm btn-success revertok">回复</botton>
+                                  </div>
+                                            
+
+
+                                   <div class="form-group">
+                                       <div class="col-sm-12">
+                                      	<div style="padding-top:10px;cursor:pointer;" class="status status<{$data.id}>" id="<{$data.id}>" name="<{$data.status}>">
+                                              	<switch name="data.status">
+                                              	<case value="0"><img alt="隐藏" title="隐藏" class="img-responsive" src="__IMG__/no.gif"></case>
+                                              	<case value="1"><img alt="显示" title="显示" class="img-responsive" src="__IMG__/yes.gif"></case>
+                                     			</switch>
+                                        </div>
+                                       </div>
+                                   </div>
+                          		</div>
+                                
+                          		
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script>
+   
+    
+    $().ready(function(){
+    	//var id="<{$data.id}>";
+    	var gid="<{$data.goods_id}>";
+      var words_id="<{$data.id}>";
+    	
+    	$(".status").click(function(){
+       		var id=$(this).attr("id");//这是数据id
+       		var status=$(this).attr("name");//这是当前状态 0禁用1正常
+       		changeStatusOne('comment','id',id,status);
+       	})  
+       	
+       	//商品详情
+    	$(".checkInfo").click(function(){
+   			layer.open({
+     			  type: 2,
+     			  title: '商品详情',
+     			  shadeClose: true,
+     			  shade: 0.8,
+     			  area: ['80%', '90%'],
+     			  content: '__APP__/Goods/goodsEdit/id/'+gid//iframe的url
+    		}); 
+    	})
+       	
+    	//删除
+    	$(".delete").click(function(){
+    		layer.confirm('确认删除此评论么？', {
+    			icon:7,btn: ['确认','取消'] //按钮
+    		}, function(){
+    			$.ajax({
+        			url:"__APP__/Goods/deleteCommentOne",
+        			type:"post",
+        			data:"id="+id,
+        			success:function(re){
+        				if(re=="success"){
+        					 layer.msg("删除成功");
+        					 window.location="<{:U('Goods/goodsComment')}>";
+        				}else{
+        					layer.msg(re);
+        				}
+        			}
+        		})
+    		});
+    	})
+
+      //回复
+      $(".revertok").click(function(){
+        //var address="<{$data.revert}>";
+        var revert = $("[name='revert']").val();
+          
+          layer.confirm('确认回复该内容？', {
+          icon:7,btn: ['确认','取消'] //按钮
+        }, function(){
+          $.ajax({
+              url:"__APP__/Goods/revert",
+              type:"post",
+              data:"words_id="+words_id+"&revert="+revert,
+              success:function(re){
+                if(re=="success"){
+                   layer.msg("回复成功！");
+                   window.location.reload()
+                }else{
+                  layer.msg(re);
+                }
+              }
+            })
+        });
+      })
+
+
+
+
+    	
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+</head>
+
+<body>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	用户管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+					<a href="<{:U('User/ipbanList')}>" class="btn btn-xs btn-primary">禁止IP列表</a>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="alert alert-danger alert-dismissable">
+                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                  	  温馨提示：1.禁用该IP，请填写禁止天数1-3650天，状态选择"禁用" 2.解除禁用，状态选择"正常"
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+	                    <div class="panel panel-primary">
+	                        <div class="panel-heading">
+	                            	<{$meta_title}>
+	                        </div>
+	                        <div class="panel-body">
+	                        	 <form action="<{:U('')}>" method="post" class="form-horizontal m-t" id="signupForm">
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font>ip：</label>
+                                        <div class="col-sm-3">
+                                            <input id="ip" name="ip" value="<{$data.ip|default=''}>" class="form-control" type="text" maxlength="20">
+                                            <input id="oldip" type="hidden" name="oldip" value="<{$data.ip}>">
+                                        </div>
+                                    </div>
+                                    
+                                 
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><font class="text-danger">*</font>禁止天数：</label>
+                                        <div class="col-sm-2">
+                                            <input  name="ban_day" value="<{$data.ban_day|default=''}>" class="form-control" type="text" maxlength="4">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">当前起止时间：</label>
+                                        <div class="col-sm-2" style="padding:6px;">
+                                           <if condition="$data.begin_time eq 0">
+                                        	暂未设置过禁止天数
+                                        	<else/>
+                                            <{$data.begin_time|date="Y-m-d",###}>	至	<{$data.end_time|date="Y-m-d",###}>
+                                        	</if>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">状态：</label>
+                                        <div class="col-sm-3" style="margin:5px;">
+                                        		<input type="radio" value="1" name="status" id="status1"/>正常
+                                        		<input type="radio" value="0" name="status" id="status0" checked/>禁用
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-3">
+                                       		<input type="hidden" value="<{$data.id|default=''}>" name="id"/>
+                                            <button class="btn btn-sm btn-primary" type="submit">保存</button>
+                                            <button class="btn btn-sm btn-primary" type="reset">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
+	                        </div>
+	                    </div>
+	                </div>
+	                
+                </div>
+            </div>
+     <script type="text/javascript">
+		$("#status"+<{$data.status}>).attr("checked","checked");//状态
+     </script>
+	 <script>
+        //以下为修改jQuery Validation插件兼容Bootstrap的方法，没有直接写在插件中是为了便于插件升级
+        //以下为官方示例
+        $().ready(function () {
+        	//设置默认选项的
+        	
+            // validate the comment form when it is submitted
+            $("#commentForm").validate();
+           	var id=$("[name='id']").val();
+           	if(!id){
+           	 // validate signup form on keyup and submit
+                $("#signupForm").validate({
+                    rules: {
+                         ip: {
+                             required: true,
+                             ip:true,
+                             ipsame:true,
+                         },
+                         ban_day: {
+                             required: true,
+                             digits:true,
+                             range:[1,3650],
+                         }
+                    },
+                    messages: {
+                    	ip: {
+                    		required:no+"请输入ip",
+                    		ip:no+"请输入合法的ip",
+                            ipsame:no+"该ip已经存在",
+                        },
+                        ban_day: {
+                            required: no+"请输入禁止天数，1-3650",
+                            digits:no+"请输入整数，1-3650",
+                            range:no+"请输入1-3650",
+                        },
+                    },
+                    onfocus: true,　　　　
+                    onkeyup: false,　　　　//这个地方要注意，修改去控制器验证的事件。
+                    onsubmit: true
+                });
+           	}else{
+	           	 $("#signupForm").validate({
+	                 rules: {
+	                      ip: {
+	                          required: true,
+	                          ip:true,
+	                          remote: {
+	                              url: "__APP__/Admin/checkOnly",
+	                              type: "post",
+	                              dataType: "json",
+	                              data: {
+	                                  tablename: function () {
+	                                      return "ipban";　　　　//数据表名称
+	                                  },
+	                                  fieldname: function () {
+	                                      return "ip";　　　　//要查找的字段
+	                                  },
+	                                  value: function () {
+	                                      return $("#ip").val();　　　　//新值
+	                                  },
+	                                  oldvalue: function () {
+	                                      return $("#oldip").val();　　　　//老值
+	                                  }
+	                              },
+	                              dataFilter: function (msg) {　　　　//判断控制器返回的内容
+	                            	  if (msg == "1") {
+	                                      return true;
+	                                  }
+	                                  else {
+	                                      return false;
+	                                  }
+	                              }
+	                          }
+	                      },
+	                      ban_day: {
+	                          required: true,
+	                          digits:true,
+	                          range:[1,3650],
+	                      }
+	                 },
+	                 messages: {
+	                 	ip: {
+	                 		required:no+"请输入ip",
+	                 		ip:no+"请输入合法的ip",
+	                 		remote:no+"该ip已经存在"
+	                     },
+	                     ban_day: {
+	                         required: no+"请输入禁止天数，1-3650",
+	                         digits:no+"请输入整数，1-3650",
+	                         range:no+"请输入1-3650",
+	                     },
+	                 },
+	                 onfocus: true,　　　　
+	                 onkeyup: false,　　　　//这个地方要注意，修改去控制器验证的事件。
+	                 onsubmit: true
+	             });
+           	}
+        });
+    </script>
+</body>
+</html>

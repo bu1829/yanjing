@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<include file="Public:metas"/>
+</head>
+
+<body>
+    <div>
+
+        <div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10" id="biaoti">
+                    
+                    <ol class="breadcrumb" style="margin-top:20px;">
+                        <li>
+                            	会员管理
+                        </li>
+                        <li>
+                            <strong><{$meta_title}></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2" id="fubiaoti">
+					<a href="<{:U('User/userAdd')}>" class="btn btn-xs btn-primary">会员添加</a>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content">
+            	<form class="submitform" action="<{:U('User/index')}>" method="get" id="signupForm">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            
+                            <div class="ibox-content">
+                                <div class="row">
+                                    <div class="col-sm-2 m-b-xs">
+                                       <select name="handle" style="font-size:13px;" class="input-sm form-control input-s-sm inline">
+                                            <option value="1">启用</option>
+                                            <option value="0">禁用</option>
+                                            <option value="2">删除</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4 m-b-xs">
+                                    	 <button class="deletechosebysubmit btn btn-sm btn-primary" type="submit">操作</button>
+                                    </div>
+                                    
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input name='reg_start_time' value='<{$reg_start_time}>' class="laydate-icon btn-sm btn-white" id="start"/>&nbsp;至&nbsp;
+                                            <script>
+                                            laydate({
+                                                elem: '#start',
+                                                format: 'YYYY-MM-DD', // 分隔符可以任意定义，该例子表示只显示年月
+                                                max: laydate.now(), //设定最小日期为当前日期
+                                                festival: true, //显示节日
+                                                choose: function(datas){ //选择日期完毕的回调
+                                                }
+                                            });
+                                            laydate.skin("molv");
+                                            </script>
+                                            <input name='reg_end_time' value='<{$reg_end_time}>' class="laydate-icon btn-sm" id="end"/>
+                                            <script>
+                                            laydate({
+                                                elem: '#end',
+                                                format: 'YYYY-MM-DD', // 分隔符可以任意定义，该例子表示只显示年月
+                                                max: laydate.now(), //设定最小日期为当前日期
+                                                festival: true, //显示节日
+                                                choose: function(datas){ //选择日期完毕的回调
+                                                }
+                                            });
+                                            laydate.skin("molv");
+                                            </script>
+                                            <input placeholder="请输入关键字" name="keyword" class="btn-xs btn-white" value="<{$keyword}>">
+                                            <span class="input-group-btn">
+                                        	<button id="submit2" type="submit" class="btn btn-sm btn-primary">搜索</button> 
+                                        	</span>
+                                            <button id="submit3" type="submit" class="btn btn-sm btn-danger">导出Excel报表</button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover tooltip-demo">
+                                        <thead>
+                                            <tr>
+                                                <th><input type="checkbox" class="choseall" name="input[]"></th>
+                                                <th>UID</th>
+                                                <th>用户名</th>
+                                                <th>角色</th>
+                                                <!-- <th>申请业务员</th> -->
+                                                <th>登录次数</th>
+                                                <th>资金</th>
+                                                <th>注册时间|来源</th>
+                                                <th>最后登录时间</th>
+                                                <th>注册IP</th>
+                                                <th>最后登录IP</th>
+                                                <th>状态</th>
+                                                <th>邀请码</th>
+                                                <!-- <th>一级推荐|二级推荐</th> -->
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+                                        	<volist name="list" id="v" empty="暂无数据">
+                                            <tr>
+                                                <td>
+                                                   <input type="checkbox" class='i-checks' name="check[]" value="<{$v.user_id}>">
+                                                </td>
+                                                <td>
+                                                	<{$v.user_id}>
+                                                </td>
+                                                <td>
+                                                	<{$v.username}>
+                                                </td>
+                                                <td>
+                                                	<if condition='$v.role eq 1'>
+                                                	普通会员
+                                                	<elseif condition='$v.role eq 2'/>
+                                                	艺术家
+                                                    <elseif condition='$v.role eq 3'/>
+                                                    业务员（内部）
+                                                    <elseif condition='$v.role eq 4'/>
+                                                    加盟商（内部）
+                                                    <elseif condition='$v.role eq 5'/>
+                                                    业务员（外部）
+                                                    <elseif condition='$v.role eq 6'/>
+                                                    加盟商（外部）
+                                                	</if>
+                                                </td>
+                                                <!-- <td class="role role<{$v.user_id}>" id="<{$v.user_id}>" name="<{$v.role}>" style="cursor:pointer;">
+                                                <switch name="v.role">
+                                                    <case value="1"><img alt="image" class="img-responsive" src="__IMG__/no.gif"></case>
+                                                    <case value="3"><img alt="image" class="img-responsive" src="__IMG__/yes.gif"></case>
+                                                </switch> -->
+                                                </td>
+                                                <td>
+                                                	<{$v.login}>
+                                                </td>
+                                                <td>
+                                                	<a href="<{:U('Money/moneyList',array('username'=>$v[username]))}>" title="查看资金记录"><{$v.money}></a>
+                                                </td>
+                                                <td>
+                                                	<if condition="$v.reg_time neq 0">
+                                                	<{$v.reg_time|date="Y-m-d H:i:s",###}> |
+                                                	<switch name="v.reg_source">
+                                                		<case value="0">未知</case>
+                                                		<case value="1">网站注册</case>
+                                                		<case value="2">APP注册</case>
+                                                		<case value="3">后台注册</case>
+                                                        <case value="4">Android注册</case>
+                                                        <case value="5">iOS注册</case>
+                                                	</switch>
+                                                	</if>
+                                                </td>
+                                                <td>
+                                                	<if condition="$v.last_login_time neq 0">
+                                                	<{$v.last_login_time|date="Y-m-d H:i:s",###}>
+                                                	</if>
+                                                </td>
+                                                <td>
+                                                    <if condition="$v.reg_ip neq 0">
+                                                    <{$v.reg_ip}>
+                                                    </if>
+                                                </td>
+                                                <td>
+                                                	<if condition="$v.last_login_ip neq 0">
+                                                	<{$v.last_login_ip}>
+                                                	</if>
+                                                </td>
+                                                
+                                                <td class="status status<{$v.user_id}>" id="<{$v.user_id}>" name="<{$v.status}>" style="cursor:pointer;">
+                                                <switch name="v.status">
+                                                	<case value="0"><img alt="image" class="img-responsive" src="__IMG__/no.gif"></case>
+                                                	<case value="1"><img alt="image" class="img-responsive" src="__IMG__/yes.gif"></case>
+                                                </switch>
+                                                </td>
+                                                <td><{$v.invitecode}></td>
+                                                 <!-- <td>
+                                                	<a href="<{:U('User/index',array('presenter'=>$v[sharecode]))}>"><{$v.first}></a> | <{$v.second}>
+                                                </td> -->
+                                                <td>
+                                                	<a data-toggle="tooltip" data-placement="top" title="详情" class="btn btn-sm btn-success" href="<{:U('User/userInfo',array('user_id'=>$v['user_id']))}>">
+                                                	<i class="fa fa-eye"></i>
+                                                	</a>&nbsp;
+                                                	<a data-toggle="tooltip" data-placement="top" title="收货地址" class="btn btn-sm btn-info" href="<{:U('User/userAddressList',array('user_id'=>$v['user_id']))}>">
+                                                	<i class="fa fa-home"></i>
+                                                	</a>&nbsp;
+                                                	<!-- <a href="<{:U('User/userBan',array('user_id'=>$v['user_id']))}>">禁止用户</a> | -->
+                                                	<a data-toggle="tooltip" data-placement="top" title="删除" class="btn btn-sm btn-danger" onclick="del('<{:U('User/userDeleteOne',array('user_id'=>$v[user_id]))}>','您确定删除此会员么？','3')">
+                                                	<i class="fa fa-trash-o"></i>
+                                                	</a>
+                                                	
+                                                	<if condition="$types eq 'chose'">
+                                                	<a class="btn btn-sm btn-primary add" rel="<{$v.user_id}>"  name="<{$v.username}>">
+                                                	确认选择
+                                                	</a>&nbsp;
+                                                	</if>
+                                                </td>
+                                            </tr>
+                                            </volist>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+								<div class="text-center">
+                                    <{$page}>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+   <script type="text/javascript">
+   $().ready(function(){
+	   $(".status").click(function(){
+      		var id=$(this).attr("id");//这是数据id
+      		var status=$(this).attr("name");//这是当前状态 0禁用1正常
+      		changeStatusOne('user','user_id',id,status);
+      	}) 
+      
+	    var action2='<{:U("User/index",array("types"=>$types))}>';
+	 	//切换action
+      	form("<{:U('User/userHandle')}>",action2,"post","get");
+	 	
+	 	//确认选择
+      	$(".add").click(function(){
+    		var uid=$(this).attr("rel");
+    		var username=$(this).attr("name");
+    		window.parent.call_back(uid,username);
+    		$(this).hide();
+    	})
+
+
+        // 申请成为业务员
+        $(".role").click(function(){
+            var id=$(this).attr("id");
+            var status=$(this).attr("name");
+            toSalesman(id,status,"role");
+        })
+
+        $("#submit3").click(function(){
+            $(".submitform").attr("action","<{:U('User/userExport')}>");
+        })
+
+        $("#submit2").click(function(){
+            $(".submitform").attr("action","<{:U('User/index')}>");
+        })
+
+   })
+   </script>
+</body>
+</html>

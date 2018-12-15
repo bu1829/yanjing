@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<include file="Public:metas"/>
+	<link href="__CSS__/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
+    <link href="__CSS__/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <!-- IonRangeSlider -->
+    <script src="__CJS__/plugins/chosen/chosen.jquery.js"></script>
+    <script src="__CJS__/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
+	<style type="text/css">
+	.water-title{font-size:15px;font-weight:bold;padding:10px;margin-bottom:10px;text-align:center;background:#f5f5f5;border-radius:2px;}
+	</style>
+	<!-- 颜色选择器 -->
+	<script>
+	$().ready(function(){
+		$('#color').colpick({
+			layout:'hex',
+			submit:0,
+			colorScheme:'dark',
+			onChange:function(hsb,hex,rgb,el,bySetColor) {
+				if(!bySetColor) $("#color").val("#"+hex);
+			}
+		}).keyup(function(){
+			$(this).colpickSetColor(this.value);
+		});
+	})
+	</script>
+</head>
+
+<body class="gray-bg">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="wrapper wrapper-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5><{$meta_title}></h5>
+                            </div>
+                            <form action="" method="post" enctype="multipart/form-data">
+                            <div class="ibox-content">
+                                <div class="row">
+
+                                    <div class="col-md-4 form-horizontal">
+                                    	<div class="water-title">文字水印设置</div>
+                                    	
+                                    	<div class="form-group">
+	                                        <label class="col-sm-3 control-label">文字</label>
+	                                        <div class="col-sm-8">
+	                                            <input id="word" name="WORD" class="form-control" type="text" maxlength="20" value="<{$data.WORD}>">
+	                                        </div>
+                                  	    </div>
+                                  	    
+                                  	    <div class="form-group">
+	                                        <label class="col-sm-3 control-label">字号</label>
+	                                        <div class="col-sm-8">
+	                                            <input id="font" name="FONT" class="form-control" type="tel" maxlength="11" value="<{$data.FONT}>">
+	                                        </div>
+                                  	    </div>
+                                  	    
+                                  	    <div class="form-group">
+	                                        <label class="col-sm-3 control-label">颜色</label>
+	                                        <div class="col-sm-8">
+	                                            <input id="color"  name="COLOR" class="form-control" type="text" value="<{$data.COLOR}>">
+	                                            <div>
+		                                            <button class="btn btn-sm pikcolor" type="button" value="#ffffff" style="margin:5px 5px 10px 0px;color:#ffffff;">白色(建议)</button>
+		                                            <button class="btn btn-sm pikcolor" type="button" value="#000000" style="margin:5px 5px 10px 0px;color:#000000;">黑色</button>
+		                                            <script>
+		                                            $(".pikcolor").click(function(){
+		                                            	var color=$(this).val();
+		                                            	$("#color").val(color);
+		                                            })
+		                                            </script>
+	                                            </div>
+	                                        </div>
+                                  	    </div>
+                                  	    
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">位置</label>
+                                            <div class="col-sm-8">
+                                            <div class="radio radio-primary">
+                                                   <input type="radio" name="WORD_LOCATE" value="1" id="word1">
+                                                   <label  for="word1">
+                                                  		左上角
+                                                   </label>
+                                            </div>
+                                            <div class="radio radio-primary">
+                                                    <input type="radio" name="WORD_LOCATE" value="2" id="word2">
+                                                    <label  for="word2">
+                                                     	上居中
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-primary">
+                                                    <input type="radio" name="WORD_LOCATE" value="3" id="word3">
+                                                    <label  for="word3">
+                                                    	右上角
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-primary">
+                                                    <input type="radio" name="WORD_LOCATE" value="4" id="word4">
+                                                    <label  for="word4">
+                                                    	左居中
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-primary">
+                                                    <input type="radio" name="WORD_LOCATE" value="5" id="word5">
+                                                    <label  for="word5">
+                                                    	居中
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-primary">
+                                                    <input type="radio" name="WORD_LOCATE" value="6" id="word6">
+                                                    <label  for="word6">
+                                                    	右居中
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-primary">
+                                                    <input type="radio" name="WORD_LOCATE" value="7" id="word7">
+                                                    <label  for="word7">
+                                                    	左下角
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-primary">
+                                                    <input type="radio" name="WORD_LOCATE" value="8" id="word8">
+                                                    <label  for="word8">
+                                                    	下居中
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-primary">
+                                                    <input type="radio" name="WORD_LOCATE" value="9" id="word9">
+                                                    <label  for="word9">
+                                                    	右下角
+                                                    </label>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="col-md-4 form-horizontal">
+                                    	<div class="water-title">图片水印设置</div>
+                                    	<div class="form-group">
+	                                        <label class="col-sm-3 control-label">水印图片</label>
+	                                        <div class="col-sm-6">
+	                                           <div class="details" style="width:100px;">
+									                   <div style='border:0px solid red;position:relative;'><!-- 第一张-->
+																<div class='yulan yulan1'></div><!-- 预览  -->
+																<div class='detail detail1'><!--预览详细和关闭  -->
+																	<div>
+																	<a title=''  rel="1" class='close close1'>×</a>
+																	</div>
+																	<div>
+																	<a class="picture picture1" id="1" title="图片预览">
+																	查看
+		                               								</a>
+																	</div>
+																</div>
+																<div><input type="file" name="WATER_PICTURE"  value='' class="inputimg inputimg1" id="1" /></div><!-- input插入 -->
+													  </div>
+								                </div>
+	                                        </div>
+	                                        <div class="col-sm-3 val14">
+	                                        	<if condition="$data.WATER_PICTURE neq null">
+	                                			<a class="fancybox"  href="__ROOT__<{$data.WATER_PICTURE}>" title="水印图片">
+	                            					<img alt="image" class="feed-photo" style="border:0px solid red;width:100px;height:100px;" src="__ROOT__<{$data.WATER_PICTURE}>" />
+	                       						</a>
+	                       						<a rel="14" class="btn btn-xs btn-danger delconfigpicture" style="position:absolute;bottom:40px;left:50px;">删除</a>
+	                       						</if>
+	                                        </div>
+                                  	    </div>
+                                  	    <div class="form-group">
+	                                        <label class="col-sm-3 control-label">透明度</label>
+	                                        <div class="col-sm-8">
+	                                        	 <input type="hidden" name="ALPHA" value="<{$data.ALPHA}>"/>
+                               					 <div id="ionrange_2"></div>
+	                                        </div>
+                                  	    </div>
+                                  	    
+                                  	    <div class="form-group">
+                                            <label class="col-sm-3 control-label">位置</label>
+                                            <div class="col-sm-8">
+                                            <div class="radio radio-info">
+                                                   <input type="radio" name="PICTURE_LOCATE" value="1" id="picture1">
+                                                   <label  for="picture1">
+                                                  		左上角
+                                                   </label>
+                                            </div>
+                                            <div class="radio radio-info">
+                                                    <input type="radio" name="PICTURE_LOCATE" value="2" id="picture2">
+                                                    <label  for="picture2">
+                                                     	上居中
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-info">
+                                                    <input type="radio" name="PICTURE_LOCATE" value="3" id="picture3">
+                                                    <label  for="picture3">
+                                                    	右上角
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-info">
+                                                    <input type="radio" name="PICTURE_LOCATE" value="4" id="picture4">
+                                                    <label  for="picture4">
+                                                    	左居中
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-info">
+                                                    <input type="radio" name="PICTURE_LOCATE" value="5" id="picture5">
+                                                    <label  for="picture5">
+                                                    	居中
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-info">
+                                                    <input type="radio" name="PICTURE_LOCATE" value="6" id="picture6">
+                                                    <label  for="picture6">
+                                                    	右居中
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-info">
+                                                    <input type="radio" name="PICTURE_LOCATE" value="7" id="picture7">
+                                                    <label  for="picture7">
+                                                    	左下角
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-info">
+                                                    <input type="radio" name="PICTURE_LOCATE" value="8" id="picture8">
+                                                    <label  for="picture8">
+                                                    	下居中
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-info">
+                                                    <input type="radio" name="PICTURE_LOCATE" value="9" id="picture9">
+                                                    <label  for="picture9">
+                                                    	右下角
+                                                    </label>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-4 form-horizontal">
+                                    	<div class="water-title">默认水印类型</div>
+                                    	<div class="form-group" id="toastTypeGroup">
+                                            <label class="col-sm-3 control-label">默认</label>
+                                            <div class="col-sm-8">
+                                            <div class="radio radio-success">
+	                                                <input type="radio" name="DEFAULT_WATER_TYPE" id="default0" value="0" checked=''>
+	                                                <label for="default0">
+	                                                  	 无水印
+	                                                </label>
+                                            </div>
+                                            <div class="radio radio-success">
+                                                    <input type="radio" name="DEFAULT_WATER_TYPE" value="1" id="default1">
+                                                    <label for="default1">
+                                                    	文字水印
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-success">
+                                                    <input type="radio" name="DEFAULT_WATER_TYPE" value="2" id="default2">
+                                                    <label for="default2">
+                                                    	图片水印
+                                                    </label>
+                                            </div>
+                                            <div class="radio radio-success">
+                                                    <input type="radio" name="DEFAULT_WATER_TYPE" value="3" id="default3">
+                                                    <label for="default3">
+                                                    	文字+图片
+                                                    </label>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div class="water-title">当前效果</div>
+                                        <div>
+                                       	 <a class="fancybox"  href="__ROOT__/Public/Water/water-preview.jpg">
+	                            				<img class="img-responsive img-rounded" style="width:100%;height:100%;" src="__ROOT__/Public/Water/water-preview.jpg" />
+	                       				 </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                    <div class="col-lg-12">
+                                        <button type="submit" class="btn btn-sm btn-primary" id="save" style="float:right;margin-right:15px;">保存</button>
+                                    </div>
+                                	</div>
+                                </div>
+
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--上传图片  -->
+    <include file="Public:upload"/>
+    <!--上传图片  -->
+    <!-- 放置图片显示的 -->
+    <div style="display:none;padding:10px;" class="open1">
+	<img src="" alt="" class="fancybox-image carousel-inne img-rounded img-responsive openimg1"/>
+	</div>
+    <script type="text/javascript">
+		$().ready(function(){
+			$("#save").click(function(){
+				var alpha=$(".irs-single").html();
+				$("[name='ALPHA']").val(alpha);
+			})
+		})
+    </script>
+    <script type="text/javascript">
+    	$("#word<{$data.WORD_LOCATE}>").prop("checked","checked");//文字水印位置
+    	$("#picture<{$data.PICTURE_LOCATE}>").prop("checked","checked");//文字水印位置
+    	$("#default<{$data.DEFAULT_WATER_TYPE}>").prop("checked","checked");//文字水印位置
+    </script>
+    <SCRIPT>
+        $("#ionrange_2").ionRangeSlider({
+            min: 0,
+            max: 100,
+            type: 'single',
+            from:"<{$data.ALPHA}>",
+            step: 1,
+            postfix: "",
+            prettify: false,
+            hasGrid: true
+        });
+    </script>
+</body>
+</html>
